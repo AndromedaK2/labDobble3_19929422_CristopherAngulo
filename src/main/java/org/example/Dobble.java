@@ -63,20 +63,21 @@ public class Dobble {
     /**
      * 
      */
-    public List<Card> CreateFirstCard(List<Element> elements,Integer order) {
-
-        for (Integer i=0; ){
-
+    public Card CreateFirstCard(List<String> elements,Integer order) {
+        Card card = new Card();
+        for (Integer i=0; i<order;i++){
+            String element = elements.get(i);
+            card.addElement(element);
         }
-
-
+        return card;
     }
 
     /**
      * 
      */
-    public void CreateNCards() {
-        // TODO implement here
+    public void CreateNCards(List<String> elements,Integer order) {
+        Card card = new Card();
+
     }
 
     /**
