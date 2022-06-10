@@ -19,6 +19,8 @@ public class Dobble {
         list.add(10);
         list.add(11);
         list.add(12);
+        list.add(13);
+
 
         addCard(CreateFirstCard(list,3));
         addCards(CreateNCards(list,3));
@@ -91,9 +93,9 @@ public class Dobble {
         for (int i= 1; i<=order; i++) {
             for (int j=1; j<=order; j++) {
                 Card card = new Card();
-                card.addElement(elements.get(i+1));
+                card.addElement(elements.get(i));
                 for (int k=1; k<= order; k++) {
-                    card.addElement(calculateIndexToGetNSquareCards(elements,i,order-1,j,k));
+                    card.addElement(calculateIndexToGetNSquareCards(elements,i,order,j,k));
                 }
                 cards.add(card);
             }
@@ -102,7 +104,7 @@ public class Dobble {
     }
 
     public Object calculateIndexToGetNCards( List<Object> elements, int order, int j, int k){
-        return elements.get((order-1) * j + (k+1));
+        return elements.get((order * j + (k+1))-1);
     }
 
     public Object calculateIndexToGetNSquareCards( List<Object> elements,int i, int order, int j, int k){
