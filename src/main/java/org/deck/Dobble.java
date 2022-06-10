@@ -5,26 +5,14 @@ import java.util.*;
 public class Dobble {
 
 
-    public Dobble() {
-        List<Object> list = new ArrayList<>();
-        list.add("1");
-        list.add("2");
-        list.add("3");
-        list.add("4");
-        list.add("5");
-        list.add("6");
-        list.add("7");
-        list.add(8);
-        list.add(9);
-        list.add(10);
-        list.add(11);
-        list.add(12);
-        list.add(13);
+    public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
 
 
-        addCard(CreateFirstCard(list,3));
-        addCards(CreateNCards(list,3));
-        addCards(CreateNSquareCards(list,3));
+        int order = getOrder(elementsPerCard);
+
+        addCard(CreateFirstCard(elements,order));
+        addCards(CreateNCards(elements,order));
+        addCards(CreateNSquareCards(elements,order));
 
 
         for (int i = 0; i < DobbleCards.size(); i++) {
@@ -114,6 +102,10 @@ public class Dobble {
 
     private int calculateIndexToGetNSquareCards(int i, int order, int j, int k){
        return (order+2+order*(k-1)+(((i-1)*(k-1)+j-1) % order))-1;
+    }
+
+    private int getOrder(int elementPerCard){
+        return elementPerCard -1;
     }
 
     private void Shuffle() {
