@@ -66,7 +66,7 @@ public class Dobble {
     public void addCard(Card card){
         DobbleCards.add(card);
     }
-    
+
     private Card CreateFirstCard(List<Object> elements,Integer order) {
         Card card = new Card();
         for (int i=0; i<order+1;i++){
