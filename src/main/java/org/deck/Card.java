@@ -1,48 +1,40 @@
-package org.example;
+package org.deck;
 
 import java.util.*;
 
 
 public class Card {
 
-    private String Id;
-    private List<Object> elements;
+    private String id;
 
     public List<Object> getElements() {
         return elements;
     }
 
-    public void setElements(List<Element> elements) {
-        elements = elements;
-    }
+    private List<Object> elements;
 
 
     public Card(String id, List<String> elements) {
-        Id = id;
+        id = id;
         elements = elements;
     }
 
     public Card() {
-        Id = "1";
+        id = "1";
         elements = new ArrayList<>();
     }
 
-    public void addElement(String element) {
+    public void addElement(Object element) {
         if(!elements.contains(element))
         elements.add(element);
     }
 
-    public void addElement(Integer element) {
-        if(!elements.contains(element))
-            elements.add(element);
-    }
-
-    public Element GetFirstElement() {
+    public Object GetFirstElement() {
         return null;
     }
 
 
-    public Element GetLastElement() {
+    public Object GetLastElement() {
         return null;
     }
 
