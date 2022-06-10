@@ -26,7 +26,7 @@ public class Dobble {
         // TODO implement here
     }
 
-    public void GetRequiredCards() {
+    public void GetRequiredElements() {
         // TODO implement here
     }
 
@@ -40,7 +40,7 @@ public class Dobble {
 
     public Card CreateFirstCard(List<Object> elements,Integer order) {
         Card card = new Card();
-        for (Integer i=0; i<order;i++){
+        for (int i=0; i<order;i++){
             Object element = elements.get(i);
             card.addElement(element);
         }
@@ -48,14 +48,28 @@ public class Dobble {
     }
 
 
-    public void CreateNCards(List<String> elements,Integer order) {
-        Card card = new Card();
+    public List<Card> CreateNCards(List<Object> elements,int order) {
+        List<Card> cards = new ArrayList<>();
+        for (int j=1; j<=order; j++) {
+            Object firstElement  =  elements.get(0);
+            Card card = new Card();
+            card.addElement(firstElement);
 
+            for (int k=1; k<=order; k++) {
+                card.addElement(calculateIndexToGetElementNSquare(elements,order,j,k));
+            }
+            cards.add(card);
+        }
+        return  cards;
     }
 
 
     public void CreateNSquareCards() {
 
+    }
+
+    public Object calculateIndexToGetElementNSquare( List<Object> elements, int order,int j, int k){
+        return elements.get(order * j + (k+1));
     }
 
 
