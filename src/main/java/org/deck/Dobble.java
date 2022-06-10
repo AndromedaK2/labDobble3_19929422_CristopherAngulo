@@ -50,19 +50,24 @@ public class Dobble {
     }
 
     public void GetRequiredElements() {
-        // TODO implement here
+
     }
 
     public void GetTotalCards() {
         // TODO implement here
     }
 
-    public void ToString() {
-
-
+    public void addCards(List<Card> cards){
+        for (int i = 0; i < cards.size(); i++) {
+            DobbleCards.add(GetNthCard(cards,i));
+        }
     }
 
-    public Card CreateFirstCard(List<Object> elements,Integer order) {
+    public void addCard(Card card){
+        DobbleCards.add(card);
+    }
+    
+    private Card CreateFirstCard(List<Object> elements,Integer order) {
         Card card = new Card();
         for (int i=0; i<order+1;i++){
             Object element = elements.get(i);
@@ -71,8 +76,7 @@ public class Dobble {
         return card;
     }
 
-
-    public List<Card> CreateNCards(List<Object> elements,int order) {
+    private List<Card> CreateNCards(List<Object> elements,int order) {
         List<Card> cards = new ArrayList<>();
         for (int j=1; j<=order; j++) {
             Object firstElement  =  elements.get(0);
@@ -87,8 +91,7 @@ public class Dobble {
         return  cards;
     }
 
-
-    public List<Card> CreateNSquareCards(List<Object> elements,int order) {
+    private List<Card> CreateNSquareCards(List<Object> elements,int order) {
         List<Card> cards = new ArrayList<>();
         for (int i= 1; i<=order; i++) {
             for (int j=1; j<=order; j++) {
@@ -103,26 +106,20 @@ public class Dobble {
         return  cards;
     }
 
-    public Object calculateIndexToGetNCards( List<Object> elements, int order, int j, int k){
+    private Object calculateIndexToGetNCards( List<Object> elements, int order, int j, int k){
         return elements.get((order * j + (k+1))-1);
     }
 
-    public Object calculateIndexToGetNSquareCards( List<Object> elements,int i, int order, int j, int k){
+    private Object calculateIndexToGetNSquareCards( List<Object> elements,int i, int order, int j, int k){
         return elements.get((order+2+order*(k-1)+(((i-1)*(k-1)+j-1) % order))-1);
     }
 
-    public void addCards(List<Card> cards){
-        for (int i = 0; i < cards.size(); i++) {
-            DobbleCards.add(GetNthCard(cards,i));
-        }
+    private void Shuffle() {
+
     }
 
-    public void addCard(Card card){
-        DobbleCards.add(card);
-    }
+    public void ToString() {
 
-
-    public void Shuffle() {
 
     }
 

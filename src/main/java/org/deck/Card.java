@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Card {
-
+   private int i = 0;
     private String id;
 
     public List<Object> getElements() {
@@ -20,7 +20,7 @@ public class Card {
     }
 
     public Card() {
-        id = "1";
+        id = String.valueOf(1+i);
         elements = new ArrayList<>();
     }
 
@@ -37,7 +37,6 @@ public class Card {
     public Object GetLastElement() {
         return null;
     }
-
 
     public Boolean CompareUniqueElements(Card FirstCard) {
         return null;
