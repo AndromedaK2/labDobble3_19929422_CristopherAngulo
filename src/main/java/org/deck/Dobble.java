@@ -84,7 +84,8 @@ public class Dobble {
             card.addElement(firstElement);
 
             for (int k=1; k<=order; k++) {
-                card.addElement(calculateIndexToGetNCards(elements,order,j,k));
+                Object element = elements.get(calculateIndexToGetNCards(order,j,k));
+                card.addElement(element);
             }
             cards.add(card);
         }
@@ -98,7 +99,8 @@ public class Dobble {
                 Card card = new Card();
                 card.addElement(elements.get(i));
                 for (int k=1; k<= order; k++) {
-                    card.addElement(calculateIndexToGetNSquareCards(elements,i,order,j,k));
+                    Object element = elements.get(calculateIndexToGetNSquareCards(i,order,j,k));
+                    card.addElement(element);
                 }
                 cards.add(card);
             }
@@ -106,12 +108,12 @@ public class Dobble {
         return  cards;
     }
 
-    private Object calculateIndexToGetNCards( List<Object> elements, int order, int j, int k){
-        return elements.get((order * j + (k+1))-1);
+    private int calculateIndexToGetNCards( int order, int j, int k){
+        return (order * j + (k+1))-1;
     }
 
-    private Object calculateIndexToGetNSquareCards( List<Object> elements,int i, int order, int j, int k){
-        return elements.get((order+2+order*(k-1)+(((i-1)*(k-1)+j-1) % order))-1);
+    private int calculateIndexToGetNSquareCards(int i, int order, int j, int k){
+       return (order+2+order*(k-1)+(((i-1)*(k-1)+j-1) % order))-1;
     }
 
     private void Shuffle() {

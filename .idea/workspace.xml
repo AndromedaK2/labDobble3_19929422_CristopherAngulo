@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deck/Dobble.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +123,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654873041169</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[update] dobble card creation">
+      <created>1654873457235</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1654873457235</updated>
+    </task>
+    <task id="LOCAL-00009" summary="[update] dobble card creation">
+      <created>1654873488166</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1654873488166</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +159,7 @@
     <MESSAGE value="[add] create cardsSet" />
     <MESSAGE value="[add] updates" />
     <MESSAGE value="[fix] dobble card creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="[fix] dobble card creation" />
+    <MESSAGE value="[update] dobble card creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] dobble card creation" />
   </component>
 </project>
