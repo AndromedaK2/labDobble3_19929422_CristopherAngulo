@@ -2,9 +2,6 @@ package org.deck;
 
 import java.util.*;
 
-/**
- * 
- */
 public class Dobble {
 
 
@@ -20,7 +17,6 @@ public class Dobble {
     public void GetMissingCards() {
         // TODO implement here
     }
-
 
     public void GetNthCard() {
         // TODO implement here
@@ -40,7 +36,7 @@ public class Dobble {
 
     public Card CreateFirstCard(List<Object> elements,Integer order) {
         Card card = new Card();
-        for (int i=0; i<order;i++){
+        for (int i=0; i<order+1;i++){
             Object element = elements.get(i);
             card.addElement(element);
         }
@@ -56,7 +52,7 @@ public class Dobble {
             card.addElement(firstElement);
 
             for (int k=1; k<=order; k++) {
-                card.addElement(calculateIndexToGetElementNSquare(elements,order,j,k));
+                card.addElement(calculateIndexToGetNCards(elements,order,j,k));
             }
             cards.add(card);
         }
@@ -64,13 +60,29 @@ public class Dobble {
     }
 
 
-    public void CreateNSquareCards() {
-
+    public List<Card> CreateNSquareCards(List<Object> elements,int order) {
+        List<Card> cards = new ArrayList<>();
+        for (int i= 1; i<=order; i++) {
+            for (int j=1; j<=order; j++) {
+                Card card = new Card();
+                card.addElement(elements.get(i+1));
+                for (int k=1; k<= order; k++) {
+                    card.addElement(calculateIndexToGetNSquareCards(elements,i,order-1,j,k));
+                }
+                cards.add(card);
+            }
+        }
+        return  cards;
     }
 
-    public Object calculateIndexToGetElementNSquare( List<Object> elements, int order,int j, int k){
-        return elements.get(order * j + (k+1));
+    public Object calculateIndexToGetNCards( List<Object> elements, int order, int j, int k){
+        return elements.get(((order-1) * j + (k+1))-1);
     }
+
+    public Object calculateIndexToGetNSquareCards( List<Object> elements,int i, int order, int j, int k){
+        return elements.get((order+2+order*(k-1)+(((i-1)*(k-1)+j-1) % order))-1);
+    }
+
 
 
     public void Shuffle() {
