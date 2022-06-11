@@ -15,15 +15,10 @@ public class Dobble {
         addCards(CreateNSquareCards(elements,order));
 
 
-        for (int i = 0; i < DobbleCards.size(); i++) {
-          System.out.println( DobbleCards.get(i).getElements());
-        }
-
-
     }
 
 
-    public List<Card> DobbleCards = new ArrayList<>();
+    public List<Card> dobbleCards = new ArrayList<>();
 
     public void isDobble() {
         // TODO implement here
@@ -47,12 +42,12 @@ public class Dobble {
 
     public void addCards(List<Card> cards){
         for (int i = 0; i < cards.size(); i++) {
-            DobbleCards.add(GetNthCard(cards,i));
+            dobbleCards.add(GetNthCard(cards,i));
         }
     }
 
     public void addCard(Card card){
-        DobbleCards.add(card);
+        dobbleCards.add(card);
     }
 
     private Card CreateFirstCard(List<Object> elements,Integer order) {
@@ -112,7 +107,18 @@ public class Dobble {
 
     }
 
-    public void ToString() {
+
+    @Override
+    public String toString() {
+        String dobbleCardsString = "Mazo de cartas: \n";
+
+        for (int i = 0; i < dobbleCards.size(); i++) {
+            Card card = dobbleCards.get(i);
+            String cardString = card.toString();
+            dobbleCardsString = dobbleCardsString.concat(cardString);
+
+        }
+        return dobbleCardsString;
 
 
     }

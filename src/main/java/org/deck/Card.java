@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class Card {
-   private int i = 0;
+    private int i = 0;
     private String id;
 
     public List<Object> getElements() {
@@ -42,8 +42,18 @@ public class Card {
         return null;
     }
 
-    public String ToString() {
-        return "";
+    @Override
+    public String toString() {
+        String caption = "Carta: ";
+        for (int j = 0; j < elements.size(); j++) {
+            Object element = elements.get(j);
+            if(j+1 == elements.size()){
+                caption = caption.concat(element+"");
+            }else{
+                caption = caption.concat(element+"-");
+            }
+        }
+        return caption+"\n";
     }
 
 }

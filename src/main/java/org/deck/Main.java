@@ -26,6 +26,7 @@ public class Main {
 
         Dobble dobble = new Dobble(list,4,13);
 
+        System.out.println(dobble.toString());
 
 
 
