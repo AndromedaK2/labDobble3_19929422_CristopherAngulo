@@ -29,14 +29,37 @@ public class Menu {
         switch(option)
         {
             case 1:
+                createGame();
                 break;
             case 2:
+                registerPlayer();
                 break;
             case 3:
+                play();
                 break;
-            case 4: closeMenu = true;
+            case 4:
+                showStatusGame();
+                break;
+            case 5: closeMenu = true;
                 break;
         }
+
+    }
+
+
+    private void createGame(){
+
+    }
+
+    private void registerPlayer(){
+
+    }
+
+    private void play(){
+
+    }
+
+    private void showStatusGame(){
 
     }
 

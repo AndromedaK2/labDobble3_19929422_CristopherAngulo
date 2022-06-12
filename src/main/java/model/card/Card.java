@@ -1,4 +1,4 @@
-package model.deck;
+package model.card;
 
 import java.util.*;
 

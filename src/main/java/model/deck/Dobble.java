@@ -1,4 +1,6 @@
 package model.deck;
+import model.card.Card;
+
 import java.util.*;
 
 public class Dobble {
@@ -23,7 +25,7 @@ public class Dobble {
 
     }
 
-    public Card GetNthCard(List<Card> cards, int position) {
+    public Card getNthCard(List<Card> cards, int position) {
        return cards.get(position);
     }
 
@@ -37,7 +39,7 @@ public class Dobble {
 
     public void addCards(List<Card> cards){
         for (int i = 0; i < cards.size(); i++) {
-            dobbleCards.add(GetNthCard(cards,i));
+            dobbleCards.add(getNthCard(cards,i));
         }
     }
 
