@@ -24,16 +24,16 @@ public class Card implements ICard {
         elements.add(element);
     }
 
-    public Object GetFirstElement() {
+    public Object getFirstElement() {
         return null;
     }
 
 
-    public Object GetLastElement() {
+    public Object getLastElement() {
         return null;
     }
 
-    public Boolean CompareUniqueElements(Card FirstCard) {
+    public Boolean compareUniqueElements(Card FirstCard) {
         return null;
     }
 
