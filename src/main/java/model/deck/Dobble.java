@@ -7,9 +7,10 @@ public class Dobble {
     public List<Card> dobbleCards = new ArrayList<>();
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
         int order = getOrder(elementsPerCard);
-        addCard(CreateFirstCard(elements,order));
-        addCards(CreateNCards(elements,order));
-        addCards(CreateNSquareCards(elements,order));
+        addCard(createFirstCard(elements,order));
+        addCards(createNCards(elements,order));
+        addCards(createNSquareCards(elements,order));
+        shuffle();
     }
 
 
@@ -26,11 +27,11 @@ public class Dobble {
        return cards.get(position);
     }
 
-    public void GetRequiredElements() {
+    public void getRequiredElements() {
 
     }
 
-    public void GetTotalCards() {
+    public void getTotalCards() {
         // TODO implement here
     }
 
@@ -44,7 +45,7 @@ public class Dobble {
         dobbleCards.add(card);
     }
 
-    private Card CreateFirstCard(List<Object> elements,Integer order) {
+    private Card createFirstCard(List<Object> elements,Integer order) {
         Card card = new Card();
         for (int i=0; i<order+1;i++){
             Object element = elements.get(i);
@@ -53,7 +54,7 @@ public class Dobble {
         return card;
     }
 
-    private List<Card> CreateNCards(List<Object> elements,int order) {
+    private List<Card> createNCards(List<Object> elements,int order) {
         List<Card> cards = new ArrayList<>();
         for (int j=1; j<=order; j++) {
             Object firstElement  =  elements.get(0);
@@ -69,7 +70,7 @@ public class Dobble {
         return  cards;
     }
 
-    private List<Card> CreateNSquareCards(List<Object> elements,int order) {
+    private List<Card> createNSquareCards(List<Object> elements,int order) {
         List<Card> cards = new ArrayList<>();
         for (int i= 1; i<=order; i++) {
             for (int j=1; j<=order; j++) {
@@ -97,8 +98,8 @@ public class Dobble {
         return elementPerCard -1;
     }
 
-    private void Shuffle() {
-
+    private void shuffle() {
+        dobbleCards.sort(Comparator.comparingInt(Card::getId));
     }
 
     @Override

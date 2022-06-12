@@ -4,18 +4,22 @@ import java.util.*;
 
 
 public class Card implements ICard {
-    private int i = 0;
-    private String id;
+    private int id;
+    private List<Object> elements;
 
     public List<Object> getElements() {
         return elements;
     }
 
-    private List<Object> elements;
+    public int getId() {
+        return id;
+    }
+
+
 
 
     public Card() {
-        id = String.valueOf(1+i);
+        id = generateRandomNumber();
         elements = new ArrayList<>();
     }
 
@@ -39,7 +43,7 @@ public class Card implements ICard {
 
     @Override
     public String toString() {
-        String caption = "Carta: ";
+        String caption = "id: "+id+" Carta: ";
         for (int j = 0; j < elements.size(); j++) {
             Object element = elements.get(j);
             if(j+1 == elements.size()){
@@ -49,6 +53,12 @@ public class Card implements ICard {
             }
         }
         return caption+"\n";
+    }
+
+    private int generateRandomNumber(){
+        int min = 1;
+        int max = 1000;
+        return (int)(Math.random()*(max-min+1)+min);
     }
 
 }
