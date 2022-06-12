@@ -1,7 +1,4 @@
 package model.deck;
-
-
-
 import java.util.*;
 
 public class Dobble {
@@ -9,7 +6,6 @@ public class Dobble {
 
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
         int order = getOrder(elementsPerCard);
-
         addCard(CreateFirstCard(elements,order));
         addCards(CreateNCards(elements,order));
         addCards(CreateNSquareCards(elements,order));
@@ -22,8 +18,8 @@ public class Dobble {
         // TODO implement here
     }
 
-    public void GetMissingCards() {
-        // TODO implement here
+    public void MissingCards() {
+
     }
 
     public Card GetNthCard(List<Card> cards, int position) {
@@ -104,7 +100,6 @@ public class Dobble {
     private void Shuffle() {
 
     }
-
 
     @Override
     public String toString() {

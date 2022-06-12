@@ -3,7 +3,7 @@ package model.deck;
 import java.util.*;
 
 
-public class Card {
+public class Card implements ICard {
     private int i = 0;
     private String id;
 
@@ -13,11 +13,6 @@ public class Card {
 
     private List<Object> elements;
 
-
-    public Card(String id, List<String> elements) {
-        id = id;
-        elements = elements;
-    }
 
     public Card() {
         id = String.valueOf(1+i);

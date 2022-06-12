@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/deck/ICard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/deck/IDobble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/ICard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/ICard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654956875357</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[refactor] code structure">
+      <created>1654995570260</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654995570260</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +206,7 @@
     <MESSAGE value="[update]  create n cards and n square cards" />
     <MESSAGE value="[add]  get order" />
     <MESSAGE value="[add]  toString DobbleCards" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add]  toString DobbleCards" />
+    <MESSAGE value="[refactor] code structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="[refactor] code structure" />
   </component>
 </project>
