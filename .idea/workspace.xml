@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/ICard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/ICard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/console/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +59,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.console.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.main.Main" />
       <module name="DobbleGame.main" />
@@ -73,8 +73,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="console.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="console.Main" />
+      <module name="DobbleGame.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.console.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -193,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654997627315</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="[add] menu">
+      <created>1655000270662</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655000270662</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,6 +243,7 @@
     <MESSAGE value="[refactor] code structure" />
     <MESSAGE value="[add] ICard" />
     <MESSAGE value="[refactor] ICard" />
-    <option name="LAST_COMMIT_MESSAGE" value="[refactor] ICard" />
+    <MESSAGE value="[add] menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] menu" />
   </component>
 </project>

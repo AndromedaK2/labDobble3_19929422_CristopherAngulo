@@ -4,6 +4,7 @@ import java.util.*;
 public class Dobble {
 
 
+    public List<Card> dobbleCards = new ArrayList<>();
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
         int order = getOrder(elementsPerCard);
         addCard(CreateFirstCard(elements,order));
@@ -12,7 +13,6 @@ public class Dobble {
     }
 
 
-    public List<Card> dobbleCards = new ArrayList<>();
 
     public void isDobble() {
         // TODO implement here

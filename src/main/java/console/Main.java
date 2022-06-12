@@ -1,4 +1,4 @@
-package org.main;
+package console;
 
 import model.deck.Dobble;
 
