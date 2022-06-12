@@ -1,4 +1,4 @@
-package org.deck;
+package model.deck;
 
 import java.util.*;
 

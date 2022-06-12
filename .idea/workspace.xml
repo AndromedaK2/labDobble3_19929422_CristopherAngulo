@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="[add]  get order">
+    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/deck/ICard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/model/deck/IDobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deck/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deck/Dobble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/deck/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/deck/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +47,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-11&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -54,14 +57,17 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kurisu\IdeaProjects\DobbleGame\src\main\java\org\example" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.deck.Main" />
+      <option name="MAIN_CLASS_NAME" value="org.main.Main" />
       <module name="DobbleGame.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.deck.*" />
+          <option name="PATTERN" value="org.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -69,6 +75,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -156,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654875104097</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[add]  toString DobbleCards">
+      <created>1654956875357</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654956875357</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -181,17 +199,7 @@
     <MESSAGE value="[update] dobble card creation" />
     <MESSAGE value="[update]  create n cards and n square cards" />
     <MESSAGE value="[add]  get order" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add]  get order" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/deck/Main.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="[add]  toString DobbleCards" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add]  toString DobbleCards" />
   </component>
 </project>

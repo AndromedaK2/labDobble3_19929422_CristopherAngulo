@@ -1,4 +1,6 @@
-package org.deck;
+package org.main;
+
+import model.deck.Dobble;
 
 import java.util.ArrayList;
 import java.util.List;

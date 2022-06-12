@@ -1,4 +1,6 @@
-package org.deck;
+package model.deck;
+
+
 
 import java.util.*;
 
@@ -6,15 +8,11 @@ public class Dobble {
 
 
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
-
-
         int order = getOrder(elementsPerCard);
 
         addCard(CreateFirstCard(elements,order));
         addCards(CreateNCards(elements,order));
         addCards(CreateNSquareCards(elements,order));
-
-
     }
 
 
@@ -111,16 +109,12 @@ public class Dobble {
     @Override
     public String toString() {
         String dobbleCardsString = "Mazo de cartas: \n";
-
         for (int i = 0; i < dobbleCards.size(); i++) {
             Card card = dobbleCards.get(i);
             String cardString = card.toString();
             dobbleCardsString = dobbleCardsString.concat(cardString);
-
         }
         return dobbleCardsString;
-
-
     }
 
 }
