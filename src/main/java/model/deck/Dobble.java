@@ -3,7 +3,7 @@ import model.card.Card;
 
 import java.util.*;
 
-public class Dobble {
+public class Dobble implements  IDobble {
 
 
     public List<Card> dobbleCards = new ArrayList<>();
