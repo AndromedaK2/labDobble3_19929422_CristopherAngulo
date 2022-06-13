@@ -1,6 +1,7 @@
 package console;
 
 import model.deck.Dobble;
+import model.player.Player;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,9 @@ public class Main {
 
         System.out.println(dobble.toString());
 
-
+        Player player = new Player("Cristopher");
+        player.setDobble(dobble);
+        System.out.println(player.toString());
 
     }
 

@@ -5,8 +5,12 @@ import java.util.*;
 
 public class Dobble implements  IDobble {
 
-
+    public int id = 0;
     public List<Card> dobbleCards = new ArrayList<>();
+
+    public Dobble(){
+
+    }
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
         int order = getOrder(elementsPerCard);
         addCard(createFirstCard(elements,order));
@@ -114,5 +118,13 @@ public class Dobble implements  IDobble {
         }
         return dobbleCardsString;
     }
+
+    @Override
+    public boolean equals(Object object){
+        Dobble dobble = (Dobble)object;
+
+        return true;
+    }
+
 
 }
