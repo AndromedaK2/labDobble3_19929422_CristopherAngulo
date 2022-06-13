@@ -1,9 +1,12 @@
 package view;
 
+import model.game.IDobbleGame;
+
 import java.util.Scanner;
 
 public class Menu {
 
+    public IDobbleGame dobbleGame = null;
     private boolean closeMenu = false;
     public void run(){
         while(!closeMenu)
@@ -48,6 +51,13 @@ public class Menu {
 
 
     private void createGame(){
+        System.out.println("Comenzamos creando el mazo de cartas");
+        System.out.println("Ingresar cantidad de elementos por carta");
+        Scanner scanner = new Scanner(System.in);
+        int order = scanner.nextInt();
+
+        System.out.println("Cantidad total de Cartas con las que deseas jugar");
+        System.out.println("Ingresar cantidad de elementos por carta");
 
     }
 
