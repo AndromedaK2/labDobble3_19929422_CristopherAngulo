@@ -32,11 +32,10 @@ public class Player implements IPlayer {
     @Override
     public String toString() {
         calculatePoints();
-        return "Player{" +
-                "username='" + username + '\'' +
-                ", dobbleCards=" + dobble.toString() +
-                ", points=" + points +
-                '}';
+        return "Jugador: \n" +
+                "Nombre de usuario='" + username + '\'' +
+                ",\n" + dobble.toString() +
+                ", points=" + points ;
     }
 
     @Override
