@@ -1,5 +1,6 @@
 package view;
 
+import common.Helper;
 import model.game.DobbleGame;
 
 
@@ -100,6 +101,10 @@ public class Menu {
         }
         if(option == 2){
 
+            List<Object> elements = Helper.generateRandomElements(totalCards);
+            for (int j = 0; j <elements.size(); j++ ){
+                System.out.println(elements.get(j));
+            }
         }
 
 

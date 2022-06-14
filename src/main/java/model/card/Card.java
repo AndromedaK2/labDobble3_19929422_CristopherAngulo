@@ -21,7 +21,7 @@ public class Card implements ICard {
 
 
     public Card() {
-        id = Helper.generateRandomNumber();
+        id = Helper.generateRandomNumber(1,1000);
         elements = new ArrayList<>();
     }
 
