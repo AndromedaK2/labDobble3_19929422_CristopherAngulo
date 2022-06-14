@@ -54,23 +54,24 @@ public class Menu {
 
 
     private void createGame(){
+       List<Object> elements = requestElements();
+       for (int j = 0; j <elements.size(); j++ ){
+            System.out.println(elements.get(j));
+       }
 
-        requestElements();
+
+
 
     }
-
     private void registerPlayer(){
 
     }
-
     private void play(){
 
     }
-
     private void showStatusGame(){
 
     }
-
     private List<Object> requestElements(){
         List<Object> elements = new ArrayList<>();
         int totalCards = getTotalCardsEnterByUser();
@@ -94,7 +95,6 @@ public class Menu {
 
         return elements;
     }
-
     private int getTotalCardsEnterByUser(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Comenzamos creando el mazo de cartas");
@@ -109,23 +109,15 @@ public class Menu {
         return elementsPerCard;
     }
     private  List<Object> generateRandomElements(int totalCards){
-        List<Object> elements = Helper.generateRandomElements(totalCards);
-        for (int j = 0; j <elements.size(); j++ ){
-            System.out.println(elements.get(j));
-        }
-        return elements;
+        return Helper.generateRandomElements(totalCards);
     }
-    public  List<Object> generateElements(int totalCards){
+    private  List<Object> generateElements(int totalCards){
         Scanner scanner = new Scanner(System.in);
         List<Object> elements = new ArrayList<>();
         for(int i= 0; i<totalCards; i++){
             System.out.println("Ingresar elemento o símbolo "+(i+1));
             String element = scanner.next();
             elements.add(element);
-        }
-
-        for (int j = 0; j <elements.size(); j++ ){
-            System.out.println(elements.get(j));
         }
         return elements;
     }

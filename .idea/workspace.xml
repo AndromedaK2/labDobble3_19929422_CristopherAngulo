@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
+    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="[add] switch case with options and return elements">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -292,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655239312931</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="[add] switch case with options and return elements">
+      <created>1655239854415</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1655239854415</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,7 +341,8 @@
     <MESSAGE value="[update] player toString()" />
     <MESSAGE value="[add] get elements and total cards from user and console" />
     <MESSAGE value="[add] generate ramdom elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] generate ramdom elements" />
+    <MESSAGE value="[add] switch case with options and return elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] switch case with options and return elements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
