@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/card/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -288,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655237740632</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="[add] generate ramdom elements">
+      <created>1655239312931</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1655239312931</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -326,7 +330,8 @@
     <MESSAGE value="[add] player and IPlayer" />
     <MESSAGE value="[update] player toString()" />
     <MESSAGE value="[add] get elements and total cards from user and console" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] get elements and total cards from user and console" />
+    <MESSAGE value="[add] generate ramdom elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] generate ramdom elements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

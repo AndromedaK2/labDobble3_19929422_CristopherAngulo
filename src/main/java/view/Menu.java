@@ -71,8 +71,8 @@ public class Menu {
 
     }
 
-    private void requestElements(){
-
+    private List<Object> requestElements(){
+        List<Object> elements = new ArrayList<>();
         int totalCards = getTotalCardsEnterByUser();
         int elementsPerCard = getElementsPerCardEnterByUser();
         Scanner scanner = new Scanner(System.in);
@@ -82,35 +82,18 @@ public class Menu {
         System.out.println("2. Generar elementos y símbolos aleatorios");
         int option = scanner.nextInt();
 
-
-
-        if(option==1){
-
-            List<Object> elements = new ArrayList<>();
-            for(int i= 0; i<totalCards; i++){
-                System.out.println("Ingresar elemento o símbolo "+(i+1));
-                String element = scanner.next();
-                elements.add(element);
-            }
-
-            for (int j = 0; j <elements.size(); j++ ){
-                System.out.println(elements.get(j));
-            }
-
-
-        }
-        if(option == 2){
-
-            List<Object> elements = Helper.generateRandomElements(totalCards);
-            for (int j = 0; j <elements.size(); j++ ){
-                System.out.println(elements.get(j));
-            }
+        switch(option)
+        {
+            case 1:
+                generateElements(totalCards).forEach(element-> elements.add(element));
+                break;
+            case 2:
+                generateRandomElements(totalCards).forEach(element-> elements.add(element));
+                break;
         }
 
-
-
+        return elements;
     }
-
 
     private int getTotalCardsEnterByUser(){
         Scanner scanner = new Scanner(System.in);
@@ -124,6 +107,27 @@ public class Menu {
         System.out.println("Ingresar la cantidad de elementos por carta que deseas");
         int elementsPerCard = scanner.nextInt();
         return elementsPerCard;
+    }
+    private  List<Object> generateRandomElements(int totalCards){
+        List<Object> elements = Helper.generateRandomElements(totalCards);
+        for (int j = 0; j <elements.size(); j++ ){
+            System.out.println(elements.get(j));
+        }
+        return elements;
+    }
+    public  List<Object> generateElements(int totalCards){
+        Scanner scanner = new Scanner(System.in);
+        List<Object> elements = new ArrayList<>();
+        for(int i= 0; i<totalCards; i++){
+            System.out.println("Ingresar elemento o símbolo "+(i+1));
+            String element = scanner.next();
+            elements.add(element);
+        }
+
+        for (int j = 0; j <elements.size(); j++ ){
+            System.out.println(elements.get(j));
+        }
+        return elements;
     }
 
 }
