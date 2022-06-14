@@ -2,6 +2,7 @@ package console;
 
 import model.deck.Dobble;
 import model.player.Player;
+import view.Menu;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-
+        /*
         List<Object> list = new ArrayList<>();
         list.add("1");
         list.add("2");
@@ -33,7 +34,10 @@ public class Main {
 
         Player player = new Player("Cristopher");
         player.setDobble(dobble);
-        System.out.println(player.toString());
+        System.out.println(player.toString());**/
+
+        Menu menu = new Menu();
+        menu.run();
 
     }
 

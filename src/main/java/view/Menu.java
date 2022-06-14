@@ -1,12 +1,14 @@
 package view;
 
-import model.game.IDobbleGame;
+import model.game.DobbleGame;
 
-import java.util.Scanner;
+
+import java.util.*;
 
 public class Menu {
 
-    public IDobbleGame dobbleGame = null;
+    public List<DobbleGame> dobbleGames = null;
+
     private boolean closeMenu = false;
     public void run(){
         while(!closeMenu)
@@ -51,13 +53,8 @@ public class Menu {
 
 
     private void createGame(){
-        System.out.println("Comenzamos creando el mazo de cartas");
-        System.out.println("Ingresar cantidad de elementos por carta");
-        Scanner scanner = new Scanner(System.in);
-        int order = scanner.nextInt();
 
-        System.out.println("Cantidad total de Cartas con las que deseas jugar");
-        System.out.println("Ingresar cantidad de elementos por carta");
+        requestElements();
 
     }
 
@@ -71,6 +68,57 @@ public class Menu {
 
     private void showStatusGame(){
 
+    }
+
+    private void requestElements(){
+
+        int totalCards = getTotalCardsEnterByUser();
+        int elementsPerCard = getElementsPerCardEnterByUser();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Escoger una de las siguientes opciones");
+        System.out.println("1. Ingresar elementos y símbolos 1 por 1");
+        System.out.println("2. Generar elementos y símbolos aleatorios");
+        int option = scanner.nextInt();
+
+
+
+        if(option==1){
+
+            List<Object> elements = new ArrayList<>();
+            for(int i= 0; i<totalCards; i++){
+                System.out.println("Ingresar elemento o símbolo "+(i+1));
+                String element = scanner.next();
+                elements.add(element);
+            }
+
+            for (int j = 0; j <elements.size(); j++ ){
+                System.out.println(elements.get(j));
+            }
+
+
+        }
+        if(option == 2){
+
+        }
+
+
+
+    }
+
+
+    private int getTotalCardsEnterByUser(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Comenzamos creando el mazo de cartas");
+        System.out.println("Cantidad total de Cartas con las que deseas jugar");
+        int totalCards = scanner.nextInt();
+        return totalCards;
+    }
+    private int getElementsPerCardEnterByUser(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresar la cantidad de elementos por carta que deseas");
+        int elementsPerCard = scanner.nextInt();
+        return elementsPerCard;
     }
 
 }

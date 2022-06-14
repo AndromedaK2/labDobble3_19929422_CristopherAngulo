@@ -13,9 +13,9 @@ public interface IDobble {
 
      Card getNthCard(List<Card> cards, int position);
 
-    void getRequiredElements();
+    void getRequiredElements(Card card);
 
-     void getTotalCards();
+     void getTotalCards(Card card);
 
     void addCards(List<Card> cards);
 

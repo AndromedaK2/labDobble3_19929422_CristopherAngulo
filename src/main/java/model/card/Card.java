@@ -1,5 +1,7 @@
 package model.card;
 
+import common.Helper;
+
 import java.util.*;
 
 
@@ -19,7 +21,7 @@ public class Card implements ICard {
 
 
     public Card() {
-        id = generateRandomNumber();
+        id = Helper.generateRandomNumber();
         elements = new ArrayList<>();
     }
 
@@ -55,10 +57,6 @@ public class Card implements ICard {
         return caption+"\n";
     }
 
-    private int generateRandomNumber(){
-        int min = 1;
-        int max = 1000;
-        return (int)(Math.random()*(max-min+1)+min);
-    }
+
 
 }

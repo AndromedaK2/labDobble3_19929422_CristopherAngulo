@@ -33,13 +33,15 @@ public class Dobble implements  IDobble {
        return cards.get(position);
     }
 
-    public void getRequiredElements() {
+    public void getRequiredElements(Card card) {
+        List<Object> elements = card.getElements();
 
     }
 
-    public void getTotalCards() {
-        // TODO implement here
+    public void getTotalCards(Card card) {
+
     }
+
 
     public void addCards(List<Card> cards){
         for (int i = 0; i < cards.size(); i++) {
@@ -119,12 +121,15 @@ public class Dobble implements  IDobble {
         return dobbleCardsString;
     }
 
-    @Override
-    public boolean equals(Object object){
-        Dobble dobble = (Dobble)object;
 
-        return true;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Dobble)) return false;
+        Dobble dobble = (Dobble) o;
+        return id == dobble.id && Objects.equals(dobbleCards, dobble.dobbleCards);
     }
+
 
 
 }
