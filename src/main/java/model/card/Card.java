@@ -31,12 +31,12 @@ public class Card implements ICard {
     }
 
     public Object getFirstElement() {
-        return null;
+       return elements.get(0);
     }
 
 
     public Object getLastElement() {
-        return null;
+        return elements.get(elements.size()-1);
     }
 
     public Boolean compareUniqueElements(Card FirstCard) {
