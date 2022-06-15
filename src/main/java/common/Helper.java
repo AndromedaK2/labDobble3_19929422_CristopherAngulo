@@ -15,7 +15,6 @@ public class Helper {
 
         List<Object> elements = new ArrayList<>();
 
-
         List<Object> baseElements = new ArrayList<>();
         baseElements.add("Bear/s");
         baseElements.add("Tiger/s");
@@ -28,7 +27,6 @@ public class Helper {
         baseElements.add("Lion/s");
         baseElements.add("Spider/s");
 
-
         List<Object> positions = new ArrayList<>();
         positions.add("with");
         positions.add("on");
@@ -40,7 +38,6 @@ public class Helper {
         positions.add("at");
         positions.add("behind");
         positions.add("next to");
-
 
         List<Object> objects = new ArrayList<>();
         objects.add("Computer");
@@ -55,17 +52,11 @@ public class Helper {
         objects.add("I");
 
 
-
         for (int i = 0; i < total ; i++) {
             Object baseElement = baseElements.get(generateRandomNumber(0,9));
             Object position = positions.get(generateRandomNumber(0,9));
             Object object = objects.get(generateRandomNumber(0,9));
-
-
             elements.add( generateRandomNumber(1,100) +" " + baseElement+" "+ position +" "+ object);
-
-
-
         }
         return elements;
 

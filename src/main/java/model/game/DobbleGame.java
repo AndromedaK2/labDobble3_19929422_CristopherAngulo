@@ -9,6 +9,21 @@ public class DobbleGame implements  IDobbleGame{
 
     public GameStatus gameStatus = GameStatus.CREATED;
 
+    public List<Player> Players;
+    public Dobble dobbleCards;
+
+    //public List<Turn> Turns;
+
+    public int PlayersNumber;
+
+    //public IMode Mode;
+
+    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, String mode, int playersNumber){
+        playersNumber = playersNumber;
+        dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
+
+    }
+
 
 
     public String getWhoseIsTurn() {
