@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Menu {
 
-    public List<DobbleGame> dobbleGames = null;
+    public List<DobbleGame> dobbleGames = new ArrayList<>();
 
     private boolean closeMenu = false;
     public void run(){
@@ -25,7 +25,6 @@ public class Menu {
         System.out.println("2) Registrar jugador");
         System.out.println("3) Jugar");
         System.out.println("4) Visualizar estado completo del juego");
-
     }
 
     private void selectOption()
@@ -44,12 +43,11 @@ public class Menu {
                 play();
                 break;
             case 4:
-                showStatusGame();
+                showGameStatus();
                 break;
             case 5: closeMenu = true;
                 break;
         }
-
     }
 
 
@@ -58,10 +56,6 @@ public class Menu {
        for (int j = 0; j <elements.size(); j++ ){
             System.out.println(elements.get(j));
        }
-
-
-
-
     }
     private void registerPlayer(){
 
@@ -69,13 +63,13 @@ public class Menu {
     private void play(){
 
     }
-    private void showStatusGame(){
+    private void showGameStatus(){
 
     }
     private List<Object> requestElements(){
         List<Object> elements = new ArrayList<>();
-        int totalCards = getTotalCardsEnterByUser();
-        int elementsPerCard = getElementsPerCardEnterByUser();
+        int totalCards = requestTotalCardsEnterByUser();
+        int elementsPerCard = requestElementsPerCardEnterByUser();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Escoger una de las siguientes opciones");
@@ -95,14 +89,14 @@ public class Menu {
 
         return elements;
     }
-    private int getTotalCardsEnterByUser(){
+    private int requestTotalCardsEnterByUser(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Comenzamos creando el mazo de cartas");
         System.out.println("Cantidad total de Cartas con las que deseas jugar");
         int totalCards = scanner.nextInt();
         return totalCards;
     }
-    private int getElementsPerCardEnterByUser(){
+    private int requestElementsPerCardEnterByUser(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingresar la cantidad de elementos por carta que deseas");
         int elementsPerCard = scanner.nextInt();
