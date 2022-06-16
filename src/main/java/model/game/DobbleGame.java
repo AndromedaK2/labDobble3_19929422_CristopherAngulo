@@ -33,12 +33,12 @@ public class DobbleGame implements  IDobbleGame{
 
 
     public Dobble getDobble() {
-        return null;
+        return dobbleCards;
     }
 
 
     public DobbleGameStatus getStatus() {
-        return null;
+        return gameStatus;
     }
 
 
@@ -48,7 +48,7 @@ public class DobbleGame implements  IDobbleGame{
 
 
     public int getPlayersNumber() {
-        return 0;
+        return playersNumber;
     }
 
 
@@ -63,8 +63,6 @@ public class DobbleGame implements  IDobbleGame{
             this.players.add(player);
             return true;
         }
-
-
         return false;
     }
 
