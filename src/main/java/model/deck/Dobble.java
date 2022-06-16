@@ -31,9 +31,10 @@ public class Dobble implements  IDobble {
        return cards.get(position);
     }
 
-    public void getRequiredElements(Card card) {
-        List<Object> elements = card.getElements();
-
+    public int getRequiredElements(Card card) {
+        int elementsPerCard = card.getElements().size();
+        int order = getOrder(elementsPerCard);
+        return (order * order)+ order + 1;
     }
 
     public void getTotalCards(Card card) {

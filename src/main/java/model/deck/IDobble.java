@@ -13,7 +13,7 @@ public interface IDobble {
 
      Card getNthCard(List<Card> cards, int position);
 
-    void getRequiredElements(Card card);
+    int getRequiredElements(Card card);
 
      void getTotalCards(Card card);
 
