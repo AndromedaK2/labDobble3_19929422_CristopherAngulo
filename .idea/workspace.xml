@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/card/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,17 +53,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-11&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "temurin-11",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Kurisu\IdeaProjects\DobbleGame\src\main\java\org\example" />
@@ -332,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655328420032</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="[add] register player">
+      <created>1655354998746</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1655354998746</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,7 +346,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[add] create cardsSet" />
     <MESSAGE value="[add] updates" />
     <MESSAGE value="[fix] dobble card creation" />
     <MESSAGE value="[update] dobble card creation" />
@@ -372,7 +370,8 @@
     <MESSAGE value="[add] getfirstElement and getLastElement" />
     <MESSAGE value="[add] constructor of dobble game" />
     <MESSAGE value="[update] methods names" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] methods names" />
+    <MESSAGE value="[add] register player" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] register player" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

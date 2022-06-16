@@ -61,10 +61,9 @@ public class DobbleGame implements  IDobbleGame{
         Player player = new Player(username);
         if(!this.players.contains(player) && this.playersNumber >= this.players.size()  ){
             this.players.add(player);
-            System.out.println("Se ha registrado");
             return true;
         }
-        System.out.println("No se ha registrado");
+
 
         return false;
     }

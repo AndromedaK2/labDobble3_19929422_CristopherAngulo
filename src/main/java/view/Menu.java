@@ -71,7 +71,11 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese su nombre de usuario para registarlo en el juego");
         String username = scanner.next();
-        dg.register(username);
+        if(dg.register(username)){
+            System.out.println("Se ha registrado");
+        }else{
+            System.out.println("No se ha registrado");
+        }
         System.out.println(dg.getPlayers());
     }
     private void play(){
