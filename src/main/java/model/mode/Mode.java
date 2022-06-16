@@ -1,5 +1,25 @@
 package model.mode;
 
-public abstract class Mode implements IMode {
+public class Mode implements IMode {
 
+    @Override
+    public void dealCards() {
+
+    }
+
+    @Override
+    public void setZoneGame() {
+
+    }
+
+
+    @Override
+    public void spotit() {
+
+    }
+
+    @Override
+    public void pass() {
+
+    }
 }

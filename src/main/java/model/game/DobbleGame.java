@@ -1,5 +1,6 @@
 package model.game;
 
+import model.card.Card;
 import model.deck.Dobble;
 import model.player.Player;
 
@@ -13,6 +14,9 @@ public class DobbleGame implements  IDobbleGame{
     private List<Player> players = new ArrayList<>();
     private Dobble dobbleCards;
     private int playersNumber;
+
+    private List<Card> cardsZone;
+
     // public List<Turn> Turns;
     // public IMode Mode;
 

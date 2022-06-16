@@ -2,7 +2,10 @@ package model.mode;
 
 public interface IMode {
 
-    void play();
+    /***
+        Repartir cartas a los jugadores    **/
+    void dealCards();
+    void setZoneGame();
     void spotit();
     void pass();
 
