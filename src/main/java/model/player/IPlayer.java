@@ -1,11 +1,14 @@
 package model.player;
 
-import model.deck.Dobble;
+import model.card.Card;
+
+
+import java.util.List;
 
 public interface IPlayer {
 
     String getUsername();
-    Dobble getDobble();
+    List<Card> getCards();
 
     int getPoints();
 

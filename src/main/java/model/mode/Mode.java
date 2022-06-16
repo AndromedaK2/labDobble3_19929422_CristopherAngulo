@@ -1,25 +1,9 @@
 package model.mode;
+import model.card.Card;
 
-public class Mode implements IMode {
+import java.util.List;
 
-    @Override
-    public void dealCards() {
-
-    }
-
-    @Override
-    public void setZoneGame() {
-
-    }
+public class Mode  {
 
 
-    @Override
-    public void spotit() {
-
-    }
-
-    @Override
-    public void pass() {
-
-    }
 }

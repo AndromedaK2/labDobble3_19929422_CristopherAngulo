@@ -35,13 +35,12 @@ public class Helper {
         positions.add("above");
         positions.add("in front of");
         positions.add("under");
-        positions.add("at");
         positions.add("behind");
         positions.add("next to");
 
         List<Object> objects = new ArrayList<>();
         objects.add("Computer");
-        objects.add("Glasses");
+        objects.add("Sky");
         objects.add("Book");
         objects.add("Ball");
         objects.add("Guitar");
@@ -49,12 +48,12 @@ public class Helper {
         objects.add("Cinema");
         objects.add("Tv");
         objects.add("Window");
-        objects.add("I");
+        objects.add("Table");
 
 
         for (int i = 0; i < total ; i++) {
             Object baseElement = baseElements.get(generateRandomNumber(0,9));
-            Object position = positions.get(generateRandomNumber(0,9));
+            Object position = positions.get(generateRandomNumber(0,8));
             Object object = objects.get(generateRandomNumber(0,9));
             elements.add( generateRandomNumber(1,100) +" " + baseElement+" "+ position +" "+ object);
         }

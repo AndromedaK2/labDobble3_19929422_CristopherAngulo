@@ -19,8 +19,6 @@ public class Dobble implements  IDobble {
         shuffle();
     }
 
-
-
     public void isDobble() {
         // TODO implement here
     }

@@ -1,28 +1,31 @@
 package model.player;
 
+import model.card.Card;
 import model.deck.Dobble;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Player implements IPlayer {
     private String username;
-    private Dobble dobble = new Dobble();
+    private List<Card> cards = new ArrayList<>() ;
     private int points = 0;
 
     public String getUsername() {
         return username;
     }
 
-    public void setDobble(Dobble dobble) {
-        this.dobble = dobble;
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
     }
 
     public Player(String username) {
         this.username = username;
     }
 
-    public Dobble getDobble() {
-        return dobble;
+    public List<Card> getCards() {
+        return cards;
     }
 
     public int getPoints() {
@@ -34,7 +37,7 @@ public class Player implements IPlayer {
         calculatePoints();
         return "Jugador: \n" +
                 "Nombre de usuario='" + username + '\'' +
-                ",\n" + dobble.toString() +
+                ",\n" + cards.toString() +
                 ", points=" + points ;
     }
 
@@ -43,11 +46,11 @@ public class Player implements IPlayer {
         if (this == o) return true;
         if (!(o instanceof Player)) return false;
         Player player = (Player) o;
-        return points == player.points && Objects.equals(username, player.username) && Objects.equals(dobble, player.dobble);
+        return points == player.points && Objects.equals(username, player.username) && Objects.equals(cards, player.cards);
     }
 
     private void calculatePoints(){
-        for (int i = 0; i < dobble.dobbleCards.size(); i++) {
+        for (int i = 0; i < cards.size(); i++) {
             points = points + 1;
         }
     }
