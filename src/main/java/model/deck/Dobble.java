@@ -37,8 +37,10 @@ public class Dobble implements  IDobble {
         return (order * order)+ order + 1;
     }
 
-    public void getTotalCards(Card card) {
-
+    public int getTotalCards(Card card) {
+        int elementsPerCard = card.getElements().size();
+        int order = getOrder(elementsPerCard);
+        return (order * order)+ order + 1;
     }
 
 
