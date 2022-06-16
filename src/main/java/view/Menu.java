@@ -2,6 +2,7 @@ package view;
 
 import common.Helper;
 import model.game.DobbleGame;
+import model.game.DobbleGameMode;
 
 
 import java.util.*;
@@ -27,8 +28,7 @@ public class Menu {
         System.out.println("4) Visualizar estado completo del juego");
     }
 
-    private void selectOption()
-    {
+    private void selectOption(){
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch(option)
@@ -52,24 +52,36 @@ public class Menu {
 
 
     private void createGame(){
-       List<Object> elements = requestElements();
+       int  totalCards =  requestTotalCards();
+       int elementsPerCard  =  requestElementsPerCard();
+       List<Object> elements = requestElements(totalCards);
+
        for (int j = 0; j <elements.size(); j++ ){
             System.out.println(elements.get(j));
        }
+       int playersNumber = requestPlayersNumber();
+       DobbleGameMode dobbleGameMode = requestGameMode();
+
+       DobbleGame dobbleGame = new DobbleGame(elements,elementsPerCard,totalCards, dobbleGameMode,playersNumber);
+       dobbleGames.add(dobbleGame);
+       System.out.println(dobbleGame);
     }
     private void registerPlayer(){
-
+        DobbleGame dg = dobbleGames.get(0);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese su nombre de usuario para registarlo en el juego");
+        String username = scanner.next();
+        dg.register(username);
+        System.out.println(dg.getPlayers());
     }
     private void play(){
 
     }
     private void showGameStatus(){
-
+        System.out.println(this.dobbleGames.get(0));
     }
-    private List<Object> requestElements(){
+    private List<Object> requestElements(int totalCards){
         List<Object> elements = new ArrayList<>();
-        int totalCards = requestTotalCardsEnterByUser();
-        int elementsPerCard = requestElementsPerCardEnterByUser();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Escoger una de las siguientes opciones");
@@ -89,18 +101,44 @@ public class Menu {
 
         return elements;
     }
-    private int requestTotalCardsEnterByUser(){
+    private int requestTotalCards(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Comenzamos creando el mazo de cartas");
-        System.out.println("Cantidad total de Cartas con las que deseas jugar");
+        System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
         int totalCards = scanner.nextInt();
         return totalCards;
     }
-    private int requestElementsPerCardEnterByUser(){
+    private int requestElementsPerCard(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingresar la cantidad de elementos por carta que deseas");
         int elementsPerCard = scanner.nextInt();
         return elementsPerCard;
+    }
+    private int requestPlayersNumber(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresar la cantidad de jugadores para jugar");
+        int playersNumber = scanner.nextInt();
+        return playersNumber;
+    }
+    private DobbleGameMode requestGameMode(){
+        Scanner scanner = new Scanner(System.in);
+        DobbleGameMode dobbleGameMode = DobbleGameMode.STACKMODE;
+        System.out.println("Selecciona uno de los siguientes modos de juego");
+        System.out.println("1- StackMode");
+        System.out.println("2- EmptyHandsStackMode");
+        System.out.println("Otros modo diponibles proximamente...");
+        int option = scanner.nextInt();
+        switch(option)
+        {
+            case 1:
+                dobbleGameMode = DobbleGameMode.STACKMODE;
+                break;
+            case 2:
+                dobbleGameMode = DobbleGameMode.EMPTYHANDSMODE;
+                break;
+        }
+        return dobbleGameMode;
+
     }
     private  List<Object> generateRandomElements(int totalCards){
         return Helper.generateRandomElements(totalCards);

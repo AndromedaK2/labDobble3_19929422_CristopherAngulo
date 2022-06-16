@@ -45,11 +45,11 @@ public class Card implements ICard {
 
     @Override
     public String toString() {
-        String caption = "id: "+id+" Carta: ";
+        String caption = "id: "+id+" Carta: [";
         for (int j = 0; j < elements.size(); j++) {
             Object element = elements.get(j);
             if(j+1 == elements.size()){
-                caption = caption.concat(element+"");
+                caption = caption.concat(element+"]");
             }else{
                 caption = caption.concat(element+"-");
             }

@@ -1,5 +1,5 @@
 package model.mode;
 
-public class StackMode extends Mode {
+public class StackMode {
 
 }

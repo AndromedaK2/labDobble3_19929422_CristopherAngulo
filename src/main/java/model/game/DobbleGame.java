@@ -3,28 +3,24 @@ package model.game;
 import model.deck.Dobble;
 import model.player.Player;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DobbleGame implements  IDobbleGame{
 
-    public GameStatus gameStatus = GameStatus.CREATED;
+    private String id;
+    private DobbleGameStatus gameStatus = DobbleGameStatus.CREATED;
+    private List<Player> players = new ArrayList<>();
+    private Dobble dobbleCards;
+    private int playersNumber;
+    // public List<Turn> Turns;
+    // public IMode Mode;
 
-    public List<Player> Players;
-    public Dobble dobbleCards;
-
-    //public List<Turn> Turns;
-
-    public int PlayersNumber;
-
-    //public IMode Mode;
-
-    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, String mode, int playersNumber){
-        playersNumber = playersNumber;
-        dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
+    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode mode, int playersNumber){
+        this.playersNumber = playersNumber;
+        this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
 
     }
-
-
 
     public String getWhoseIsTurn() {
         return null;
@@ -32,7 +28,7 @@ public class DobbleGame implements  IDobbleGame{
 
 
     public List<Player> getPlayers() {
-        return null;
+        return players;
     }
 
 
@@ -41,7 +37,7 @@ public class DobbleGame implements  IDobbleGame{
     }
 
 
-    public GameStatus getStatus() {
+    public DobbleGameStatus getStatus() {
         return null;
     }
 
@@ -61,7 +57,17 @@ public class DobbleGame implements  IDobbleGame{
     }
 
 
-    public void register() {
+    public boolean register(String username) {
+        Player player = new Player(username);
+        if(!this.players.contains(player) && this.playersNumber >= this.players.size()  ){
+            this.players.add(player);
+            System.out.println("Se ha registrado");
+            return true;
+        }
+        System.out.println("No se ha registrado");
 
+        return false;
     }
+
+
 }

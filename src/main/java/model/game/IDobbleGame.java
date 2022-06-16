@@ -1,6 +1,5 @@
 package model.game;
 
-import model.card.Card;
 import model.deck.Dobble;
 import model.player.Player;
 
@@ -17,7 +16,7 @@ public interface IDobbleGame {
      Dobble getDobble();
 
 
-     GameStatus getStatus();
+     DobbleGameStatus getStatus();
 
 
      List<Object> getTurns();
@@ -29,5 +28,5 @@ public interface IDobbleGame {
      void play();
 
 
-     void register();
+     boolean register(String username);
 }
