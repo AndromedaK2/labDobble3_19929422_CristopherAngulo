@@ -10,7 +10,6 @@ import java.util.*;
 public class Menu {
 
     public List<DobbleGame> dobbleGames = new ArrayList<>();
-
     private boolean closeMenu = false;
     public void run(){
         while(!closeMenu)
@@ -27,7 +26,6 @@ public class Menu {
         System.out.println("3) Jugar");
         System.out.println("4) Visualizar estado completo del juego");
     }
-
     private void selectOption(){
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
@@ -49,8 +47,6 @@ public class Menu {
                 break;
         }
     }
-
-
     private void createGame(){
        int  totalCards =  requestTotalCards();
        int elementsPerCard  =  requestElementsPerCard();
@@ -74,7 +70,7 @@ public class Menu {
         if(dg.register(username)){
             System.out.println("Se ha registrado");
         }else{
-            System.out.println("No se ha registrado");
+            System.out.println("El usuario ya existe");
         }
         System.out.println(dg.getPlayers());
     }
