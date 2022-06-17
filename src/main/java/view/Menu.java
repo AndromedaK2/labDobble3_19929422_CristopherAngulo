@@ -3,6 +3,7 @@ package view;
 import common.Helper;
 import model.game.DobbleGame;
 import model.game.DobbleGameMode;
+import model.game.InvalidOrderException;
 
 
 import java.util.*;
@@ -11,7 +12,7 @@ public class Menu {
 
     public List<DobbleGame> dobbleGames = new ArrayList<>();
     private boolean closeMenu = false;
-    public void run(){
+    public void run() throws InvalidOrderException {
         while(!closeMenu)
         {
             displayMenuOptions();
@@ -26,7 +27,7 @@ public class Menu {
         System.out.println("3) Jugar");
         System.out.println("4) Visualizar estado completo del juego");
     }
-    private void selectOption(){
+    private void selectOption() throws InvalidOrderException {
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch(option)
@@ -47,7 +48,7 @@ public class Menu {
                 break;
         }
     }
-    private void createGame(){
+    private void createGame() throws InvalidOrderException {
        int  totalCards =  requestTotalCards();
        int elementsPerCard  =  requestElementsPerCard();
        List<Object> elements = requestElements(totalCards,elementsPerCard);
@@ -55,6 +56,8 @@ public class Menu {
         for (Object element : elements) {
             System.out.println(element);
         }
+
+
 
        int playersNumber = requestPlayersNumber();
        DobbleGameMode dobbleGameMode = requestGameMode();
@@ -110,10 +113,18 @@ public class Menu {
         System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
         return scanner.nextInt();
     }
-    private int requestElementsPerCard(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingresar la cantidad de elementos por carta que deseas");
-        return scanner.nextInt();
+    private int requestElementsPerCard() {
+        try {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Ingresar la cantidad de elementos por carta que deseas");
+            int elementsPerCard = scanner.nextInt();
+            Helper.isValidOrder(elementsPerCard);
+            return elementsPerCard;
+        } catch (InvalidOrderException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return 0;
     }
     private int requestPlayersNumber(){
         Scanner scanner = new Scanner(System.in);

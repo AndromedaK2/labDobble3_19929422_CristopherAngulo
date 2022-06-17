@@ -1,5 +1,7 @@
 package common;
 
+import model.game.InvalidOrderException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,15 +69,14 @@ public class Helper {
                 return true;
     }
 
-    public static  boolean isValidOrder(int order){
+    public static  void isValidOrder(int order) throws InvalidOrderException {
         for (int i = 2; i<= order/2; i++)
         {
             if ((order % i) == 0)
             {
-                return false;
+                throw new InvalidOrderException();
             }
         }
-        return true;
     }
 
 

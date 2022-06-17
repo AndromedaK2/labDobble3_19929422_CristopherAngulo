@@ -23,7 +23,6 @@ public class DobbleGame implements  IDobbleGame{
     public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode mode, int playersNumber){
         this.playersNumber = playersNumber;
         this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
-
     }
 
     public String getWhoseIsTurn() {
