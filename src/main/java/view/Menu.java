@@ -50,11 +50,12 @@ public class Menu {
     private void createGame(){
        int  totalCards =  requestTotalCards();
        int elementsPerCard  =  requestElementsPerCard();
-       List<Object> elements = requestElements(totalCards);
+       List<Object> elements = requestElements(totalCards,elementsPerCard);
 
-       for (int j = 0; j <elements.size(); j++ ){
-            System.out.println(elements.get(j));
-       }
+        for (Object element : elements) {
+            System.out.println(element);
+        }
+
        int playersNumber = requestPlayersNumber();
        DobbleGameMode dobbleGameMode = requestGameMode();
 
@@ -80,7 +81,7 @@ public class Menu {
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));
     }
-    private List<Object> requestElements(int totalCards){
+    private List<Object> requestElements(int totalCards, int elementsPerCard){
         List<Object> elements = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
@@ -88,14 +89,16 @@ public class Menu {
         System.out.println("1. Ingresar elementos y símbolos 1 por 1");
         System.out.println("2. Generar elementos y símbolos aleatorios");
         int option = scanner.nextInt();
+        int order = elementsPerCard -1;
+        int totalElements =  (order*order)+order+1;
 
         switch(option)
         {
             case 1:
-                generateElements(totalCards).forEach(element-> elements.add(element));
+                elements.addAll(generateElements(totalElements));
                 break;
             case 2:
-                generateRandomElements(totalCards).forEach(element-> elements.add(element));
+                elements.addAll(generateRandomElements(totalElements));
                 break;
         }
 
@@ -105,24 +108,21 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Comenzamos creando el mazo de cartas");
         System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
-        int totalCards = scanner.nextInt();
-        return totalCards;
+        return scanner.nextInt();
     }
     private int requestElementsPerCard(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingresar la cantidad de elementos por carta que deseas");
-        int elementsPerCard = scanner.nextInt();
-        return elementsPerCard;
+        return scanner.nextInt();
     }
     private int requestPlayersNumber(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingresar la cantidad de jugadores para jugar");
-        int playersNumber = scanner.nextInt();
-        return playersNumber;
+        return scanner.nextInt();
     }
     private DobbleGameMode requestGameMode(){
         Scanner scanner = new Scanner(System.in);
-        DobbleGameMode dobbleGameMode = DobbleGameMode.STACKMODE;
+        DobbleGameMode dobbleGameMode = null;
         System.out.println("Selecciona uno de los siguientes modos de juego");
         System.out.println("1- StackMode");
         System.out.println("2- EmptyHandsStackMode");

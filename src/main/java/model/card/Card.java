@@ -8,17 +8,12 @@ import java.util.*;
 public class Card implements ICard {
     private int id;
     private List<Object> elements;
-
     public List<Object> getElements() {
         return elements;
     }
-
     public int getId() {
         return id;
     }
-
-
-
 
     public Card() {
         id = Helper.generateRandomNumber(1,1000);
@@ -57,6 +52,13 @@ public class Card implements ICard {
         return caption+"\n";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Card)) return false;
+        Card card = (Card) o;
+        return id == card.id && Objects.equals(elements, card.elements);
+    }
 
 
 }

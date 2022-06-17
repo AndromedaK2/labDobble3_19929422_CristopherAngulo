@@ -63,4 +63,21 @@ public class Helper {
     }
 
 
+    public static boolean isValidDobbleToCreate(List<Object> elements, int order, int maxTotalCards){
+                return true;
+    }
+
+    public static  boolean isValidOrder(int order){
+        for (int i = 2; i<= order/2; i++)
+        {
+            if ((order % i) == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 }

@@ -7,9 +7,9 @@ import java.util.List;
 public interface IDobble {
 
 
-     void isDobble();
+     boolean isDobble();
 
-     void MissingCards();
+     List<Card> MissingCards();
 
      Card getNthCard(List<Card> cards, int position);
 

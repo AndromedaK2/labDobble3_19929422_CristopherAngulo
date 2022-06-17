@@ -70,5 +70,15 @@ public class DobbleGame implements  IDobbleGame{
         return false;
     }
 
-
+    @Override
+    public String toString() {
+        return "DobbleGame{" +
+                "id='" + id + '\'' +
+                ", gameStatus=" + gameStatus +
+                ", players=" + players +
+                ", dobbleCards=" + dobbleCards +
+                ", playersNumber=" + playersNumber +
+                ", cardsZone=" + cardsZone +
+                '}';
+    }
 }
