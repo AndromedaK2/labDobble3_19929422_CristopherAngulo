@@ -1,14 +1,13 @@
 package model.player;
 
 import model.card.Card;
-import model.deck.Dobble;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Player implements IPlayer {
     private String username;
+
     private List<Card> cards = new ArrayList<>() ;
     private int points = 0;
 

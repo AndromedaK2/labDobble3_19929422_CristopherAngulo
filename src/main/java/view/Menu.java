@@ -48,10 +48,11 @@ public class Menu {
                 break;
         }
     }
-    private void createGame() throws InvalidOrderException {
-       int  totalCards =  requestTotalCards();
-       int elementsPerCard  =  requestElementsPerCard();
-       List<Object> elements = requestElements(totalCards,elementsPerCard);
+    private void createGame()  {
+        System.out.println("Comenzamos creando el mazo de cartas");
+        int  totalCards       =  requestTotalCards();
+        int elementsPerCard   =  requestElementsPerCard();
+        List<Object> elements =  requestElements(totalCards,elementsPerCard);
 
         for (Object element : elements) {
             System.out.println(element);
@@ -109,7 +110,6 @@ public class Menu {
     }
     private int requestTotalCards(){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Comenzamos creando el mazo de cartas");
         System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
         return scanner.nextInt();
     }

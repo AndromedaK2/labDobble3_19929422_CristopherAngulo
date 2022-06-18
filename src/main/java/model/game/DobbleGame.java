@@ -2,7 +2,9 @@ package model.game;
 
 import model.card.Card;
 import model.deck.Dobble;
+import model.mode.IMode;
 import model.player.Player;
+import model.turn.Turn;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +19,9 @@ public class DobbleGame implements  IDobbleGame{
 
     private List<Card> cardsZone;
 
-    // public List<Turn> Turns;
-    // public IMode Mode;
+    private List<Turn> turns;
+
+    private IMode Mode;
 
     public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode mode, int playersNumber){
         this.playersNumber = playersNumber;
@@ -26,7 +29,7 @@ public class DobbleGame implements  IDobbleGame{
     }
 
     public String getWhoseIsTurn() {
-        return null;
+        return this.turns.get(0).toString();
     }
 
 
@@ -64,6 +67,8 @@ public class DobbleGame implements  IDobbleGame{
         Player player = new Player(username);
         if(!this.players.contains(player) && this.playersNumber >= this.players.size()  ){
             this.players.add(player);
+            Turn turn = new Turn(player);
+            this.turns.add(turn);
             return true;
         }
         return false;

@@ -8,11 +8,8 @@ import java.util.List;
 
 public interface IMode {
 
-    /***
-        Repartir cartas a los jugadores    **/
-    List<Player> dealCards(List<Player> players, Dobble dobbleCards);
-    void setZoneGame();
-    void spotit();
+
+    boolean spotit(Object element, Card firstCard, Card secondCard);
     void pass();
 
 
