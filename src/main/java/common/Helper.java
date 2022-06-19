@@ -1,7 +1,5 @@
 package common;
 
-import model.game.InvalidOrderException;
-
 import java.util.ArrayList;
 import java.util.List;
 

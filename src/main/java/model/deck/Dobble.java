@@ -10,6 +10,7 @@ public class Dobble implements  IDobble {
     private int id;
     private List<Card> dobbleCards = new ArrayList<>();
     private List<Object> allElements = new ArrayList<>();
+    private List<Card> missingCards = new ArrayList<>();
 
 
 
@@ -29,10 +30,18 @@ public class Dobble implements  IDobble {
         shuffle();
         if(!(getMaxNumberOfCards(order)==maximumTotalCards)){
             List<Card> dobbleCards =  new ArrayList<>();
-            for (int i = 0; i < maximumTotalCards ; i++) {
+            int i = 0;
+
+            for (; i < maximumTotalCards ; i++) {
                 dobbleCards.add(this.dobbleCards.get(i));
             }
+
+            for (int j = i; j <this.dobbleCards.size();j++){
+                this.missingCards.add(this.dobbleCards.get(j));
+            }
+
             this.dobbleCards = dobbleCards;
+
         }
     }
 
@@ -41,7 +50,7 @@ public class Dobble implements  IDobble {
     }
 
     public List<Card> MissingCards() {
-        return null;
+        return this.missingCards;
     }
 
     public Card getNthCard(List<Card> cards, int position) {
@@ -203,7 +212,15 @@ public class Dobble implements  IDobble {
             String cardString = card.toString();
             dobbleCardsString = dobbleCardsString.concat(cardString);
         }
-        return dobbleCardsString;
+
+        String missingCardsString = "\nCartas Faltantes: \n";
+        for (int i = 0; i < missingCards.size(); i++) {
+            Card card = missingCards.get(i);
+            String cardString = card.toString();
+            missingCardsString = missingCardsString.concat(cardString);
+        }
+
+        return  dobbleCardsString + ""+ missingCardsString;
     }
 
     @Override

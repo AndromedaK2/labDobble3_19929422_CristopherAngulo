@@ -1,12 +1,6 @@
 package console;
 
-import model.deck.Dobble;
-import model.game.InvalidOrderException;
-import model.player.Player;
 import view.Menu;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
