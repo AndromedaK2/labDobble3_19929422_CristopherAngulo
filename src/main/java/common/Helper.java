@@ -70,7 +70,9 @@ public class Helper {
     }
 
     public static boolean  isValidOrder(int order)  {
-        if(order==1) return false;
+        if(order<=1) {
+            return false;
+        }
         for (int i = 2; i<= order/2; i++)
         {
             if ((order % i) == 0)
