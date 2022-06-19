@@ -17,9 +17,9 @@ public class DobbleGame implements  IDobbleGame{
     private Dobble dobbleCards;
     private int playersNumber;
 
-    private List<Card> cardsZone;
+    private List<Card> cardsZone ;
 
-    private List<Turn> turns;
+    private List<Turn> turns = new ArrayList<>();
 
     private IMode Mode;
 

@@ -12,7 +12,7 @@ public class Menu {
 
     public List<DobbleGame> dobbleGames = new ArrayList<>();
     private boolean closeMenu = false;
-    public void run() throws InvalidOrderException {
+    public void run()  {
         while(!closeMenu)
         {
             displayMenuOptions();
@@ -27,7 +27,7 @@ public class Menu {
         System.out.println("3) Jugar");
         System.out.println("4) Visualizar estado completo del juego");
     }
-    private void selectOption() throws InvalidOrderException {
+    private void selectOption()  {
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
         switch(option)
@@ -52,6 +52,10 @@ public class Menu {
         System.out.println("Comenzamos creando el mazo de cartas");
         int  totalCards       =  requestTotalCards();
         int elementsPerCard   =  requestElementsPerCard();
+        if(Helper.isValidOrder(elementsPerCard)){
+            System.out.println("Ingresar la cantidad de elementos por carta que deseas");
+
+        }
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
 
         for (Object element : elements) {
@@ -114,17 +118,12 @@ public class Menu {
         return scanner.nextInt();
     }
     private int requestElementsPerCard() {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Ingresar la cantidad de elementos por carta que deseas");
-            int elementsPerCard = scanner.nextInt();
-            Helper.isValidOrder(elementsPerCard);
-            return elementsPerCard;
-        } catch (InvalidOrderException ex) {
-            System.out.println(ex.getMessage());
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresar la cantidad de elementos por carta que deseas");
+        int elementsPerCard = scanner.nextInt();
+        return elementsPerCard;
 
-        return 0;
+
     }
     private int requestPlayersNumber(){
         Scanner scanner = new Scanner(System.in);

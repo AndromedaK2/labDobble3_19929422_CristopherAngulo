@@ -69,14 +69,16 @@ public class Helper {
                 return true;
     }
 
-    public static  void isValidOrder(int order) throws InvalidOrderException {
+    public static boolean  isValidOrder(int order)  {
         for (int i = 2; i<= order/2; i++)
         {
             if ((order % i) == 0)
             {
-                throw new InvalidOrderException();
+               return false;
             }
         }
+
+        return true;
     }
 
 

@@ -7,8 +7,10 @@ import java.util.*;
 
 public class Dobble implements  IDobble {
 
-    public int id = 0;
-    public List<Card> dobbleCards = new ArrayList<>();
+    private int id;
+    private List<Card> dobbleCards = new ArrayList<>();
+    private List<Object> allElements = new ArrayList<>();
+
 
 
     /**
@@ -19,6 +21,7 @@ public class Dobble implements  IDobble {
      */
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
         this.id = Helper.generateRandomNumber(1,10000000);
+        this.allElements  = elements;
         int order = getOrder(elementsPerCard);
         addCard(createFirstCard(elements,order));
         addCards(createNCards(elements,order));
