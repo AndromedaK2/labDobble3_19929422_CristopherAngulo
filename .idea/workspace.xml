@@ -7,9 +7,7 @@
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/common/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/console/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -411,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655514210991</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="[add] turns and refactor modes">
+      <created>1655658995837</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1655658995838</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -426,7 +431,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[structure] folder" />
     <MESSAGE value="[add] random id" />
     <MESSAGE value="[order] folders and add new methods in menu" />
     <MESSAGE value="[add] IDobble Interface" />
@@ -451,6 +455,7 @@
     <MESSAGE value="[refactor] refactoring code and comment code" />
     <MESSAGE value="[add] invalid order exception" />
     <MESSAGE value="[add] structure of modes" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] structure of modes" />
+    <MESSAGE value="[add] turns and refactor modes" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] turns and refactor modes" />
   </component>
 </project>

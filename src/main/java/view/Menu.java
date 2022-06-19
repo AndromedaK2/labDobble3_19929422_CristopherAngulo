@@ -10,7 +10,9 @@ import java.util.*;
 
 public class Menu {
 
-    public List<DobbleGame> dobbleGames = new ArrayList<>();
+    private List<DobbleGame> dobbleGames = new ArrayList<>();
+
+    private int elementsPerCard;
     private boolean closeMenu = false;
     public void run()  {
         while(!closeMenu)
@@ -50,12 +52,10 @@ public class Menu {
     }
     private void createGame()  {
         System.out.println("Comenzamos creando el mazo de cartas");
+        requestElementsPerCard();
         int  totalCards       =  requestTotalCards();
-        int elementsPerCard   =  requestElementsPerCard();
-        if(Helper.isValidOrder(elementsPerCard)){
-            System.out.println("Ingresar la cantidad de elementos por carta que deseas");
 
-        }
+
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
 
         for (Object element : elements) {
@@ -117,12 +117,23 @@ public class Menu {
         System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
         return scanner.nextInt();
     }
-    private int requestElementsPerCard() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingresar la cantidad de elementos por carta que deseas");
-        int elementsPerCard = scanner.nextInt();
-        return elementsPerCard;
+    private void requestElementsPerCard() {
+        try{
+            boolean isValidElementsPerCard = false;
+            while(!isValidElementsPerCard){
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Ingresar la cantidad de elementos por carta que deseas");
 
+                this.elementsPerCard = scanner.nextInt();
+                isValidElementsPerCard = Helper.isValidOrder(elementsPerCard-1);
+                if(!isValidElementsPerCard){
+                    System.out.println("La cantidad de elementos es inválida para crear un mazo de cartas");
+                }
+            }
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
     }
     private int requestPlayersNumber(){

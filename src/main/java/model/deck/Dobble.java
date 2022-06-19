@@ -215,5 +215,7 @@ public class Dobble implements  IDobble {
     }
 
 
-
+    public List<Object> getAllElements() {
+        return allElements;
+    }
 }
