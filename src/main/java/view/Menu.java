@@ -11,7 +11,6 @@ import java.util.*;
 public class Menu {
 
     private List<DobbleGame> dobbleGames = new ArrayList<>();
-
     private int elementsPerCard;
     private boolean closeMenu = false;
     public void run()  {
@@ -53,7 +52,7 @@ public class Menu {
     private void createGame()  {
         System.out.println("Comenzamos creando el mazo de cartas");
         requestElementsPerCard();
-        int  totalCards       =  requestTotalCards();
+        int  totalCards = requestTotalCards();
 
 
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
@@ -118,23 +117,27 @@ public class Menu {
         return scanner.nextInt();
     }
     private void requestElementsPerCard() {
-        try{
-            boolean isValidElementsPerCard = false;
-            while(!isValidElementsPerCard){
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Ingresar la cantidad de elementos por carta que deseas");
-
-                this.elementsPerCard = scanner.nextInt();
-                isValidElementsPerCard = Helper.isValidOrder(elementsPerCard-1);
-                if(!isValidElementsPerCard){
-                    System.out.println("La cantidad de elementos es inválida para crear un mazo de cartas");
+        boolean isValidElementsPerCard = false;
+        boolean wenttocatch = false;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            try{
+                while(!isValidElementsPerCard){
+                    System.out.println("Ingresar la cantidad de elementos por carta que deseas");
+                    this.elementsPerCard = scanner.nextInt();
+                    isValidElementsPerCard = Helper.isValidOrder(elementsPerCard-1);
+                    if(!isValidElementsPerCard){
+                        System.out.println("La cantidad de elementos es inválida para crear un mazo de cartas");
+                    }else{
+                        wenttocatch = true;
+                    }
                 }
+            }catch (InputMismatchException  e){
+                System.out.println("Ingresar un valor entero válido");
+                scanner.nextLine();
             }
-
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
+        }while (!wenttocatch);
+        
     }
     private int requestPlayersNumber(){
         Scanner scanner = new Scanner(System.in);
