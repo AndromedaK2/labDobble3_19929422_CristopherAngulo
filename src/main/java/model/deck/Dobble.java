@@ -11,8 +11,9 @@ public class Dobble implements  IDobble {
     private List<Card> dobbleCards = new ArrayList<>();
     private List<Object> allElements = new ArrayList<>();
     private List<Card> missingCards = new ArrayList<>();
+    private int order = 0;
 
-
+    private int elementsPerCard = 0;
 
     /**
      *
@@ -23,7 +24,8 @@ public class Dobble implements  IDobble {
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
         this.id = Helper.generateRandomNumber(1,10000000);
         this.allElements  = elements;
-        int order = getOrder(elementsPerCard);
+        this.elementsPerCard = elementsPerCard;
+        this.order = getOrder(elementsPerCard);
         addCard(createFirstCard(elements,order));
         addCards(createNCards(elements,order));
         addCards(createNSquareCards(elements,order));
@@ -43,10 +45,13 @@ public class Dobble implements  IDobble {
             this.dobbleCards = dobbleCards;
 
         }
+
+        isDobble();
     }
 
     public boolean isDobble() {
-        return true;
+        boolean value = this.dobbleCards.stream().map(Card::getElements).distinct().count() == this.elementsPerCard;
+        return value;
     }
 
     public List<Card> MissingCards() {
@@ -228,8 +233,12 @@ public class Dobble implements  IDobble {
         if (this == o) return true;
         if (!(o instanceof Dobble)) return false;
         Dobble dobble = (Dobble) o;
-        return id == dobble.id && Objects.equals(dobbleCards, dobble.dobbleCards);
+        return id == dobble.id && order == dobble.order
+                && elementsPerCard == dobble.elementsPerCard
+                && Objects.equals(dobbleCards, dobble.dobbleCards)
+                && Objects.equals(allElements, dobble.allElements) && Objects.equals(missingCards, dobble.missingCards);
     }
+
 
 
     public List<Object> getAllElements() {
