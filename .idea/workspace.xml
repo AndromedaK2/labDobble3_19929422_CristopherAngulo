@@ -450,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655682547965</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="[add] isValidTotalCards">
+      <created>1655691368592</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1655691368592</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,7 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[update] player toString()" />
     <MESSAGE value="[add] get elements and total cards from user and console" />
     <MESSAGE value="[add] generate ramdom elements" />
     <MESSAGE value="[add] switch case with options and return elements" />
@@ -490,6 +496,18 @@
     <MESSAGE value="[fix] helper" />
     <MESSAGE value="[add] missing cards" />
     <MESSAGE value="[add] is dobble first part" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] is dobble first part" />
+    <MESSAGE value="[add] isValidTotalCards" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] isValidTotalCards" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/view/Menu.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

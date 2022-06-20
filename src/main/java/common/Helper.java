@@ -63,10 +63,8 @@ public class Helper {
     }
 
 
-    public static boolean isValidTotalCards(int totalCards, int elementsPerCard){
-        int order = elementsPerCard-1;
-        int totalCardsAuxiliar = elementsPerCard + order * order;
-        return (totalCardsAuxiliar >= totalCards)? true : false;
+    public static boolean isValidTotalCards(int totalCards,  int elementsPerCard, int totalCardsAuxiliary){
+        return (totalCardsAuxiliary >= totalCards && totalCards>0)? true : false;
     }
 
     public static boolean  isValidOrder(int order)  {

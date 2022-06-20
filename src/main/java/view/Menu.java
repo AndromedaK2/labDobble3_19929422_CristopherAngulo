@@ -10,6 +10,7 @@ import java.util.*;
 public class Menu {
 
     private List<DobbleGame> dobbleGames = new ArrayList<>();
+
     private int elementsPerCard;
     private boolean closeMenu = false;
     public void run()  {
@@ -114,23 +115,27 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         boolean isValidTotalCards = false;
         boolean wenttocatch = false;
+        int order = elementsPerCard-1;
+        int totalCardsAuxiliary = elementsPerCard + order * order;
         int totalCards = 0;
         do{
             try{
                 while (!isValidTotalCards){
                     System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
                     totalCards =  scanner.nextInt();
-                    isValidTotalCards = Helper.isValidTotalCards(totalCards,elementsPerCard);
+                    isValidTotalCards = Helper.isValidTotalCards(totalCards,elementsPerCard,totalCardsAuxiliary);
+
+                    if(!isValidTotalCards){
+                        System.out.println("La cantidad de cartas debe ser mayor a cero y menor o igual a "+totalCardsAuxiliary);
+                    }else{
+                        wenttocatch = true;
+                    }
                 }
-
-
             }catch(InputMismatchException ex){
                 System.out.println("Ingresar un valor entero válido");
                 scanner.nextLine();
             }
-
-        }
-        while (!wenttocatch);
+        } while (!wenttocatch);
         return totalCards;
     }
     private int requestElementsPerCard() {
