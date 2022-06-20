@@ -51,7 +51,7 @@ public class Menu {
     private void createGame()  {
         System.out.println("Comenzamos creando el mazo de cartas");
         int  elementsPerCard = requestElementsPerCard();
-        int  totalCards = requestTotalCards();
+        int  totalCards = requestTotalCards(elementsPerCard);
 
 
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
@@ -110,10 +110,28 @@ public class Menu {
 
         return elements;
     }
-    private int requestTotalCards(){
+    private int requestTotalCards(int elementsPerCard){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
-        return scanner.nextInt();
+        boolean isValidTotalCards = false;
+        boolean wenttocatch = false;
+        int totalCards = 0;
+        do{
+            try{
+                while (!isValidTotalCards){
+                    System.out.println("Ingresar Cantidad total de Cartas con las que deseas jugar");
+                    totalCards =  scanner.nextInt();
+                    isValidTotalCards = Helper.isValidTotalCards(totalCards,elementsPerCard);
+                }
+
+
+            }catch(InputMismatchException ex){
+                System.out.println("Ingresar un valor entero válido");
+                scanner.nextLine();
+            }
+
+        }
+        while (!wenttocatch);
+        return totalCards;
     }
     private int requestElementsPerCard() {
         boolean isValidElementsPerCard = false;
