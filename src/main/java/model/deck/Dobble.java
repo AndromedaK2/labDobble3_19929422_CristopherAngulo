@@ -216,8 +216,11 @@ public class Dobble implements  IDobble {
     }
 
     private boolean betweenAllCardsHaveOneElementInCommon(){
+        int auxiliary = 0;
         for (int i = 0; i < this.dobbleCards.size() ; i++) {
-            for (int j = 1; j < this.dobbleCards.size(); j++) {
+            auxiliary = auxiliary+1;
+
+            for (int j = auxiliary; j < this.dobbleCards.size(); j++) {
                 Card firstCard =  this.dobbleCards.get(i);
                 Card nextCard  =  this.dobbleCards.get(j);
                 if( !(firstCard.getElements().stream().filter(nextCard.getElements()::contains).
