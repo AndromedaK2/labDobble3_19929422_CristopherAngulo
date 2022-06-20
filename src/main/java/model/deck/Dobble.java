@@ -3,6 +3,7 @@ import common.Helper;
 import model.card.Card;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class Dobble implements  IDobble {
@@ -50,8 +51,9 @@ public class Dobble implements  IDobble {
     }
 
     public boolean isDobble() {
-        boolean value = this.dobbleCards.stream().map(Card::getElements).distinct().count() == this.elementsPerCard;
-        return value;
+        boolean allCardsHaveDifferentElements        = this.allCardsHaveDifferentElements();
+        boolean betweenAllCardsHaveDifferentElements = this.betweenAllCardsHaveOneElementInCommon();
+        return (allCardsHaveDifferentElements && betweenAllCardsHaveDifferentElements)? true : false;
     }
 
     public List<Card> MissingCards() {
@@ -207,6 +209,24 @@ public class Dobble implements  IDobble {
      */
     private void shuffle() {
         dobbleCards.sort(Comparator.comparingInt(Card::getId));
+    }
+
+    private boolean allCardsHaveDifferentElements (){
+      return this.dobbleCards.stream().allMatch(card -> card.getElements().stream().distinct().count() == this.elementsPerCard);
+    }
+
+    private boolean betweenAllCardsHaveOneElementInCommon(){
+        for (int i = 0; i < this.dobbleCards.size() ; i++) {
+            for (int j = 1; j < this.dobbleCards.size(); j++) {
+                Card firstCard =  this.dobbleCards.get(i);
+                Card nextCard  =  this.dobbleCards.get(j);
+                if( !(firstCard.getElements().stream().filter(nextCard.getElements()::contains).
+                        collect(Collectors.toList()).size() == 1)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     @Override
