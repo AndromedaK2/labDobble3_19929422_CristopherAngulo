@@ -22,4 +22,9 @@ public class Mode implements  IMode {
     public void pass() {
 
     }
+
+    @Override
+    public void finish() {
+
+    }
 }

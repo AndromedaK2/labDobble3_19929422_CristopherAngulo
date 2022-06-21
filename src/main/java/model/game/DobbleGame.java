@@ -29,7 +29,6 @@ public class DobbleGame implements  IDobbleGame{
         this.playersNumber = playersNumber;
         this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
         this.setMode(dobbleGameMode);
-
     }
 
     public String getWhoseIsTurn() {

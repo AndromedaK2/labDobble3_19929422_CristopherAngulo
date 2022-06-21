@@ -12,6 +12,8 @@ public interface IMode {
     boolean spotit(Object element, Card firstCard, Card secondCard);
     void pass();
 
+    void finish();
+
 
 
 }
