@@ -10,12 +10,7 @@ public class Mode implements  IMode {
 
     @Override
     public boolean spotit(Object element, Card firstCard, Card secondCard) {
-        if(firstCard.getElements().contains(element) && secondCard.getElements().contains(element)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return firstCard.getElements().contains(element) && secondCard.getElements().contains(element);
     }
 
     @Override
@@ -25,6 +20,6 @@ public class Mode implements  IMode {
 
     @Override
     public void finish() {
-
+        
     }
 }
