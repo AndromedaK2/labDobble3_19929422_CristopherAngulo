@@ -103,6 +103,50 @@ public class DobbleGame implements  IDobbleGame{
         return false;
     }
 
+    public void startGame(){
+        this.gameStatus = DobbleGameStatus.STARTED;
+        this.mode.startGame(this);
+    }
+    public boolean spotit(Object element){
+        boolean spotit  = this.mode.spotit(element,this.cardsZone);
+        if(spotit){
+            Player player  = getWhoseIsTurn().getPlayer();
+            int playerIndex = this.players.indexOf(player);
+            player = this.mode.updatePlayerCards(player,this.cardsZone);
+            this.players.set(playerIndex,player);
+            this.resetCardsZone();
+            this.passTurn();
+            return true;
+
+        }
+        this.resetDobbleCards();
+        this.resetCardsZone();
+        this.passTurn();
+        return false;
+
+    }
+
+    public void passTurn(){
+        Turn currentTurn = getWhoseIsTurn();
+        int turnIndex = this.turns.indexOf(currentTurn);
+        this.turns.add(this.turns.remove(turnIndex));
+    }
+
+    public void resetDobbleCards(){
+        this.dobbleCards = (Dobble) this.mode.resetDobbleCards(this.dobbleCards.getDobbleCards(), this.cardsZone);
+    }
+
+    public  void resetCardsZone(){
+        this.cardsZone   = this.mode.resetCardsZone(this.cardsZone);
+    }
+
+
+
+    public void endGame(){
+        this.gameStatus = DobbleGameStatus.FINISHED;
+        Player winner =  this.mode.endGame(this.players);
+    }
+
     @Override
     public String toString() {
         return "DobbleGame{" +

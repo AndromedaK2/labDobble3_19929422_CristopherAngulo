@@ -27,6 +27,11 @@ public class Player implements IPlayer {
         return cards;
     }
 
+
+    public void addCards(List<Card> cards){
+        this.cards.addAll(cards);
+    }
+
     public int getPoints() {
         return points;
     }

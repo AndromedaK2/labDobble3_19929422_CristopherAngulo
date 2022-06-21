@@ -10,21 +10,21 @@ public class Dobble implements  IDobble {
 
     private int id;
     private List<Card> dobbleCards = new ArrayList<>();
-    private List<Object> allElements = new ArrayList<>();
+    private List<Object> allElements;
     private List<Card> missingCards = new ArrayList<>();
-    private int order = 0;
+    private int order;
 
     public List<Card> getDobbleCards() {
         return dobbleCards;
     }
 
-    private int elementsPerCard = 0;
+    private int elementsPerCard;
 
     /**
      *
-     * @param elements
-     * @param elementsPerCard
-     * @param maximumTotalCards
+     * @param elements  symbols or elements of cards
+     * @param elementsPerCard quantity elements per card
+     * @param maximumTotalCards maximum total cards of deck
      */
     public Dobble(List<Object> elements, int elementsPerCard, int maximumTotalCards) {
         this.id = Helper.generateRandomNumber(1,10000000);

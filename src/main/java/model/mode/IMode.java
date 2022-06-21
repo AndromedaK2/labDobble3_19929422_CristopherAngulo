@@ -2,18 +2,21 @@ package model.mode;
 
 import model.card.Card;
 import model.deck.Dobble;
+import model.game.DobbleGame;
 import model.player.Player;
 
 import java.util.List;
 
 public interface IMode {
 
+    DobbleGame startGame(DobbleGame dobbleGame);
+    boolean spotit(Object element,List<Card> cards);
+    Player updatePlayerCards(Player player,List<Card> cards);
+    DobbleGame passTurn(DobbleGame dobbleGame);
+    List<Card> resetDobbleCards(List<Card> dobbleCards, List<Card> cards );
 
-    boolean spotit(Object element, Card firstCard, Card secondCard);
-    void pass();
+    List<Card> resetCardsZone(List<Card> cards );
 
-    void finish();
-
-
+    Player endGame(List<Player> players);
 
 }

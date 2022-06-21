@@ -4,7 +4,7 @@ import common.Helper;
 import model.game.DobbleGame;
 import model.game.DobbleGameMode;
 import model.game.DobbleGameStatus;
-import model.mode.Mode;
+import model.mode.IMode;
 import model.mode.StackMode;
 
 
@@ -56,16 +56,12 @@ public class Menu {
 
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
 
-        /**for (Object element : elements) {
-            System.out.println(element);
-        }**/
+        int playersNumber = requestPlayersNumber();
+        DobbleGameMode dobbleGameMode = requestGameMode();
 
-       int playersNumber = requestPlayersNumber();
-       DobbleGameMode dobbleGameMode = requestGameMode();
-
-       DobbleGame dobbleGame = new DobbleGame(elements,elementsPerCard,totalCards, dobbleGameMode,playersNumber);
-       dobbleGames.add(dobbleGame);
-       System.out.println(dobbleGame);
+        DobbleGame dobbleGame = new DobbleGame(elements,elementsPerCard,totalCards, dobbleGameMode,playersNumber);
+        dobbleGames.add(dobbleGame);
+        System.out.println(dobbleGame);
     }
     private void registerPlayer(){
         DobbleGame dg = dobbleGames.get(0);
@@ -83,7 +79,7 @@ public class Menu {
         DobbleGame dobbleGame = this.dobbleGames.get(0);
         dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
         StackMode mode = (StackMode) dobbleGame.getMode();
-        mode.setZoneGame(dobbleGame);
+        mode.startGame(dobbleGame);
         while(!finishCurrentGame)
         {
             System.out.println("Juego Iniciado: ");
@@ -101,7 +97,6 @@ public class Menu {
             switch(option)
             {
                 case 1:
-
                     spoit(mode,dobbleGame);
                     break;
                 case 2:
@@ -111,14 +106,13 @@ public class Menu {
                     System.out.println("Estado del juego: "+ dobbleGame);
                     break;
                 case 4:
-                    System.out.println("Zona de cartas: "+ dobbleGame.getCardsZone());
+                    System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
                     break;
                 case 5:
                     System.out.println("El turno es de: "+ dobbleGame.getWhoseIsTurn());
                     break;
                 case 6: finishCurrentGame = true;
-                    mode.finish();
-                    dobbleGame.setGameStatus(DobbleGameStatus.FINISHED);
+                    this.endGame();
                     break;
             }
 
@@ -127,13 +121,21 @@ public class Menu {
 
     }
 
-    private DobbleGame spoit(Mode mode,DobbleGame dobbleGame){
+    private void spoit(IMode mode, DobbleGame dobbleGame){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
         System.out.println("Ingresar elemento en común entre las cartas");
         Object element = scanner.next();
-        //mode.spotit();
+        if(dobbleGame.spotit(element)){
+            System.out.println("Acción exitosa");
+        }else{
+            System.out.println("Acción fallida");
 
-        return dobbleGame;
+        }
+    }
+    
+    private void endGame(){
+
     }
 
 
