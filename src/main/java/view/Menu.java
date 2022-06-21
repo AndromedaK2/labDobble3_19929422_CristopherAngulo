@@ -13,6 +13,7 @@ public class Menu {
 
     private int elementsPerCard;
     private boolean closeMenu = false;
+    private boolean finishCurrentGame = false;
     public void run()  {
         while(!closeMenu)
         {
@@ -25,8 +26,7 @@ public class Menu {
         System.out.println("Escoja su opción:");
         System.out.println("1) Crear un Juego");
         System.out.println("2) Registrar jugador");
-        System.out.println("3) Jugar");
-        System.out.println("4) Visualizar estado completo del juego");
+        System.out.println("3) Iniciar Partida");
     }
     private void selectOption()  {
         Scanner scanner = new Scanner(System.in);
@@ -42,10 +42,7 @@ public class Menu {
             case 3:
                 play();
                 break;
-            case 4:
-                showGameStatus();
-                break;
-            case 5: closeMenu = true;
+            case 4: closeMenu = true;
                 break;
         }
     }
@@ -83,8 +80,40 @@ public class Menu {
         System.out.println(dg.getPlayers());
     }
     private void play(){
+        while(!finishCurrentGame)
+        {
+            DobbleGame dobbleGame = this.dobbleGames.get(0);
+            System.out.println("Juego Iniciado: ");
+            System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
+            System.out.println("Escoja su opción:");
+            System.out.println("1) Spotit");
+            System.out.println("2) Pasar");
+            System.out.println("3) Ver estado del juego ");
+            System.out.println("4) Terminar juego");
+
+            Scanner scanner = new Scanner(System.in);
+            int option = scanner.nextInt();
+            switch(option)
+            {
+                case 1:
+                    createGame();
+                    break;
+                case 2:
+                    registerPlayer();
+                    break;
+                case 3:
+                    play();
+                    break;
+                case 4: finishCurrentGame = true;
+                    break;
+            }
+
+        }
+
 
     }
+
+
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));
     }
