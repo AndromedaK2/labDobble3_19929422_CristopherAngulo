@@ -19,15 +19,26 @@ public class DobbleGame implements  IDobbleGame{
     private Dobble dobbleCards;
     private int playersNumber;
 
+    public List<Card> getCardsZone() {
+        return cardsZone;
+    }
+
     private List<Card> cardsZone ;
 
+    private DobbleGameMode dobbleGameMode ;
+
     private List<Turn> turns = new ArrayList<>();
+
+    public IMode getMode() {
+        return mode;
+    }
 
     private IMode mode;
 
     public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber){
         this.playersNumber = playersNumber;
         this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
+        this.dobbleGameMode = dobbleGameMode;
         this.setMode(dobbleGameMode);
     }
 
@@ -97,5 +108,9 @@ public class DobbleGame implements  IDobbleGame{
                 ", playersNumber=" + playersNumber +
                 ", cardsZone=" + cardsZone +
                 '}';
+    }
+
+    public void setCardsZone(List<Card> cardsZone) {
+        this.cardsZone = cardsZone;
     }
 }

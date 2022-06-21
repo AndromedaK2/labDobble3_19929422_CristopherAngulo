@@ -20,6 +20,6 @@ public class Mode implements  IMode {
 
     @Override
     public void finish() {
-        
+
     }
 }

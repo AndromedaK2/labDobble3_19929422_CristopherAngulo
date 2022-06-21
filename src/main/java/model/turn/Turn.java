@@ -10,5 +10,12 @@ public class Turn {
     public Turn(Player player) {
         this.player = player;
     }
+
+    @Override
+    public String toString() {
+        return "Turn{" +
+                "player=" + player +
+                '}';
+    }
 }
 

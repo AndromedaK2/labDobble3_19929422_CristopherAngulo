@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/Mode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/Mode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,20 +124,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00004" summary="[add] create n cards">
-      <created>1654831166104</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654831166104</updated>
-    </task>
-    <task id="LOCAL-00005" summary="[add] create cardsSet">
-      <created>1654834708899</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1654834708899</updated>
     </task>
     <task id="LOCAL-00006" summary="[add] updates">
       <created>1654835744272</created>
@@ -464,7 +454,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655773954015</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="[add]  finish method">
+      <created>1655774088378</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1655774088378</updated>
+    </task>
+    <task id="LOCAL-00054" summary="[refactor]  spotit">
+      <created>1655774217794</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1655774217794</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -479,8 +483,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[add] IDobbleGame and DobbleGame classes" />
-    <MESSAGE value="[add] getfirstElement and getLastElement" />
     <MESSAGE value="[add] constructor of dobble game" />
     <MESSAGE value="[update] methods names" />
     <MESSAGE value="[add] register player" />
@@ -504,14 +506,16 @@
     <MESSAGE value="[update]  request total cards" />
     <MESSAGE value="[refactor]  isDobble" />
     <MESSAGE value="[set]  DobbleGameMode" />
-    <option name="LAST_COMMIT_MESSAGE" value="[set]  DobbleGameMode" />
+    <MESSAGE value="[add]  finish method" />
+    <MESSAGE value="[refactor]  spotit" />
+    <option name="LAST_COMMIT_MESSAGE" value="[refactor]  spotit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/model/deck/Dobble.java</url>
-          <line>54</line>
+          <line>58</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

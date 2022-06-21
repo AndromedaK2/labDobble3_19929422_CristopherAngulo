@@ -3,6 +3,8 @@ package view;
 import common.Helper;
 import model.game.DobbleGame;
 import model.game.DobbleGameMode;
+import model.mode.Mode;
+import model.mode.StackMode;
 
 
 import java.util.*;
@@ -83,28 +85,39 @@ public class Menu {
         while(!finishCurrentGame)
         {
             DobbleGame dobbleGame = this.dobbleGames.get(0);
+            StackMode mode = (StackMode) dobbleGame.getMode();
+            mode.setZoneGame(dobbleGame);
             System.out.println("Juego Iniciado: ");
             System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
             System.out.println("Escoja su opción:");
             System.out.println("1) Spotit");
             System.out.println("2) Pasar");
-            System.out.println("3) Ver estado del juego ");
-            System.out.println("4) Terminar juego");
+            System.out.println("3) Ver estado del juego");
+            System.out.println("4) Ver zona de cartas");
+            System.out.println("5) ¿De quién es el turno?");
+            System.out.println("6) Terminar juego");
 
             Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
             switch(option)
             {
                 case 1:
-                    createGame();
+
+
                     break;
                 case 2:
                     registerPlayer();
                     break;
                 case 3:
-                    play();
+                    System.out.println("Estado del juego: "+ dobbleGame.getStatus());
                     break;
-                case 4: finishCurrentGame = true;
+                case 4:
+                    System.out.println("Zona de cartas: "+ dobbleGame.getCardsZone());
+                    break;
+                case 5:
+                    System.out.println("El turno es de: "+ dobbleGame.getWhoseIsTurn());
+                    break;
+                case 6: finishCurrentGame = true;
                     break;
             }
 
@@ -112,6 +125,11 @@ public class Menu {
 
 
     }
+
+    private void spoit(){
+
+    }
+
 
 
     private void showGameStatus(){

@@ -14,6 +14,10 @@ public class Dobble implements  IDobble {
     private List<Card> missingCards = new ArrayList<>();
     private int order = 0;
 
+    public List<Card> getDobbleCards() {
+        return dobbleCards;
+    }
+
     private int elementsPerCard = 0;
 
     /**
@@ -64,6 +68,10 @@ public class Dobble implements  IDobble {
        return cards.get(position);
     }
 
+    public Card getNthCard(int position) {
+        return this.dobbleCards.get(position);
+    }
+
     /**
      *
      * @param card
@@ -111,6 +119,10 @@ public class Dobble implements  IDobble {
      */
     public void addCard(Card card){
         dobbleCards.add(card);
+    }
+
+    public void removeCard(Card card){
+        this.dobbleCards.remove(card);
     }
 
     /**
