@@ -16,16 +16,16 @@ public class Helper {
         List<Object> elements = new ArrayList<>();
 
         List<Object> baseElements = new ArrayList<>();
-        baseElements.add("Bear/s");
-        baseElements.add("Tiger/s");
-        baseElements.add("Wolf/s");
-        baseElements.add("Bee/s");
-        baseElements.add("Car/s");
-        baseElements.add("Dog/s");
-        baseElements.add("Snake/s");
-        baseElements.add("Python/s");
-        baseElements.add("Lion/s");
-        baseElements.add("Spider/s");
+        baseElements.add("Bear's");
+        baseElements.add("Tiger's");
+        baseElements.add("Wolf's");
+        baseElements.add("Bee's");
+        baseElements.add("Car's");
+        baseElements.add("Dog's");
+        baseElements.add("Snake's");
+        baseElements.add("Python's");
+        baseElements.add("Lion's");
+        baseElements.add("Spider's");
 
         List<Object> positions = new ArrayList<>();
         positions.add("with");
@@ -40,22 +40,22 @@ public class Helper {
 
         List<Object> objects = new ArrayList<>();
         objects.add("Computer");
-        objects.add("Sky");
         objects.add("Book");
         objects.add("Ball");
         objects.add("Guitar");
-        objects.add("Sun");
-        objects.add("Cinema");
-        objects.add("Tv");
-        objects.add("Window");
+        objects.add("Jacket");
+        objects.add("Shirt");
+        objects.add("Sweater");
         objects.add("Table");
+        objects.add("Chair");
+        objects.add("Flower");
 
 
         for (int i = 0; i < total ; i++) {
             Object baseElement = baseElements.get(generateRandomNumber(0,9));
             Object position = positions.get(generateRandomNumber(0,8));
             Object object = objects.get(generateRandomNumber(0,9));
-            elements.add( generateRandomNumber(1,100) +" " + baseElement+" "+ position +" "+ object);
+            elements.add( generateRandomNumber(1,10) +" " + baseElement+" "+ position +" "+ object);
         }
         return elements;
 

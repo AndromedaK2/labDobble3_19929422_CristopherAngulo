@@ -15,6 +15,11 @@ public class DobbleGame implements  IDobbleGame{
 
     private String id;
     private DobbleGameStatus gameStatus = DobbleGameStatus.CREATED;
+
+    public void setGameStatus(DobbleGameStatus gameStatus) {
+        this.gameStatus = gameStatus;
+    }
+
     private List<Player> players = new ArrayList<>();
     private Dobble dobbleCards;
     private int playersNumber;
@@ -42,8 +47,8 @@ public class DobbleGame implements  IDobbleGame{
         this.setMode(dobbleGameMode);
     }
 
-    public String getWhoseIsTurn() {
-        return this.turns.get(0).toString();
+    public Turn getWhoseIsTurn() {
+        return this.turns.get(0);
     }
 
 

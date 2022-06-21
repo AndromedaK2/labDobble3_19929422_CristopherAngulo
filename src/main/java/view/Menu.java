@@ -3,6 +3,7 @@ package view;
 import common.Helper;
 import model.game.DobbleGame;
 import model.game.DobbleGameMode;
+import model.game.DobbleGameStatus;
 import model.mode.Mode;
 import model.mode.StackMode;
 
@@ -53,14 +54,11 @@ public class Menu {
         int  elementsPerCard = requestElementsPerCard();
         int  totalCards = requestTotalCards(elementsPerCard);
 
-
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
 
-        for (Object element : elements) {
+        /**for (Object element : elements) {
             System.out.println(element);
-        }
-
-
+        }**/
 
        int playersNumber = requestPlayersNumber();
        DobbleGameMode dobbleGameMode = requestGameMode();
@@ -82,11 +80,12 @@ public class Menu {
         System.out.println(dg.getPlayers());
     }
     private void play(){
+        DobbleGame dobbleGame = this.dobbleGames.get(0);
+        dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
+        StackMode mode = (StackMode) dobbleGame.getMode();
+        mode.setZoneGame(dobbleGame);
         while(!finishCurrentGame)
         {
-            DobbleGame dobbleGame = this.dobbleGames.get(0);
-            StackMode mode = (StackMode) dobbleGame.getMode();
-            mode.setZoneGame(dobbleGame);
             System.out.println("Juego Iniciado: ");
             System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
             System.out.println("Escoja su opción:");
@@ -103,13 +102,13 @@ public class Menu {
             {
                 case 1:
 
-
+                    spoit(mode,dobbleGame);
                     break;
                 case 2:
-                    registerPlayer();
+
                     break;
                 case 3:
-                    System.out.println("Estado del juego: "+ dobbleGame.getStatus());
+                    System.out.println("Estado del juego: "+ dobbleGame);
                     break;
                 case 4:
                     System.out.println("Zona de cartas: "+ dobbleGame.getCardsZone());
@@ -118,6 +117,8 @@ public class Menu {
                     System.out.println("El turno es de: "+ dobbleGame.getWhoseIsTurn());
                     break;
                 case 6: finishCurrentGame = true;
+                    mode.finish();
+                    dobbleGame.setGameStatus(DobbleGameStatus.FINISHED);
                     break;
             }
 
@@ -126,8 +127,13 @@ public class Menu {
 
     }
 
-    private void spoit(){
+    private DobbleGame spoit(Mode mode,DobbleGame dobbleGame){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingresar elemento en común entre las cartas");
+        Object element = scanner.next();
+        //mode.spotit();
 
+        return dobbleGame;
     }
 
 
