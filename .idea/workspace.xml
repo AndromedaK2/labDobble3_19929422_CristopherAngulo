@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/IDobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/IDobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,13 +125,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00015" summary="[refactor] ICard">
-      <created>1654997627315</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1654997627315</updated>
     </task>
     <task id="LOCAL-00016" summary="[add] menu">
       <created>1655000270662</created>
@@ -469,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655874083918</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="[add]   name to game and change missing cards">
+      <created>1655907978886</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1655907978887</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -484,7 +484,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[add] getRequired elements" />
     <MESSAGE value="[add] get totalcards" />
     <MESSAGE value="[refactor] refactoring code and comment code" />
     <MESSAGE value="[add] invalid order exception" />
@@ -509,6 +508,7 @@
     <MESSAGE value="[update]   javadoc comments to menu" />
     <MESSAGE value="[update]   register user" />
     <MESSAGE value="[add]   endgame" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add]   endgame" />
+    <MESSAGE value="[add]   name to game and change missing cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add]   name to game and change missing cards" />
   </component>
 </project>

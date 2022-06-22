@@ -30,10 +30,6 @@ public class EmptyHandsStack implements IMode {
         return null;
     }
 
-    @Override
-    public DobbleGame passTurn(DobbleGame dobbleGame) {
-        return null;
-    }
 
     @Override
     public List<Card> resetDobbleCards(List<Card> dobbleCards, List<Card> cards) {

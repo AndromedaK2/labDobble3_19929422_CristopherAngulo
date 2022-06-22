@@ -82,7 +82,7 @@ public class Dobble implements  IDobble {
     }
 
     public Card getNthCard(List<Card> cards, int position) {
-       return cards.get(position);
+        return cards.get(position);
     }
 
     public Card getNthCard(int position) {

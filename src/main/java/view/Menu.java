@@ -122,51 +122,58 @@ public class Menu {
      * @implNote method to start to play
      */
     private void play(){
+        boolean start = true;
         System.out.println("Juego Iniciado: \n");
         DobbleGame dobbleGame = this.dobbleGames.get(0);
         dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
-        boolean start = true;
 
-        while(!finishCurrentGame)
-        {
-            if(start){
-                dobbleGame.startGame();
-            }
-            start = false;
-            System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
-            System.out.println("Escoja su opción:");
-            System.out.println("1) Spotit");
-            System.out.println("2) Pasar");
-            System.out.println("3) Ver estado del juego");
-            System.out.println("4) Ver zona de cartas");
-            System.out.println("5) ¿De quién es el turno?");
-            System.out.println("6) Terminar juego");
-
-            Scanner scanner = new Scanner(System.in);
-            int option = scanner.nextInt();
-            switch(option)
+        try{
+            while(!finishCurrentGame)
             {
-                case 1:
-                    spotit(dobbleGame);
-                    start = true;
-                    break;
-                case 2:
-                    passTurn(dobbleGame);
-                    start = true;
-                    break;
-                case 3:
-                    System.out.println("Estado del juego: "+ dobbleGame);
-                    break;
-                case 4:
-                    System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
-                    break;
-                case 5:
-                    System.out.println("El turno es de: "+ dobbleGame.getWhoseIsTurn());
-                    break;
-                case 6: finishCurrentGame = true;
-                    this.endGame(dobbleGame);
-                    break;
+                if(start){
+                    dobbleGame.startGame();
+                }
+                start = false;
+                System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
+                System.out.println("Escoja su opción:");
+                System.out.println("1) Spotit");
+                System.out.println("2) Pasar");
+                System.out.println("3) Ver estado del juego");
+                System.out.println("4) Ver zona de cartas");
+                System.out.println("5) ¿De quién es el turno?");
+                System.out.println("6) Terminar juego");
+
+                Scanner scanner = new Scanner(System.in);
+                int option = scanner.nextInt();
+                switch(option)
+                {
+                    case 1:
+                        spotit(dobbleGame);
+                        start = true;
+                        break;
+                    case 2:
+                        passTurn(dobbleGame);
+                        start = true;
+                        break;
+                    case 3:
+                        System.out.println("Estado del juego: "+ dobbleGame);
+                        break;
+                    case 4:
+                        System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
+                        break;
+                    case 5:
+                        System.out.println("El turno es de: "+ dobbleGame.getWhoseIsTurn());
+                        break;
+                    case 6: finishCurrentGame = true;
+                        this.endGame(dobbleGame);
+                        break;
+                }
             }
+        } catch (IndexOutOfBoundsException ex){
+            System.out.println("No hay suficientes cartas en el mazo para continuar");
+            start = false;
+        } catch (Exception ex){
+            System.out.println(ex.toString());
         }
     }
 
@@ -203,11 +210,10 @@ public class Menu {
         do{
             try{
                 System.out.println("Ingresar Nombre del juego");
-                gameName =  scanner.next();
+                gameName =  scanner.nextLine();;
                 wenttocatch = true;
             }catch(Exception ex){
                 System.out.println("Ingresar un valor válido");
-                scanner.nextLine();
             }
         } while (!wenttocatch);
         return gameName;
@@ -257,7 +263,6 @@ public class Menu {
                 }
             }catch(InputMismatchException ex){
                 System.out.println("Ingresar un valor entero válido");
-                scanner.nextLine();
             }
         } while (!wenttocatch);
         return totalCards;
@@ -281,7 +286,6 @@ public class Menu {
                 }
             }catch (InputMismatchException  ex){
                 System.out.println("Ingresar un valor entero válido");
-                scanner.nextLine();
             }
         }while (!wenttocatch);
 
@@ -316,13 +320,33 @@ public class Menu {
     private  List<Object> generateRandomElements(int totalCards){
         return Helper.generateRandomElements(totalCards);
     }
-    private  List<Object> generateElements(int totalCards){
+    private  List<Object> generateElements(int totalElements){
         Scanner scanner = new Scanner(System.in);
         List<Object> elements = new ArrayList<>();
-        for(int i= 0; i<totalCards; i++){
+        String element;
+        boolean isValidElement = true;
+        for(int i= 0; i<totalElements; i++){
+
             System.out.println("Ingresar elemento o símbolo "+(i+1));
-            String element = scanner.next();
+            element = scanner.next();
+            while(element.isBlank() || element.isEmpty() || element == null || elements.contains(element)){
+                if(element.isBlank() || element.isEmpty() || element == null){
+                    System.out.println("No son permitidos elementos en blanco");
+                }
+                if(elements.contains(element)){
+                    System.out.println("Es un elemento duplicado");
+                }
+
+                System.out.println("Ingresar elemento o símbolo "+(i+1));
+                element = scanner.next();
+            }
+
             elements.add(element);
+
+
+        }
+        for(int j = 0; j<elements.size();j++){
+            System.out.println("Elemento: "+elements.get(j));
         }
         return elements;
     }

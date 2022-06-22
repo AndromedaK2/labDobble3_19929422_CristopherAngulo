@@ -12,7 +12,7 @@ public interface IMode {
     DobbleGame startGame(DobbleGame dobbleGame);
     boolean spotit(Object element,List<Card> cards);
     Player updatePlayerCards(Player player,List<Card> cards);
-    DobbleGame passTurn(DobbleGame dobbleGame);
+
     List<Card> resetDobbleCards(List<Card> dobbleCards, List<Card> cards );
 
     List<Card> resetCardsZone(List<Card> cards );

@@ -116,18 +116,26 @@ public class DobbleGame implements  IDobbleGame{
             player = this.mode.updatePlayerCards(player,this.cardsZone);
             this.players.set(playerIndex,player);
             this.resetCardsZone();
-            this.passTurn();
+            this.nextTurn();
             return true;
 
         }
         this.resetDobbleCards();
         this.resetCardsZone();
-        this.passTurn();
+        this.nextTurn();
         return false;
 
     }
 
     public void passTurn(){
+        this.resetDobbleCards();
+        this.resetCardsZone();
+        Turn currentTurn = getWhoseIsTurn();
+        int turnIndex = this.turns.indexOf(currentTurn);
+        this.turns.add(this.turns.remove(turnIndex));
+    }
+
+    public void nextTurn(){
         Turn currentTurn = getWhoseIsTurn();
         int turnIndex = this.turns.indexOf(currentTurn);
         this.turns.add(this.turns.remove(turnIndex));
