@@ -3,11 +3,16 @@ package common;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Cristopher Angulo
+ * @implNote Helper to use in all application to do generic operations
+ */
+
 public class Helper {
 
 
     /**
-     *
+     * @implNote static method to generate random number
      * @param min minimum integer value
      * @param max maximum integer value
      * @return a random number between inputs number
@@ -17,7 +22,7 @@ public class Helper {
     }
 
     /**
-     *
+     * @implNote static method to generate random elements with a database in memory defined in list of objects
      * @param total number of elements
      * @return element list generated randomly
      */
@@ -73,7 +78,7 @@ public class Helper {
     }
 
     /**
-     *
+     * @implNote static method to validate total cards to create dobble cards
      * @param totalCards number of cards
      * @param elementsPerCard number of distinct elements that we identify for each card
      * @param totalCardsAuxiliary  number of cards auxiliary
@@ -84,7 +89,8 @@ public class Helper {
     }
 
     /**
-     *
+     * @implNote static method to validate the order of projective plane in order to create cardsSet
+     * the result It must be prime integer to return true
      * @param order number of order
      * @return valid if order of deck is valid
      */

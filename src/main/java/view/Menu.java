@@ -10,13 +10,18 @@ import model.mode.StackMode;
 
 import java.util.*;
 
+/** @author Cristopher Angulo
+ *
+ */
 public class Menu {
 
     private List<DobbleGame> dobbleGames = new ArrayList<>();
-
-    private int elementsPerCard;
     private boolean closeMenu = false;
     private boolean finishCurrentGame = false;
+
+    /**
+     * @
+     */
     public void run()  {
         while(!closeMenu)
         {
@@ -137,8 +142,6 @@ public class Menu {
     private void endGame(){
 
     }
-
-
 
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));
