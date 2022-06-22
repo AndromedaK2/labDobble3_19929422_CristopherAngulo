@@ -302,7 +302,7 @@ public class Menu {
         DobbleGameMode dobbleGameMode = null;
         System.out.println("Selecciona uno de los siguientes modos de juego");
         System.out.println("1- StackMode");
-        System.out.println("2- EmptyHandsStackMode");
+        //System.out.println("2- EmptyHandsStackMode");
         System.out.println("Otros modo diponibles proximamente...");
         int option = scanner.nextInt();
         switch(option)
@@ -310,9 +310,9 @@ public class Menu {
             case 1:
                 dobbleGameMode = DobbleGameMode.STACKMODE;
                 break;
-            case 2:
-                dobbleGameMode = DobbleGameMode.EMPTYHANDSMODE;
-                break;
+            //case 2:
+            //    dobbleGameMode = DobbleGameMode.EMPTYHANDSMODE;
+            //    break;
         }
         return dobbleGameMode;
 
