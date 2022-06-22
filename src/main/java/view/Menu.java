@@ -7,7 +7,6 @@ import model.game.DobbleGameStatus;
 import model.mode.IMode;
 import model.mode.StackMode;
 
-
 import java.util.*;
 
 /** @author Cristopher Angulo
@@ -28,6 +27,8 @@ public class Menu {
      */
     private boolean finishCurrentGame = false;
 
+    private DobbleGame currentDobbleGame = null;
+
     /**
      * @implNote this method is the initial point to run the application
      */
@@ -46,8 +47,9 @@ public class Menu {
         System.out.println("Bienvenido");
         System.out.println("Escoja su opción:");
         System.out.println("1) Crear un Juego");
-        System.out.println("2) Registrar jugador");
-        System.out.println("3) Iniciar Partida");
+        System.out.println("2) Seleccionar juego");
+        System.out.println("3) Jugar (debe seleccionar un juego antes)");
+
     }
 
     /**
@@ -56,13 +58,14 @@ public class Menu {
     private void selectOption()  {
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
+
         switch(option)
         {
             case 1:
                 createGame();
                 break;
             case 2:
-                registerPlayer();
+                displayDobbleGames();
                 break;
             case 3:
                 play();
@@ -84,7 +87,6 @@ public class Menu {
     private void createGame()  {
         System.out.println("Debe añadirle un nombre representativo a su juego por el cual pueda identificar");
 
-
         String name = requestGameName();
 
         System.out.println("Seguimos creando el mazo de cartas");
@@ -93,29 +95,49 @@ public class Menu {
         int  totalCards = requestTotalCards(elementsPerCard);
 
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
-
         int playersNumber = requestPlayersNumber();
         DobbleGameMode dobbleGameMode = requestGameMode();
 
         DobbleGame dobbleGame = new DobbleGame(elements,elementsPerCard,totalCards, dobbleGameMode,playersNumber,name);
+        registerPlayer(dobbleGame);
         dobbleGames.add(dobbleGame);
         System.out.println(dobbleGame);
+    }
+
+    private void displayDobbleGames(){
+        System.out.println("Lista de juegos que has creado");
+        if(this.dobbleGames.size()>0){
+            for (int i = 0; i < dobbleGames.size(); i++) {
+                int aux = i+1;
+                System.out.println(aux+"- "+dobbleGames.get(i).getName()+"\n");
+            }
+            this.selectDobbleGames();
+        }else{
+            System.out.println("No existen juego creados\n");
+        }
+
+    }
+    private void selectDobbleGames(){
+        Scanner scanner = new Scanner(System.in);
+        int option = scanner.nextInt();
+        this.currentDobbleGame = this.dobbleGames.get(option-1);
     }
 
     /**
      * @implNote method to register user in the current game
      */
-    private void registerPlayer(){
-        DobbleGame dg = dobbleGames.get(0);
+    private void registerPlayer(DobbleGame dobbleGame){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese su nombre de usuario para registarlo en el juego");
-        String username = scanner.next();
-        if(dg.register(username)){
-            System.out.println("Se ha registrado");
-        }else{
-            System.out.println("El usuario no se puede registrar");
+        for (int i = 0; i < dobbleGame.getPlayersNumber(); i++) {
+            System.out.println("Ingrese  nombre de usuario del jugador "+i+ " para registrarlo en el juego");
+            String username = scanner.next();
+            if(dobbleGame.register(username)){
+                System.out.println("Se ha registrado");
+            }else{
+                System.out.println("El usuario no se puede registrar");
+            }
+            System.out.println(dobbleGame.getPlayers());
         }
-        System.out.println(dg.getPlayers());
     }
 
     /**

@@ -13,6 +13,7 @@ public class Dobble implements  IDobble {
     private List<Object> allElements;
     private List<Card> missingCards = new ArrayList<>();
     private int order;
+    private int elementsPerCard;
 
     public List<Card> getDobbleCards() {
         return dobbleCards;
@@ -22,10 +23,9 @@ public class Dobble implements  IDobble {
         this.dobbleCards = dobbleCards;
     }
 
-    private int elementsPerCard;
+
 
     /**
-     *
      * @param elements  symbols or elements of cards
      * @param elementsPerCard quantity elements per card
      * @param maximumTotalCards maximum total cards of deck
@@ -297,7 +297,5 @@ public class Dobble implements  IDobble {
     }
 
 
-    public List<Object> getAllElements() {
-        return allElements;
-    }
+
 }

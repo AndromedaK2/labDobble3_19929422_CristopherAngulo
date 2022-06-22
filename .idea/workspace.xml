@@ -7,13 +7,9 @@
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/card/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/card/ICard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/card/ICard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/IDobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/IDobble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/player/IPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,13 +122,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00018" summary="[add] random id">
-      <created>1655071137154</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1655071137154</updated>
     </task>
     <task id="LOCAL-00019" summary="[order] folders and add new methods in menu">
       <created>1655075566124</created>
@@ -470,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655928779888</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="[add] equals and strings commetns">
+      <created>1655930579904</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1655930579905</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -485,7 +481,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[add] invalid order exception" />
     <MESSAGE value="[add] structure of modes" />
     <MESSAGE value="[add] turns and refactor modes" />
     <MESSAGE value="[add] try catch to recover elementsPerCard" />
@@ -510,6 +505,7 @@
     <MESSAGE value="[add]   name to game and change missing cards" />
     <MESSAGE value="[add]  validation elements by console" />
     <MESSAGE value="[update]  menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update]  menu" />
+    <MESSAGE value="[add] equals and strings commetns" />
+    <option name="LAST_COMMIT_MESSAGE" value="[add] equals and strings commetns" />
   </component>
 </project>
