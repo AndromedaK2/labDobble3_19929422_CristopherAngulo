@@ -108,7 +108,7 @@ public class Menu {
         if(dg.register(username)){
             System.out.println("Se ha registrado");
         }else{
-            System.out.println("El usuario ya existe");
+            System.out.println("El usuario no se puede registrar");
         }
         System.out.println(dg.getPlayers());
     }
@@ -119,10 +119,10 @@ public class Menu {
     private void play(){
         DobbleGame dobbleGame = this.dobbleGames.get(0);
         dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
-        StackMode mode = (StackMode) dobbleGame.getMode();
-        mode.startGame(dobbleGame);
+
         while(!finishCurrentGame)
         {
+            dobbleGame.startGame();
             System.out.println("Juego Iniciado: ");
             System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
             System.out.println("Escoja su opción:");
@@ -138,7 +138,7 @@ public class Menu {
             switch(option)
             {
                 case 1:
-                    spoit(mode,dobbleGame);
+                    spoit(dobbleGame);
                     break;
                 case 2:
 
@@ -170,7 +170,7 @@ public class Menu {
      * @see IMode
      * @see DobbleGame
      */
-    private void spoit(IMode mode, DobbleGame dobbleGame){
+    private void spoit(DobbleGame dobbleGame){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
         System.out.println("Ingresar elemento en común entre las cartas");

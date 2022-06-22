@@ -18,6 +18,10 @@ public class Dobble implements  IDobble {
         return dobbleCards;
     }
 
+    public void setDobbleCards(List<Card> dobbleCards) {
+        this.dobbleCards = dobbleCards;
+    }
+
     private int elementsPerCard;
 
     /**

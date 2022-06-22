@@ -9,7 +9,7 @@ public class Player implements IPlayer {
     private String username;
 
     private List<Card> cards = new ArrayList<>() ;
-    private int points = 0;
+    private int points = cards.size();
 
     public String getUsername() {
         return username;
@@ -38,10 +38,9 @@ public class Player implements IPlayer {
 
     @Override
     public String toString() {
-        calculatePoints();
         return "Jugador: \n" +
                 "Nombre de usuario='" + username + '\'' +
-                ",\n" + cards.toString() +
+                ",\n" + cards +
                 ", points=" + points ;
     }
 
@@ -53,11 +52,6 @@ public class Player implements IPlayer {
         return points == player.points && Objects.equals(username, player.username) && Objects.equals(cards, player.cards);
     }
 
-    private void calculatePoints(){
-        for (int i = 0; i < cards.size(); i++) {
-            points = points + 1;
-        }
-    }
 
 
 }

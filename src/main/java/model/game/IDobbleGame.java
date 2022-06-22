@@ -26,7 +26,6 @@ public interface IDobbleGame {
      int getPlayersNumber();
 
 
-     void play();
 
 
      boolean register(String username);

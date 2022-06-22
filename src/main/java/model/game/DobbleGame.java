@@ -16,17 +16,9 @@ public class DobbleGame implements  IDobbleGame{
     private String id;
     private DobbleGameStatus gameStatus = DobbleGameStatus.CREATED;
 
-    public void setGameStatus(DobbleGameStatus gameStatus) {
-        this.gameStatus = gameStatus;
-    }
-
     private List<Player> players = new ArrayList<>();
     private Dobble dobbleCards;
     private int playersNumber;
-
-    public List<Card> getCardsZone() {
-        return cardsZone;
-    }
 
     private List<Card> cardsZone ;
 
@@ -34,17 +26,10 @@ public class DobbleGame implements  IDobbleGame{
 
     private List<Turn> turns = new ArrayList<>();
 
-    public IMode getMode() {
-        return mode;
-    }
 
     private IMode mode;
-
-    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber){
-        this.playersNumber = playersNumber;
-        this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
-        this.dobbleGameMode = dobbleGameMode;
-        this.setMode(dobbleGameMode);
+    public IMode getMode() {
+        return mode;
     }
 
     public Turn getWhoseIsTurn() {
@@ -77,9 +62,30 @@ public class DobbleGame implements  IDobbleGame{
     }
 
 
-    public void play() {
-
+    public void setGameStatus(DobbleGameStatus gameStatus) {
+        this.gameStatus = gameStatus;
     }
+
+    public List<Card> getCardsZone() {
+        return cardsZone;
+    }
+
+    public void setCardsZone(List<Card> cardsZone) {
+        this.cardsZone = cardsZone;
+    }
+
+
+
+
+
+    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber){
+        this.playersNumber = playersNumber;
+        this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
+        this.dobbleGameMode = dobbleGameMode;
+        this.setMode(dobbleGameMode);
+    }
+
+
 
     public void setMode(DobbleGameMode dobbleGameMode) {
         switch (dobbleGameMode){
@@ -94,7 +100,7 @@ public class DobbleGame implements  IDobbleGame{
 
     public boolean register(String username) {
         Player player = new Player(username);
-        if(!this.players.contains(player) && this.playersNumber >= this.players.size()  ){
+        if(!this.players.contains(player) && this.playersNumber > this.players.size()){
             this.players.add(player);
             Turn turn = new Turn(player);
             this.turns.add(turn);
@@ -104,7 +110,6 @@ public class DobbleGame implements  IDobbleGame{
     }
 
     public void startGame(){
-        this.gameStatus = DobbleGameStatus.STARTED;
         this.mode.startGame(this);
     }
     public boolean spotit(Object element){
@@ -133,7 +138,7 @@ public class DobbleGame implements  IDobbleGame{
     }
 
     public void resetDobbleCards(){
-        this.dobbleCards = (Dobble) this.mode.resetDobbleCards(this.dobbleCards.getDobbleCards(), this.cardsZone);
+        this.dobbleCards.setDobbleCards(this.mode.resetDobbleCards(this.dobbleCards.getDobbleCards(), this.cardsZone));
     }
 
     public  void resetCardsZone(){
@@ -159,7 +164,5 @@ public class DobbleGame implements  IDobbleGame{
                 '}';
     }
 
-    public void setCardsZone(List<Card> cardsZone) {
-        this.cardsZone = cardsZone;
-    }
+
 }
