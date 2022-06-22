@@ -154,6 +154,10 @@ public class DobbleGame implements  IDobbleGame{
         return this.mode.endGame(this.players);
     }
 
+    /**
+     * @implNote  this method is overriding to return a dobble game string
+     * @return dobble game in a string format
+     */
     @Override
     public String toString() {
         return "\nInformacion del Juego Dobble:\n" +
@@ -167,20 +171,25 @@ public class DobbleGame implements  IDobbleGame{
 
     }
 
+    /**
+     * @implNote verify if 2 objects are equals accord properties and others validations
+     * @param o any object
+     * @return true if objects are equals or false if objects are not equals
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof DobbleGame)) return false;
         DobbleGame that = (DobbleGame) o;
-        return id == that.id
-                && playersNumber == that.playersNumber
+        return id == that.id && playersNumber == that.playersNumber
                 && gameStatus == that.gameStatus
                 && Objects.equals(players, that.players)
                 && Objects.equals(dobbleCards, that.dobbleCards)
                 && Objects.equals(cardsZone, that.cardsZone)
                 && dobbleGameMode == that.dobbleGameMode
                 && Objects.equals(turns, that.turns)
-                && Objects.equals(mode, that.mode);
+                && Objects.equals(mode, that.mode)
+                && Objects.equals(name, that.name);
     }
 
 }

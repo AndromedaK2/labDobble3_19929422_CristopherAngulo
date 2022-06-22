@@ -1,11 +1,14 @@
 package model.mode;
 
 import model.card.Card;
-import model.deck.Dobble;
 import model.game.DobbleGame;
 import model.player.Player;
 
 import java.util.List;
+
+/** @author Cristopher Angulo
+ * @description interface that represent a mode
+ */
 
 public interface IMode {
 

@@ -33,28 +33,19 @@ public class Player implements IPlayer {
         return username;
     }
     public int getPoints() { return points; }
-
-    public void setCards(List<Card> cards) {
-        this.cards = cards;
-    }
-
     public Player(String username) {
         this.username = username;
     }
-
     public List<Card> getCards() {
         return cards;
     }
-
-
     public void addCards(List<Card> cards){
         this.cards.addAll(cards);
     }
 
-
-
     /**
-     * @return string representation of player
+     * @implNote  this method is overriding to return a player string
+     * @return player in a string format
      */
     @Override
     public String toString() {
@@ -65,7 +56,9 @@ public class Player implements IPlayer {
     }
 
     /**
-     * @return  true  if 2 players are equals or false they are not
+     * @implNote verify if 2 objects are equals accord properties and others validations
+     * @param o any object
+     * @return true if objects are equals or false if objects are not equals
      */
     @Override
     public boolean equals(Object o) {

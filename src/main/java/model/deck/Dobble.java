@@ -261,6 +261,11 @@ public class Dobble implements  IDobble {
         return true;
     }
 
+
+    /**
+     * @implNote  this method is overriding to return a dobble string
+     * @return dobble in a string format
+     */
     @Override
     public String toString() {
         String dobbleCardsString = "Mazo de cartas: \n";
@@ -274,6 +279,11 @@ public class Dobble implements  IDobble {
         return  dobbleCardsString;
     }
 
+    /**
+     * @implNote verify if 2 objects are equals accord properties and others validations
+     * @param o any object
+     * @return true if objects are equals or false if objects are not equals
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -282,9 +292,9 @@ public class Dobble implements  IDobble {
         return id == dobble.id && order == dobble.order
                 && elementsPerCard == dobble.elementsPerCard
                 && Objects.equals(dobbleCards, dobble.dobbleCards)
-                && Objects.equals(allElements, dobble.allElements) && Objects.equals(missingCards, dobble.missingCards);
+                && Objects.equals(allElements, dobble.allElements)
+                && Objects.equals(missingCards, dobble.missingCards);
     }
-
 
 
     public List<Object> getAllElements() {

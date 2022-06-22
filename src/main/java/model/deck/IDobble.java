@@ -4,6 +4,10 @@ import model.card.Card;
 
 import java.util.List;
 
+/** @author Cristopher Angulo
+ * @description interface of a cards set o dobble
+ */
+
 public interface IDobble {
 
 
