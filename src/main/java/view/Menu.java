@@ -12,12 +12,11 @@ import java.util.*;
 
 /** @author Cristopher Angulo
  * @implNote This class represent the user interface. We retrieve and output data to the final user with in concrete operations
-
  */
 public class Menu {
 
     /**
-     * @description List of dobble games. We can have more than one
+     * @description List of dobble game. We can have more than one
      */
     private List<DobbleGame> dobbleGames = new ArrayList<>();
     /**
@@ -83,7 +82,13 @@ public class Menu {
      * add game to the list of dobble games
      */
     private void createGame()  {
-        System.out.println("Comenzamos creando el mazo de cartas");
+        System.out.println("Debe añadirle un nombre representativo a su juego por el cual pueda identificar");
+
+
+        String name = requestGameName();
+
+        System.out.println("Seguimos creando el mazo de cartas");
+
         int  elementsPerCard = requestElementsPerCard();
         int  totalCards = requestTotalCards(elementsPerCard);
 
@@ -92,7 +97,7 @@ public class Menu {
         int playersNumber = requestPlayersNumber();
         DobbleGameMode dobbleGameMode = requestGameMode();
 
-        DobbleGame dobbleGame = new DobbleGame(elements,elementsPerCard,totalCards, dobbleGameMode,playersNumber);
+        DobbleGame dobbleGame = new DobbleGame(elements,elementsPerCard,totalCards, dobbleGameMode,playersNumber,name);
         dobbleGames.add(dobbleGame);
         System.out.println(dobbleGame);
     }
@@ -186,10 +191,26 @@ public class Menu {
         dobbleGame.passTurn();
     }
     private void endGame(DobbleGame dobbleGame){
-        dobbleGame.endGame();
+        System.out.println("\nEl ganador es: \n"+dobbleGame.endGame());
     }
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));
+    }
+    private String requestGameName(){
+        Scanner scanner = new Scanner(System.in);
+        boolean wenttocatch = false;
+        String gameName = "";
+        do{
+            try{
+                System.out.println("Ingresar Nombre del juego");
+                gameName =  scanner.next();
+                wenttocatch = true;
+            }catch(Exception ex){
+                System.out.println("Ingresar un valor válido");
+                scanner.nextLine();
+            }
+        } while (!wenttocatch);
+        return gameName;
     }
     private List<Object> requestElements(int totalCards, int elementsPerCard){
         List<Object> elements = new ArrayList<>();

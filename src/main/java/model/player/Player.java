@@ -5,15 +5,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Player implements IPlayer {
-    private String username;
+/** @author Cristopher Angulo
+ * @implNote This class represent a dobble game player. Implement IPlayer
+ * @see IPlayer
+ */
 
+public class Player implements IPlayer {
+
+    /**
+     * @description Username of player in string format
+     */
+    private String username;
+    /**
+     * @description this list of cards owned by player
+     */
     private List<Card> cards = new ArrayList<>() ;
+    /**
+     * @description Is the sum  for each card
+     */
     private int points = cards.size();
+
+     /**
+     * @return player username
+     */
 
     public String getUsername() {
         return username;
     }
+    public int getPoints() { return points; }
 
     public void setCards(List<Card> cards) {
         this.cards = cards;
@@ -32,10 +51,11 @@ public class Player implements IPlayer {
         this.cards.addAll(cards);
     }
 
-    public int getPoints() {
-        return points;
-    }
 
+
+    /**
+     * @return string representation of player
+     */
     @Override
     public String toString() {
         return "Jugador: \n" +
@@ -44,6 +64,9 @@ public class Player implements IPlayer {
                 ", points=" + points ;
     }
 
+    /**
+     * @return  true  if 2 players are equals or false they are not
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -64,8 +64,21 @@ public class Dobble implements  IDobble {
         return (allCardsHaveDifferentElements && betweenAllCardsHaveDifferentElements)? true : false;
     }
 
-    public List<Card> MissingCards() {
-        return this.missingCards;
+    public String missingCards() {
+
+        String missingCardsString = "\nCartas Faltantes: \n";
+        for (int i = 0; i < missingCards.size(); i++) {
+            Card card = missingCards.get(i);
+            String cardString = card.toString();
+            missingCardsString = missingCardsString.concat(cardString);
+        }
+
+        return ""+missingCardsString;
+
+    }
+
+    public List<Card> getMissingCards(){
+        return missingCards;
     }
 
     public Card getNthCard(List<Card> cards, int position) {
@@ -257,14 +270,8 @@ public class Dobble implements  IDobble {
             dobbleCardsString = dobbleCardsString.concat(cardString);
         }
 
-        String missingCardsString = "\nCartas Faltantes: \n";
-        for (int i = 0; i < missingCards.size(); i++) {
-            Card card = missingCards.get(i);
-            String cardString = card.toString();
-            missingCardsString = missingCardsString.concat(cardString);
-        }
 
-        return  dobbleCardsString + ""+ missingCardsString;
+        return  dobbleCardsString;
     }
 
     @Override

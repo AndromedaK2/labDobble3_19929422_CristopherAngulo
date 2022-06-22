@@ -16,7 +16,7 @@ public class Turn {
 
     @Override
     public String toString() {
-        return "Jugador:" + player.getUsername() +
+        return "\nJugador: " + player.getUsername().toUpperCase() +
                 '\n';
     }
 }

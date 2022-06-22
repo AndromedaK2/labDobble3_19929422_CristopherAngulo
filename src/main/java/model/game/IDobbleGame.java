@@ -20,11 +20,10 @@ public interface IDobbleGame {
      DobbleGameStatus getStatus();
 
 
-     List<Object> getTurns();
+     List<Turn> getTurns();
 
 
      int getPlayersNumber();
-
 
 
 

@@ -1,5 +1,6 @@
 package model.game;
 
+import common.Helper;
 import model.card.Card;
 import model.deck.Dobble;
 import model.mode.EmptyHandsStack;
@@ -10,12 +11,12 @@ import model.turn.Turn;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class DobbleGame implements  IDobbleGame{
 
-    private String id;
+    private int id;
     private DobbleGameStatus gameStatus = DobbleGameStatus.CREATED;
-
     private List<Player> players = new ArrayList<>();
     private Dobble dobbleCards;
     private int playersNumber;
@@ -24,8 +25,11 @@ public class DobbleGame implements  IDobbleGame{
     private List<Turn> turns = new ArrayList<>();
 
     private IMode mode;
-    public IMode getMode() {
-        return mode;
+
+    private String name;
+
+    public String getName() {
+        return name;
     }
 
     public Turn getWhoseIsTurn() {
@@ -48,8 +52,8 @@ public class DobbleGame implements  IDobbleGame{
     }
 
 
-    public List<Object> getTurns() {
-        return null;
+    public List<Turn> getTurns() {
+        return turns;
     }
 
 
@@ -70,19 +74,6 @@ public class DobbleGame implements  IDobbleGame{
         this.cardsZone = cardsZone;
     }
 
-
-
-
-
-    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber){
-        this.playersNumber = playersNumber;
-        this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
-        this.dobbleGameMode = dobbleGameMode;
-        this.setMode(dobbleGameMode);
-    }
-
-
-
     public void setMode(DobbleGameMode dobbleGameMode) {
         switch (dobbleGameMode){
             case STACKMODE:
@@ -92,6 +83,15 @@ public class DobbleGame implements  IDobbleGame{
                 this.mode = new EmptyHandsStack();
                 break;
         }
+    }
+
+    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber,String name){
+        this.id  = Helper.generateRandomNumber(1,1000);
+        this.playersNumber = playersNumber;
+        this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
+        this.dobbleGameMode = dobbleGameMode;
+        this.name = name;
+        this.setMode(dobbleGameMode);
     }
 
     public boolean register(String username) {
@@ -141,24 +141,38 @@ public class DobbleGame implements  IDobbleGame{
         this.cardsZone   = this.mode.resetCardsZone(this.cardsZone);
     }
 
-
-
-    public void endGame(){
+    public Player endGame(){
         this.gameStatus = DobbleGameStatus.FINISHED;
-        Player winner =  this.mode.endGame(this.players);
+        return this.mode.endGame(this.players);
     }
 
     @Override
     public String toString() {
-        return "DobbleGame{" +
-                "id='" + id + '\'' +
-                ", gameStatus=" + gameStatus +
-                ", players=" + players +
-                ", dobbleCards=" + dobbleCards +
-                ", playersNumber=" + playersNumber +
-                ", cardsZone=" + cardsZone +
-                '}';
+        return "\nInformacion del Juego Dobble:\n" +
+                "- id: " + id + "\n" +
+                "- nombre: " + name + "\n" +
+                "- estado: " + gameStatus +  "\n" +
+                "- jugadores: " + players +  "\n" +
+                "- numero de jugadores:" + playersNumber +  "\n" +
+                "- zona de juego:" + cardsZone +  "\n"+
+                "- " + dobbleCards +  "\n" ;
+
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DobbleGame)) return false;
+        DobbleGame that = (DobbleGame) o;
+        return id == that.id
+                && playersNumber == that.playersNumber
+                && gameStatus == that.gameStatus
+                && Objects.equals(players, that.players)
+                && Objects.equals(dobbleCards, that.dobbleCards)
+                && Objects.equals(cardsZone, that.cardsZone)
+                && dobbleGameMode == that.dobbleGameMode
+                && Objects.equals(turns, that.turns)
+                && Objects.equals(mode, that.mode);
+    }
 
 }

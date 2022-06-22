@@ -9,9 +9,12 @@ public interface IDobble {
 
      boolean isDobble();
 
-     List<Card> MissingCards();
+     List<Card> getMissingCards();
 
-     Card getNthCard(List<Card> cards, int position);
+     String missingCards();
+
+
+    Card getNthCard(List<Card> cards, int position);
 
     int getRequiredElements(Card card);
 
