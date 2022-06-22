@@ -117,13 +117,17 @@ public class Menu {
      * @implNote method to start to play
      */
     private void play(){
+        System.out.println("Juego Iniciado: \n");
         DobbleGame dobbleGame = this.dobbleGames.get(0);
         dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
+        boolean start = true;
 
         while(!finishCurrentGame)
         {
-            dobbleGame.startGame();
-            System.out.println("Juego Iniciado: ");
+            if(start){
+                dobbleGame.startGame();
+            }
+            start = false;
             System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
             System.out.println("Escoja su opción:");
             System.out.println("1) Spotit");
@@ -138,10 +142,12 @@ public class Menu {
             switch(option)
             {
                 case 1:
-                    spoit(dobbleGame);
+                    spotit(dobbleGame);
+                    start = true;
                     break;
                 case 2:
-
+                    passTurn(dobbleGame);
+                    start = true;
                     break;
                 case 3:
                     System.out.println("Estado del juego: "+ dobbleGame);
@@ -153,40 +159,35 @@ public class Menu {
                     System.out.println("El turno es de: "+ dobbleGame.getWhoseIsTurn());
                     break;
                 case 6: finishCurrentGame = true;
-                    this.endGame();
+                    this.endGame(dobbleGame);
                     break;
             }
-
         }
-
-
     }
 
     /**
      * @implNote method that retrieve element in common writting by user
      * inside execute spotit function of concrete mode
-     * @param mode game mode
      * @param dobbleGame representation of dobble game
-     * @see IMode
      * @see DobbleGame
      */
-    private void spoit(DobbleGame dobbleGame){
+    private void spotit(DobbleGame dobbleGame){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
         System.out.println("Ingresar elemento en común entre las cartas");
         Object element = scanner.next();
         if(dobbleGame.spotit(element)){
-            System.out.println("Acción exitosa");
+            System.out.println("Acertaste,"+ element +" es el elemento en común");
         }else{
-            System.out.println("Acción fallida");
-
+            System.out.println("Fallaste, no es el elemento en común");
         }
     }
-
-    private void endGame(){
-
+    private void passTurn(DobbleGame dobbleGame){
+        dobbleGame.passTurn();
     }
-
+    private void endGame(DobbleGame dobbleGame){
+        dobbleGame.endGame();
+    }
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));
     }

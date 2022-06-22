@@ -5,8 +5,7 @@ import model.deck.Dobble;
 import model.game.DobbleGame;
 import model.player.Player;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class StackMode implements IMode {
 
@@ -15,7 +14,6 @@ public class StackMode implements IMode {
     @Override
     public DobbleGame startGame(DobbleGame dobbleGame) {
         Dobble dobble = dobbleGame.getDobble();
-
         Card firstCard  = dobble.getNthCard(0);
         Card secondCard = dobble.getNthCard(1);
 
@@ -24,7 +22,6 @@ public class StackMode implements IMode {
         cards.add(secondCard);
 
         dobbleGame.setCardsZone(cards);
-
         dobble.removeCard(firstCard);
         dobble.removeCard(secondCard);
 
@@ -62,6 +59,9 @@ public class StackMode implements IMode {
 
     @Override
     public Player endGame(List<Player> players) {
-        return null;
+       Player player =  players.stream()
+               .max(Comparator.comparing(Player::getPoints))
+               .get();
+       return player;
     }
 }
