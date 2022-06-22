@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/common/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/console/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,13 +119,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00010" summary="[update]  create n cards and n square cards">
-      <created>1654873927817</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1654873927817</updated>
     </task>
     <task id="LOCAL-00011" summary="[add]  get order">
       <created>1654875104097</created>
@@ -465,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655858138033</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="[update]   javadoc coments to helper">
+      <created>1655864157949</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1655864157949</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -480,7 +478,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[update] classes" />
     <MESSAGE value="[refactor]" />
     <MESSAGE value="[add] IMode" />
     <MESSAGE value="[refactor] IMode" />
@@ -505,6 +502,7 @@
     <MESSAGE value="[update]  dobbleGameStatus, Helper generate elements and menu" />
     <MESSAGE value="[refactor]  modes applying strategy pattern, update turns and some actions of modes" />
     <MESSAGE value="[add]   javadoc coments to helper" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add]   javadoc coments to helper" />
+    <MESSAGE value="[update]   javadoc coments to helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update]   javadoc coments to helper" />
   </component>
 </project>

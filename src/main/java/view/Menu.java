@@ -11,16 +11,26 @@ import model.mode.StackMode;
 import java.util.*;
 
 /** @author Cristopher Angulo
- *
+ * @implNote This class represent the user interface. We retrieve and output data to the final user with in concrete operations
+
  */
 public class Menu {
 
+    /**
+     * @description List of dobble games. We can have more than one
+     */
     private List<DobbleGame> dobbleGames = new ArrayList<>();
+    /**
+     * @description value to keep or close menu
+     */
     private boolean closeMenu = false;
+    /**
+     * @description value to know the state of current game
+     */
     private boolean finishCurrentGame = false;
 
     /**
-     * @
+     * @implNote this method is the initial point to run the application
      */
     public void run()  {
         while(!closeMenu)
@@ -29,6 +39,10 @@ public class Menu {
             selectOption();
         }
     }
+
+    /**
+     * @implNote method to show the main options
+     */
     private  void displayMenuOptions(){
         System.out.println("Bienvenido");
         System.out.println("Escoja su opción:");
@@ -36,6 +50,10 @@ public class Menu {
         System.out.println("2) Registrar jugador");
         System.out.println("3) Iniciar Partida");
     }
+
+    /**
+     * @implNote method to get the user option and execute the action relationed
+     */
     private void selectOption()  {
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
@@ -54,6 +72,16 @@ public class Menu {
                 break;
         }
     }
+
+    /**
+     * @implNote method to create a game
+     * @description
+     * get element per card
+     * get total cards
+     * get elements one by one or random
+     * get maximum players number
+     * add game to the list of dobble games
+     */
     private void createGame()  {
         System.out.println("Comenzamos creando el mazo de cartas");
         int  elementsPerCard = requestElementsPerCard();
@@ -68,6 +96,10 @@ public class Menu {
         dobbleGames.add(dobbleGame);
         System.out.println(dobbleGame);
     }
+
+    /**
+     * @implNote method to register user in the current game
+     */
     private void registerPlayer(){
         DobbleGame dg = dobbleGames.get(0);
         Scanner scanner = new Scanner(System.in);
@@ -80,6 +112,10 @@ public class Menu {
         }
         System.out.println(dg.getPlayers());
     }
+
+    /**
+     * @implNote method to start to play
+     */
     private void play(){
         DobbleGame dobbleGame = this.dobbleGames.get(0);
         dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
@@ -126,6 +162,14 @@ public class Menu {
 
     }
 
+    /**
+     * @implNote method that retrieve element in common writting by user
+     * inside execute spotit function of concrete mode
+     * @param mode game mode
+     * @param dobbleGame representation of dobble game
+     * @see IMode
+     * @see DobbleGame
+     */
     private void spoit(IMode mode, DobbleGame dobbleGame){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
