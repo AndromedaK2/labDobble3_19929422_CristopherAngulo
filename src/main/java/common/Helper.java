@@ -6,11 +6,21 @@ import java.util.List;
 public class Helper {
 
 
-
+    /**
+     *
+     * @param min minimum integer value
+     * @param max maximum integer value
+     * @return a random number between inputs number
+     */
     public static int generateRandomNumber(int min, int max){
         return (int)(Math.random()*(max-min+1)+min);
     }
 
+    /**
+     *
+     * @param total number of elements
+     * @return element list generated randomly
+     */
     public static List<Object> generateRandomElements(int total){
 
         List<Object> elements = new ArrayList<>();
@@ -62,11 +72,22 @@ public class Helper {
 
     }
 
-
+    /**
+     *
+     * @param totalCards number of cards
+     * @param elementsPerCard number of distinct elements that we identify for each card
+     * @param totalCardsAuxiliary  number of cards auxiliary
+     * @return return true if is valid total cards or  false if is the opposite
+     */
     public static boolean isValidTotalCards(int totalCards,  int elementsPerCard, int totalCardsAuxiliary){
         return (totalCardsAuxiliary >= totalCards && totalCards>0)? true : false;
     }
 
+    /**
+     *
+     * @param order number of order
+     * @return valid if order of deck is valid
+     */
     public static boolean  isValidOrder(int order)  {
         if(order<=1) {
             return false;

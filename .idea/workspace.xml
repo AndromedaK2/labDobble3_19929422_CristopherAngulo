@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="[update]  dobbleGameStatus, Helper generate elements and menu">
+    <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/Mode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/Helper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,13 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00008" summary="[update] dobble card creation">
-      <created>1654873457235</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1654873457235</updated>
     </task>
     <task id="LOCAL-00009" summary="[update] dobble card creation">
       <created>1654873488166</created>
@@ -471,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655825981254</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="[refactor]  modes applying strategy pattern, update turns and some actions of modes">
+      <created>1655851180550</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1655851180550</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -486,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[add] register player" />
     <MESSAGE value="[add] register player output" />
     <MESSAGE value="[update] classes" />
     <MESSAGE value="[refactor]" />
@@ -511,17 +503,7 @@
     <MESSAGE value="[refactor]  spotit" />
     <MESSAGE value="[add]  play in menu" />
     <MESSAGE value="[update]  dobbleGameStatus, Helper generate elements and menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update]  dobbleGameStatus, Helper generate elements and menu" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/view/Menu.java</url>
-          <line>124</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="[refactor]  modes applying strategy pattern, update turns and some actions of modes" />
+    <option name="LAST_COMMIT_MESSAGE" value="[refactor]  modes applying strategy pattern, update turns and some actions of modes" />
   </component>
 </project>
