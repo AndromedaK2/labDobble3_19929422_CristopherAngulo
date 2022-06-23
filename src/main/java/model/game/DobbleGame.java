@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class DobbleGame implements Cloneable,  IDobbleGame{
+public class DobbleGame implements  IDobbleGame{
 
     //region attributes
     private int id;

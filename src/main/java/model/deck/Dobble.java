@@ -102,36 +102,53 @@ public class Dobble implements  IDobble {
     //endregion
 
     //region public methods
+
+    /**
+     * @implNote  accord two assumptions we return true if  all cards have different elements inside and
+     * between all cards have only one element in common
+     * @return true if is dobble or false if is not
+     */
     public boolean isDobble() {
         boolean allCardsHaveDifferentElements        = this.allCardsHaveDifferentElements();
         boolean betweenAllCardsHaveDifferentElements = this.betweenAllCardsHaveOneElementInCommon();
         return (allCardsHaveDifferentElements && betweenAllCardsHaveDifferentElements)? true : false;
     }
 
+    /**
+     * @implNote this method return missing cards in a string format similar to dobble cards
+     * @return representation of missing cards in string
+     */
     public String missingCards() {
-
         String missingCardsString = "\nCartas Faltantes: \n";
         for (int i = 0; i < missingCards.size(); i++) {
             Card card = missingCards.get(i);
             String cardString = card.toString();
             missingCardsString = missingCardsString.concat(cardString);
         }
-
         return ""+missingCardsString;
-
     }
 
-
+    /**
+     * @implNote get a card of card list with a specific position
+     * @param cards represent list of cards where we search
+     * @param position represent position number (index to search)
+     * @return card
+     */
     public Card getNthCard(List<Card> cards, int position) {
         return cards.get(position);
     }
 
+    /**
+     * @implNote get a card of card list with a specific position
+     * @param position represent position number (index to search)
+     * @return card
+     */
     public Card getNthCard(int position) {
         return this.dobbleCards.get(position);
     }
 
     /**
-     *
+     * @implNote
      * @param card
      * @return required elements to create dobble
      */
@@ -142,8 +159,8 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     *
-     * @param card
+     * @implNote  get total cards to create dobble cards
+     * @param card represent a card
      * @return total cards to create dobble
      */
     public int getTotalCards(Card card) {
@@ -153,8 +170,8 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     *
-     * @param order
+     * @implNote  get maximum number of cards that we can create accord the order
+     * @param order represent order (projective plane)
      * @return maximum number of cards
      */
     public int getMaxNumberOfCards(int order){
@@ -162,8 +179,8 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     *
-     * @param cards
+     * @implNote add cards to dobble cards
+     * @param cards represent card list to add
      */
     public void addCards(List<Card> cards){
         for (int i = 0; i < cards.size(); i++) {
@@ -172,13 +189,17 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     *
-     * @param card
+     * @implNote  add a new card in dobble cards
+     * @param card represent a card of dobble cards
      */
     public void addCard(Card card){
         dobbleCards.add(card);
     }
 
+    /**
+     * @implNote  remove a card in dobble cards
+     * @param card represent a card of dobble cards
+     */
     public void removeCard(Card card){
         this.dobbleCards.remove(card);
     }
@@ -195,8 +216,6 @@ public class Dobble implements  IDobble {
             String cardString = card.toString();
             dobbleCardsString = dobbleCardsString.concat(cardString);
         }
-
-
         return  dobbleCardsString;
     }
 
@@ -219,11 +238,12 @@ public class Dobble implements  IDobble {
     //endregion
 
     //region private methods
+
     /**
-     *
-     * @param elements
-     * @param order
-     * @return The first card of dobble
+     * @implNote Create first card
+     * @param elements represent object list
+     * @param order represent order (projective plane)
+     * @return The first card of dobble cards
      */
     private Card createFirstCard(List<Object> elements,Integer order) {
         Card card = new Card();
@@ -235,10 +255,9 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     *
-     * @param elements
-     * @param order
-     * @see Card
+     * @implNote  Create N Cards
+     * @param elements represent object list
+     * @param order represent order (projective plane)
      * @return card list accord to N
      */
 
@@ -259,9 +278,9 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     * @param elements
-     * @param order
-     * @see Card
+     * @implNote  Create N square cards
+     * @param elements represent object list
+     * @param order represent order (projective plane)
      * @return card list accord to N square
      */
     private List<Card> createNSquareCards(List<Object> elements,int order) {
@@ -281,9 +300,10 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     * @param order
-     * @param j
-     * @param k
+     * @implNote  calculate index to get an element in the creation of N cards
+     * @param order represent order (projective plane)
+     * @param j first helper
+     * @param k second helper
      * @return index to get a element in the creation of N cards.
      */
     private int calculateIndexToGetNCards( int order, int j, int k){
@@ -291,36 +311,45 @@ public class Dobble implements  IDobble {
     }
 
     /**
-     * @param i
-     * @param order
-     * @param j
-     * @param k
-     * @return
+     * @implNote  calculate index to get an element in the creation of n square cards
+     * @param i first helper
+     * @param order represent order (projective plane)
+     * @param j second helper
+     * @param k third helper
+     * @return index to get a element in the creation of N square cards.
      */
     private int calculateIndexToGetNSquareCards(int i, int order, int j, int k){
         return (order+2+order*(k-1)+(((i-1)*(k-1)+j-1) % order))-1;
     }
 
     /**
-     *
-     * @param elementPerCard
-     * @return
+     * @implNote get order with  element per card input
+     * @param elementPerCard represent a number element per card
+     * @return order
      */
     private int getOrder(int elementPerCard){
         return elementPerCard -1;
     }
 
     /**
-     *
+     * @implNote shuffle current dobble cards
      */
     private void shuffle() {
         dobbleCards.sort(Comparator.comparingInt(Card::getId));
     }
 
+    /**
+     * @implNote  validate if all cards have different elements
+     * @return true if all cards have different elements or false if they have not
+     */
     private boolean allCardsHaveDifferentElements (){
         return this.dobbleCards.stream().allMatch(card -> card.getElements().stream().distinct().count() == this.elementsPerCard);
     }
 
+    /**
+     * @implNote  validate if between all cards have different elements
+     * @return true if between all cards have different elements or false if they have not
+     */
     private boolean betweenAllCardsHaveOneElementInCommon(){
         int auxiliary = 0;
         for (int i = 0; i < this.dobbleCards.size() ; i++) {

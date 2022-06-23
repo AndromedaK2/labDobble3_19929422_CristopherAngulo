@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/card/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/card/ICard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/card/ICard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,13 +120,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00023" summary="[update] player toString()">
-      <created>1655161329815</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1655161329815</updated>
     </task>
     <task id="LOCAL-00024" summary="[add] get elements and total cards from user and console">
       <created>1655237740632</created>
@@ -464,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655955534598</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="[update] documentation">
+      <created>1655957554164</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1655957554164</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -479,7 +479,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[fix] helper" />
     <MESSAGE value="[add] missing cards" />
     <MESSAGE value="[add] is dobble first part" />
     <MESSAGE value="[add] isValidTotalCards" />
@@ -504,6 +503,7 @@
     <MESSAGE value="[documentation] player" />
     <MESSAGE value="[update] player interface" />
     <MESSAGE value="[update] stackmode" />
-    <option name="LAST_COMMIT_MESSAGE" value="[update] stackmode" />
+    <MESSAGE value="[update] documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="[update] documentation" />
   </component>
 </project>
