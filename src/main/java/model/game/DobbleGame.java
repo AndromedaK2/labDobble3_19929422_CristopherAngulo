@@ -13,21 +13,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class DobbleGame implements  IDobbleGame{
+public class DobbleGame implements Cloneable,  IDobbleGame{
 
+    //region attributes
     private int id;
     private DobbleGameStatus gameStatus = DobbleGameStatus.CREATED;
     private List<Player> players = new ArrayList<>();
     private Dobble dobbleCards;
     private int playersNumber;
-    private List<Card> cardsZone ;
+    private List<Card> cardsZone = new ArrayList<>();
     private DobbleGameMode dobbleGameMode ;
     private List<Turn> turns = new ArrayList<>();
 
     private IMode mode;
 
     private String name;
+    //endregion
 
+    //region Getter and Setters
     public String getName() {
         return name;
     }
@@ -84,8 +87,10 @@ public class DobbleGame implements  IDobbleGame{
                 break;
         }
     }
+    //endregion
 
-    public  DobbleGame (List<Object> elements,int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber,String name){
+    //region constructor
+    public  DobbleGame (List<Object> elements, int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber, String name){
         this.id  = Helper.generateRandomNumber(1,1000);
         this.playersNumber = playersNumber;
         this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
@@ -93,7 +98,9 @@ public class DobbleGame implements  IDobbleGame{
         this.name = name;
         this.setMode(dobbleGameMode);
     }
+    // endregion
 
+    // region public methods
     public boolean register(String username) {
         Player player = new Player(username);
         if(!this.players.contains(player) && this.playersNumber > this.players.size()){
@@ -166,10 +173,12 @@ public class DobbleGame implements  IDobbleGame{
                 "- estado: " + gameStatus +  "\n" +
                 "- jugadores: " + players +  "\n" +
                 "- numero de jugadores:" + playersNumber +  "\n" +
-                "- zona de juego:" + cardsZone +  "\n"+
+                "- zona de juego:" +  cardsZone +  "\n"+
                 "- " + dobbleCards +  "\n" ;
 
     }
+
+
 
     /**
      * @implNote verify if 2 objects are equals accord properties and others validations
@@ -191,5 +200,6 @@ public class DobbleGame implements  IDobbleGame{
                 && Objects.equals(mode, that.mode)
                 && Objects.equals(name, that.name);
     }
+    // endregion
 
 }

@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/console/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/card/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/player/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
@@ -122,13 +127,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00019" summary="[order] folders and add new methods in menu">
-      <created>1655075566124</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1655075566124</updated>
     </task>
     <task id="LOCAL-00020" summary="[add] IDobble Interface">
       <created>1655077965201</created>
@@ -466,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655930579905</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="[refactor] how to select a game">
+      <created>1655935341981</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1655935341981</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -481,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="[add] structure of modes" />
     <MESSAGE value="[add] turns and refactor modes" />
     <MESSAGE value="[add] try catch to recover elementsPerCard" />
     <MESSAGE value="[fix] try catch to recover elementsPerCard" />
@@ -506,6 +510,7 @@
     <MESSAGE value="[add]  validation elements by console" />
     <MESSAGE value="[update]  menu" />
     <MESSAGE value="[add] equals and strings commetns" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] equals and strings commetns" />
+    <MESSAGE value="[refactor] how to select a game" />
+    <option name="LAST_COMMIT_MESSAGE" value="[refactor] how to select a game" />
   </component>
 </project>

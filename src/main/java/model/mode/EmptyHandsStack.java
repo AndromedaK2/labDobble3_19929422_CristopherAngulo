@@ -5,11 +5,29 @@ import model.deck.Dobble;
 import model.game.DobbleGame;
 import model.player.Player;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EmptyHandsStack implements IMode {
+    //region attributes
 
+    //endregion
+
+    //region getter and setters
+
+    //endregion
+
+    //region constructor
+
+    //endregion
+
+    //region public methods
+
+    //endregion
+
+
+    //region private methods
+
+    //endregion
 
     @Override
     public DobbleGame startGame(DobbleGame dobbleGame) {

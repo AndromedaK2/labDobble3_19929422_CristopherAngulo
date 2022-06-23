@@ -7,7 +7,26 @@ import java.util.stream.Collectors;
 
 
 public class Dobble implements  IDobble {
+    //region attributes
 
+    //endregion
+
+    //region getter and setters
+
+    //endregion
+
+    //region constructor
+
+    //endregion
+
+    //region public methods
+
+    //endregion
+
+
+    //region private methods
+
+    //endregion
     private int id;
     private List<Card> dobbleCards = new ArrayList<>();
     private List<Object> allElements;
@@ -17,6 +36,10 @@ public class Dobble implements  IDobble {
 
     public List<Card> getDobbleCards() {
         return dobbleCards;
+    }
+
+    public List<Object> getAllElements() {
+        return allElements;
     }
 
     public void setDobbleCards(List<Card> dobbleCards) {

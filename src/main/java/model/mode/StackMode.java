@@ -9,7 +9,26 @@ import java.util.*;
 
 public class StackMode implements IMode {
 
+    //region attributes
 
+    //endregion
+
+    //region getter and setters
+
+    //endregion
+
+    //region constructor
+
+    //endregion
+
+    //region public methods
+
+    //endregion
+
+
+    //region private methods
+
+    //endregion
 
     @Override
     public DobbleGame startGame(DobbleGame dobbleGame) {

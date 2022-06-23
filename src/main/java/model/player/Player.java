@@ -12,6 +12,7 @@ import java.util.Objects;
 
 public class Player implements IPlayer {
 
+    //region attributes
     /**
      * @description Username of player in string format
      */
@@ -25,22 +26,43 @@ public class Player implements IPlayer {
      */
     private int points = cards.size();
 
-     /**
+    //endregion
+
+    //region getter and setters
+    /**
      * @return player username
      */
 
     public String getUsername() {
         return username;
     }
+    /**
+     * @return player points in base cards number that has
+     */
     public int getPoints() { return points; }
+    //endregion
+
+    //region constructor
+
+    /**
+     * @implNote  Main Constructor
+     * @param username name of player
+     */
     public Player(String username) {
         this.username = username;
     }
-    public List<Card> getCards() {
-        return cards;
-    }
+    //endregion
+
+    //region public methods
+
+    /**
+     * @implNote this method receive a card list to added his card list attribute
+     * @param cards list of cards
+     * @see Card
+     */
     public void addCards(List<Card> cards){
         this.cards.addAll(cards);
+        this.points = this.cards.size();
     }
 
     /**
@@ -50,9 +72,9 @@ public class Player implements IPlayer {
     @Override
     public String toString() {
         return "Jugador: \n" +
-                "Nombre de usuario='" + username + '\'' +
-                ",\n" + cards +
-                ", points=" + points ;
+                "Nombre de usuario: " + username  +
+                "\n" + cards + "\n"+
+                "Puntos: " + cards.size() ;
     }
 
     /**
@@ -67,7 +89,6 @@ public class Player implements IPlayer {
         Player player = (Player) o;
         return points == player.points && Objects.equals(username, player.username) && Objects.equals(cards, player.cards);
     }
-
-
+    //endregion
 
 }

@@ -13,6 +13,26 @@ import java.util.*;
  * @implNote This class represent the user interface. We retrieve and output data to the final user with in concrete operations
  */
 public class Menu {
+    //region attributes
+
+    //endregion
+
+    //region getter and setters
+
+    //endregion
+
+    //region constructor
+
+    //endregion
+
+    //region public methods
+
+    //endregion
+
+
+    //region private methods
+
+    //endregion
 
     /**
      * @description List of dobble game. We can have more than one
@@ -49,6 +69,7 @@ public class Menu {
         System.out.println("1) Crear un Juego");
         System.out.println("2) Seleccionar juego");
         System.out.println("3) Jugar (debe seleccionar un juego antes)");
+        System.out.println("4) Salir");
 
     }
 
@@ -120,7 +141,8 @@ public class Menu {
     private void selectDobbleGames(){
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
-        this.currentDobbleGame = this.dobbleGames.get(option-1);
+        this.currentDobbleGame = dobbleGames.get(option-1);
+
     }
 
     /**
@@ -129,7 +151,8 @@ public class Menu {
     private void registerPlayer(DobbleGame dobbleGame){
         Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < dobbleGame.getPlayersNumber(); i++) {
-            System.out.println("Ingrese  nombre de usuario del jugador "+i+ " para registrarlo en el juego");
+            int aux = i +1;
+            System.out.println("Ingrese  nombre de usuario del jugador "+aux+ " para registrarlo en el juego");
             String username = scanner.next();
             if(dobbleGame.register(username)){
                 System.out.println("Se ha registrado");
@@ -146,7 +169,7 @@ public class Menu {
     private void play(){
         boolean start = true;
         System.out.println("Juego Iniciado: \n");
-        DobbleGame dobbleGame = this.dobbleGames.get(0);
+        DobbleGame dobbleGame = this.currentDobbleGame;
         dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
 
         try{
@@ -194,7 +217,10 @@ public class Menu {
         } catch (IndexOutOfBoundsException ex){
             System.out.println("No hay suficientes cartas en el mazo para continuar");
             start = false;
-        } catch (Exception ex){
+            this.endGame(dobbleGame);
+
+        }
+        catch (Exception ex){
             System.out.println(ex.toString());
         }
     }
@@ -221,6 +247,7 @@ public class Menu {
     }
     private void endGame(DobbleGame dobbleGame){
         System.out.println("\nEl ganador es: \n"+dobbleGame.endGame());
+        this.dobbleGames.remove(dobbleGame);
     }
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));
