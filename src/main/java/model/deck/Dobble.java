@@ -58,17 +58,26 @@ public class Dobble implements  IDobble {
         return missingCards;
     }
 
+    /**
+     * @implNote get elements
+     * @return elements
+     */
     public List<Object> getAllElements() {
         return allElements;
     }
 
+    /**
+     * @implNote get max total cards
+     * @return cards
+     */
     public int getMaximumTotalCards() {
         return maximumTotalCards;
     }
 
-    public int getOrder() {
-        return order;
-    }
+    /**
+     * @implNote get elements per card
+     * @return elementsPerCard
+     */
 
     public int getElementsPerCard() {
         return elementsPerCard;
@@ -76,7 +85,6 @@ public class Dobble implements  IDobble {
 
     /**
      * @implNote  set dobble cards
-     * @return card list
      */
     public void setDobbleCards(List<Card> dobbleCards) {
         this.dobbleCards = dobbleCards;
