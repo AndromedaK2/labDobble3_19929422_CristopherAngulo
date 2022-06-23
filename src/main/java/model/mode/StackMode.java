@@ -89,17 +89,33 @@ public class StackMode implements IMode {
     }
 
     /**
+     * @implNote reset dobble game
+     */
+
+    @Override
+    public void endGame(DobbleGame dobbleGame) {
+        dobbleGame.getPlayers().forEach(player->{
+            player.removeCards();
+        });
+    }
+
+    /**
      * @implNote  this method get the winner of the game comparing the points associated
      * @param players represent list of players
      * @return winner as a player
      */
+
     @Override
-    public Player endGame(List<Player> players) {
+    public Player getWinner(List<Player> players) {
         Player player =  players.stream()
                 .max(Comparator.comparing(Player::getPoints))
                 .get();
         return player;
     }
+
+
+
+
     //endregion
 
 

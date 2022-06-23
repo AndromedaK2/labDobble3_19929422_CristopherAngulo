@@ -31,7 +31,7 @@ public class Menu {
     /**
      * @description represent current dobble game
      */
-    private DobbleGame currentDobbleGame = null;
+    private DobbleGame currentDobbleGame = new DobbleGame();
     //endregion
 
     //region public methods
@@ -130,7 +130,22 @@ public class Menu {
     private void selectDobbleGames(){
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
-        this.currentDobbleGame = dobbleGames.get(option-1);
+        //Manual clone object
+
+        DobbleGame dobbleGameReference = dobbleGames.get(option-1);
+
+        DobbleGame dobbleGame = new DobbleGame(
+                dobbleGameReference.getDobble().getAllElements(),
+                dobbleGameReference.getDobble().getElementsPerCard(),
+                dobbleGameReference.getDobble().getMaximumTotalCards(),
+                dobbleGameReference.getDobbleGameMode(),
+                dobbleGameReference.getPlayersNumber(),
+                dobbleGameReference.getName(),
+                dobbleGameReference.getPlayers(),
+                dobbleGameReference.getTurns()
+               );
+
+        this.currentDobbleGame = dobbleGame;
 
     }
 
@@ -235,8 +250,9 @@ public class Menu {
         dobbleGame.passTurn();
     }
     private void endGame(DobbleGame dobbleGame){
-        System.out.println("\nEl ganador es: \n"+dobbleGame.endGame());
-        this.dobbleGames.remove(dobbleGame);
+        System.out.println("\nEl ganador es: \n"+dobbleGame.getWinner());
+        dobbleGame.endGame();
+        this.currentDobbleGame = null;
     }
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));

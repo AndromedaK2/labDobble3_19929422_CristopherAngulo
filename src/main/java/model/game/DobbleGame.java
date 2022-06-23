@@ -64,6 +64,9 @@ public class DobbleGame implements  IDobbleGame{
         return playersNumber;
     }
 
+    public DobbleGameMode getDobbleGameMode() {
+        return dobbleGameMode;
+    }
 
     public void setGameStatus(DobbleGameStatus gameStatus) {
         this.gameStatus = gameStatus;
@@ -90,6 +93,20 @@ public class DobbleGame implements  IDobbleGame{
     //endregion
 
     //region constructor
+    public DobbleGame(){
+
+    }
+
+    public  DobbleGame (List<Object> elements, int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber, String name, List<Player> players, List<Turn> turns){
+        this.id  = Helper.generateRandomNumber(1,1000);
+        this.playersNumber = playersNumber;
+        this.dobbleCards = new Dobble(elements,elementsPerCard,maximumTotalCards);
+        this.dobbleGameMode = dobbleGameMode;
+        this.name = name;
+        this.players = players;
+        this.turns = turns;
+        this.setMode(dobbleGameMode);
+    }
     public  DobbleGame (List<Object> elements, int elementsPerCard, int maximumTotalCards, DobbleGameMode dobbleGameMode, int playersNumber, String name){
         this.id  = Helper.generateRandomNumber(1,1000);
         this.playersNumber = playersNumber;
@@ -156,9 +173,17 @@ public class DobbleGame implements  IDobbleGame{
         this.cardsZone   = this.mode.resetCardsZone(this.cardsZone);
     }
 
-    public Player endGame(){
-        this.gameStatus = DobbleGameStatus.FINISHED;
-        return this.mode.endGame(this.players);
+    public String getWinner(){
+       Player player = this.mode.getWinner(this.players);
+       if(player.getPoints()>0){
+           return player.toString();
+       }else{
+           return "No hay ganador";
+       }
+    }
+
+    public void endGame(){
+        this.mode.endGame(this);
     }
 
     /**
@@ -177,8 +202,6 @@ public class DobbleGame implements  IDobbleGame{
                 "- " + dobbleCards +  "\n" ;
 
     }
-
-
 
     /**
      * @implNote verify if 2 objects are equals accord properties and others validations

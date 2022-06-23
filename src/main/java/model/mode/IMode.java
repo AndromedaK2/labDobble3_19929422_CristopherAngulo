@@ -16,5 +16,8 @@ public interface IMode {
     Player updatePlayerCards(Player player,List<Card> cards);
     List<Card> resetDobbleCards(List<Card> dobbleCards, List<Card> cards );
     List<Card> resetCardsZone(List<Card> cards );
-    Player endGame(List<Player> players);
+    void endGame(DobbleGame dobbleGame);
+    Player getWinner(List<Player> players);
+
+
 }

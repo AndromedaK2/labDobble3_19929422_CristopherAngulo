@@ -65,6 +65,11 @@ public class Player implements IPlayer {
         this.points = this.cards.size();
     }
 
+    public void removeCards(){
+        this.cards = new ArrayList<>();
+        this.points = 0;
+    }
+
     /**
      * @implNote  this method is overriding to return a player string
      * @return player in a string format

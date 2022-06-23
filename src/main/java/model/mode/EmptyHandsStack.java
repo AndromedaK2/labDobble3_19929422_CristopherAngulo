@@ -45,7 +45,10 @@ public class EmptyHandsStack implements IMode {
     }
 
     @Override
-    public Player endGame(List<Player> players) {
+    public void endGame(DobbleGame dobbleGame) {}
+
+    @Override
+    public Player getWinner(List<Player> players) {
         return null;
     }
     //endregion

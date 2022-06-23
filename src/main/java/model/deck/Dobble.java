@@ -34,6 +34,10 @@ public class Dobble implements  IDobble {
      * @description represent elements per card to create each card
      */
     private int elementsPerCard;
+    /**
+     * @description represent number of maximum total cards
+     */
+    private  int maximumTotalCards;
     //endregion
 
     //region getter and setters
@@ -52,6 +56,22 @@ public class Dobble implements  IDobble {
      */
     public List<Card> getMissingCards(){
         return missingCards;
+    }
+
+    public List<Object> getAllElements() {
+        return allElements;
+    }
+
+    public int getMaximumTotalCards() {
+        return maximumTotalCards;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    public int getElementsPerCard() {
+        return elementsPerCard;
     }
 
     /**
@@ -78,6 +98,7 @@ public class Dobble implements  IDobble {
         this.allElements  = elements;
         this.elementsPerCard = elementsPerCard;
         this.order = getOrder(elementsPerCard);
+        this.maximumTotalCards = maximumTotalCards;
         addCard(createFirstCard(elements,order));
         addCards(createNCards(elements,order));
         addCards(createNSquareCards(elements,order));

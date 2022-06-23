@@ -8,6 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
