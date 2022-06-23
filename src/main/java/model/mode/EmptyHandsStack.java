@@ -1,40 +1,25 @@
 package model.mode;
 
 import model.card.Card;
-import model.deck.Dobble;
 import model.game.DobbleGame;
 import model.player.Player;
 
 import java.util.List;
 
+/** @author Cristopher Angulo
+ * @description this class represent a concrete mode in game
+ * @version 1.0 is in construction for future implementations
+ */
+
 public class EmptyHandsStack implements IMode {
-    //region attributes
-
-    //endregion
-
-    //region getter and setters
-
-    //endregion
-
-    //region constructor
-
-    //endregion
 
     //region public methods
-
-    //endregion
-
-
-    //region private methods
-
-    //endregion
-
     @Override
     public DobbleGame startGame(DobbleGame dobbleGame) {
         /**
-        List<Card> cards = new ArrayList<>();
-        players.forEach(player -> player.setCards(cards));
-        return players;**/
+         List<Card> cards = new ArrayList<>();
+         players.forEach(player -> player.setCards(cards));
+         return players;**/
         return null;
     }
 
@@ -63,4 +48,9 @@ public class EmptyHandsStack implements IMode {
     public Player endGame(List<Player> players) {
         return null;
     }
+    //endregion
+
+
+
+
 }
