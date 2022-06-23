@@ -10,45 +10,31 @@ import model.mode.StackMode;
 import java.util.*;
 
 /** @author Cristopher Angulo
- * @implNote This class represent the user interface. We retrieve and output data to the final user with in concrete operations
+ * @implNote This class represent the user interface.
+ * We retrieve and output data to the final user with in concrete operations
  */
 public class Menu {
+
     //region attributes
-
-    //endregion
-
-    //region getter and setters
-
-    //endregion
-
-    //region constructor
-
-    //endregion
-
-    //region public methods
-
-    //endregion
-
-
-    //region private methods
-
-    //endregion
-
     /**
      * @description List of dobble game. We can have more than one
      */
     private List<DobbleGame> dobbleGames = new ArrayList<>();
     /**
-     * @description value to keep or close menu
+     * @description represent a boolean value to keep or close menu
      */
     private boolean closeMenu = false;
     /**
-     * @description value to know the state of current game
+     * @description represent a boolean value to know the state of current game
      */
     private boolean finishCurrentGame = false;
-
+    /**
+     * @description represent current dobble game
+     */
     private DobbleGame currentDobbleGame = null;
+    //endregion
 
+    //region public methods
     /**
      * @implNote this method is the initial point to run the application
      */
@@ -59,6 +45,9 @@ public class Menu {
             selectOption();
         }
     }
+    //endregion
+
+    //region private methods
 
     /**
      * @implNote method to show the main options
@@ -399,5 +388,8 @@ public class Menu {
         }
         return elements;
     }
+
+    //endregion
+
 
 }

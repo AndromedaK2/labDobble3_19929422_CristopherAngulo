@@ -6,5 +6,4 @@ package model.card;
 
 public interface ICard {
      void addElement(Object element);
-     String toString();
 }
