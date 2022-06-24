@@ -103,14 +103,23 @@ public class Menu {
         System.out.println("Seguimos creando el mazo de cartas");
 
         int  elementsPerCard = requestElementsPerCard();
+        System.out.println("\n*********************************\n");
         int  totalCards = requestTotalCards(elementsPerCard);
+        System.out.println("\n*********************************\n");
 
         List<Object> elements =  requestElements(totalCards,elementsPerCard);
+        System.out.println("\n*********************************\n");
+
         int playersNumber = requestPlayersNumber();
+        System.out.println("\n*********************************\n");
+
         DobbleGameMode dobbleGameMode = requestGameMode();
+        System.out.println("\n*********************************\n");
 
         DobbleGame dobbleGame = new DobbleGame(elements,elementsPerCard,totalCards, dobbleGameMode,playersNumber,name);
         registerPlayer(dobbleGame);
+        System.out.println("\n*********************************\n");
+
         dobbleGames.add(dobbleGame);
         System.out.println(dobbleGame);
     }
@@ -133,7 +142,6 @@ public class Menu {
                     closeGameMenu = true;
                 }else{
                     this.selectDobbleGames(option);
-                    closeGameMenu = false;
                 }
             }else{
                 closeGameMenu = true;
@@ -209,6 +217,7 @@ public class Menu {
      * @implNote method to start to play
      */
     private void play(){
+        finishCurrentGame = false;
         boolean start = true;
         System.out.println("Juego Iniciado: \n");
         DobbleGame dobbleGame = this.currentDobbleGame;
