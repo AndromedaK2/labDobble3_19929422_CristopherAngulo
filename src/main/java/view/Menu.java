@@ -99,7 +99,7 @@ public class Menu {
         System.out.println("Debe añadirle un nombre representativo a su juego por el cual pueda identificar");
 
         String name = requestGameName();
-
+        System.out.println("\n*********************************\n");
         System.out.println("Seguimos creando el mazo de cartas");
 
         int  elementsPerCard = requestElementsPerCard();
@@ -170,6 +170,7 @@ public class Menu {
 
     private void displayStartGame(){
         closeStartMenu = false;
+        System.out.println("\n*********************************\n");
         while(!closeStartMenu){
             System.out.println("1) Jugar");
             System.out.println("2) Volver atras");
@@ -219,6 +220,7 @@ public class Menu {
     private void play(){
         finishCurrentGame = false;
         boolean start = true;
+        System.out.println("\n*********************************\n");
         System.out.println("Juego Iniciado: \n");
         DobbleGame dobbleGame = this.currentDobbleGame;
         dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
