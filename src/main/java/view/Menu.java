@@ -525,6 +525,10 @@ public class Menu {
         }
         return elements;
     }
+
+    /**
+     * @implNote  this method is a simulator cpu vs cpu
+     */
     private void simulatorCpuVsCpu(){
         finishCurrentGame = false;
         boolean start = true;
@@ -579,6 +583,10 @@ public class Menu {
         }
     }
 
+
+    /**
+     * @implNote  this method is a special spoit random 
+     */
     private void spotitCPU(DobbleGame dobbleGame) {
         try{
             TimeUnit.SECONDS.sleep(3);
