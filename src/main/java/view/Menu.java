@@ -1,11 +1,13 @@
 package view;
 
 import common.Helper;
+import model.deck.Dobble;
 import model.game.DobbleGame;
 import model.mode.DobbleGameMode;
 import model.game.DobbleGameStatus;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /** @author Cristopher Angulo
  * @implNote This class represent the user interface o UI to interact with users.
@@ -182,7 +184,8 @@ public class Menu {
         System.out.println("\n*********************************\n");
         while(!closeStartMenu){
             System.out.println("1) Jugar");
-            System.out.println("2) Volver atras");
+            System.out.println("2) Demo Cpu vs Cpu");
+            System.out.println("3) Volver atras");
             Scanner scanner = new Scanner(System.in);
             int option = scanner.nextInt();
             switch (option){
@@ -191,6 +194,10 @@ public class Menu {
                     closeStartMenu = true;
                     break;
                 case 2:
+                    simulatorCpuVsCpu();
+                    closeStartMenu = true;
+                    break;
+                case 3:
                     closeStartMenu = true;
                     break;
             }
@@ -311,6 +318,7 @@ public class Menu {
      */
     private void passTurn(DobbleGame dobbleGame){
         dobbleGame.passTurn();
+        System.out.println("Has pasado de turno");
     }
 
     /**
@@ -518,6 +526,74 @@ public class Menu {
         return elements;
     }
     private void simulatorCpuVsCpu(){
+        finishCurrentGame = false;
+        boolean start = true;
+        System.out.println("\n*********************************\n");
+        System.out.println("Juego Iniciado: \n");
+        DobbleGame dobbleGame = this.currentDobbleGame;
+        dobbleGame.setGameStatus(DobbleGameStatus.STARTED);
+
+        try{
+            while(!finishCurrentGame)
+            {
+                if(start){
+                    dobbleGame.startGame();
+                }
+                start = false;
+                System.out.println("Juega: "+ dobbleGame.getWhoseIsTurn());
+                System.out.println("\n***************************************");
+                System.out.println("Zona de juego: "+ dobbleGame.getCardsZone());
+                System.out.println("\n***************************************");
+                System.out.println("Escoja su opción:");
+                System.out.println("1) Spotit");
+                System.out.println("2) Pasar");
+
+                TimeUnit.SECONDS.sleep(2);
+
+
+                int option = Helper.generateRandomNumber(1,2);
+
+                switch(option)
+                {
+                    case 1:
+                        spotitCPU(dobbleGame);
+                        start = true;
+                        break;
+                    case 2:
+                        passTurn(dobbleGame);
+                        start = true;
+                        break;
+                    case 3: finishCurrentGame = true;
+                        this.endGame(dobbleGame);
+                        break;
+                }
+            }
+        } catch (IndexOutOfBoundsException ex){
+            System.out.println("No hay suficientes cartas en el mazo para continuar");
+            start = false;
+            this.endGame(dobbleGame);
+
+        }
+        catch (Exception ex){
+            System.out.println(ex.toString());
+        }
+    }
+
+    private void spotitCPU(DobbleGame dobbleGame) {
+        try{
+            TimeUnit.SECONDS.sleep(3);
+            System.out.println("Ingresar elemento en común entre las cartas");
+
+            List<Object> elements = dobbleGame.getCardsZone().get(0).getElements();
+            Object element = elements.get(Helper.generateRandomNumber(0,elements.size()-1));
+            if(dobbleGame.spotit(element)){
+                System.out.println("Acertaste: "+ element +" es el elemento en común");
+            }else{
+                System.out.println("Fallaste: "+ element +" no es el elemento en común");
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
