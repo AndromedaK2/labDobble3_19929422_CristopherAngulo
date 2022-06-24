@@ -124,6 +124,9 @@ public class Menu {
         System.out.println(dobbleGame);
     }
 
+    /**
+     * @implNote this methods display dobble games
+     */
     private void displayDobbleGames(){
         closeGameMenu = false;
         while(!closeGameMenu){
@@ -150,7 +153,10 @@ public class Menu {
         }
     }
 
-
+    /**
+     * @implNote  this method select a game option
+     * @param option int value accord select option
+     */
     private void selectDobbleGames(int option){
         //Manual clone
         DobbleGame dobbleGameReference = dobbleGames.get(option-1);
@@ -168,6 +174,9 @@ public class Menu {
         this.displayStartGame();
     }
 
+    /**
+     * @implNote this method display to get started a game
+     */
     private void displayStartGame(){
         closeStartMenu = false;
         System.out.println("\n*********************************\n");
@@ -295,17 +304,36 @@ public class Menu {
             System.out.println("Fallaste, no es el elemento en común");
         }
     }
+
+    /**
+     * @implNote  this method pass a turn
+     * @param dobbleGame represent a game
+     */
     private void passTurn(DobbleGame dobbleGame){
         dobbleGame.passTurn();
     }
+
+    /**
+     * @implNote  this method finish game
+     * @param dobbleGame
+     */
     private void endGame(DobbleGame dobbleGame){
         System.out.println("\nEl ganador es: \n"+dobbleGame.getWinner());
         dobbleGame.endGame();
         this.currentDobbleGame = null;
     }
+
+    /**
+     * @implNote this method show game status
+     */
     private void showGameStatus(){
         System.out.println(this.dobbleGames.get(0));
     }
+
+    /**
+     *@implNote  this method request game name to user
+     * @return gamename
+     */
     private String requestGameName(){
         Scanner scanner = new Scanner(System.in);
         boolean wenttocatch = false;
@@ -321,6 +349,10 @@ public class Menu {
         } while (!wenttocatch);
         return gameName;
     }
+    /**
+     * @implNote this method request elements to user
+     * @return elements or symbols to create cards
+     */
     private List<Object> requestElements(int totalCards, int elementsPerCard){
         List<Object> elements = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
@@ -344,6 +376,11 @@ public class Menu {
 
         return elements;
     }
+
+    /**
+     * @implNote this  method request total cards to user
+     * @return total cards
+     */
     private int requestTotalCards(int elementsPerCard){
         Scanner scanner = new Scanner(System.in);
         boolean isValidTotalCards = false;
@@ -370,6 +407,10 @@ public class Menu {
         } while (!wenttocatch);
         return totalCards;
     }
+    /**
+     * @implNote  this method request elements per card to user
+     * @return elements per card
+     */
     private int requestElementsPerCard() {
         boolean isValidElementsPerCard = false;
         boolean wenttocatch = false;
@@ -395,11 +436,21 @@ public class Menu {
         return value;
 
     }
+
+    /**
+     * @implNote  this method request players number  to user
+     * @return  players number
+     */
     private int requestPlayersNumber(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingresar la cantidad de jugadores para jugar");
         return scanner.nextInt();
     }
+
+    /**
+     * @implNote  this method request game mode  to user
+     * @return  game mode
+     */
     private DobbleGameMode requestGameMode(){
         Scanner scanner = new Scanner(System.in);
         DobbleGameMode dobbleGameMode = null;
@@ -420,9 +471,22 @@ public class Menu {
         return dobbleGameMode;
 
     }
+
+    /**
+     * @implNote  this method generate random elements
+     * @param totalCards total cards
+     * @return  elements
+     * @see Helper
+     */
     private  List<Object> generateRandomElements(int totalCards){
         return Helper.generateRandomElements(totalCards);
     }
+
+    /**
+     * @implNote  get elements
+     * @param totalElements total elements as integer
+     * @return elements
+     */
     private  List<Object> generateElements(int totalElements){
         Scanner scanner = new Scanner(System.in);
         List<Object> elements = new ArrayList<>();
@@ -452,6 +516,9 @@ public class Menu {
             System.out.println("Elemento: "+elements.get(j));
         }
         return elements;
+    }
+    private void simulatorCpuVsCpu(){
+
     }
 
     //endregion
