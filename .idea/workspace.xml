@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGameMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/mode/DobbleGameMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,13 +122,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00025" summary="[add] generate ramdom elements">
-      <created>1655239312931</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1655239312931</updated>
     </task>
     <task id="LOCAL-00026" summary="[add] switch case with options and return elements">
       <created>1655239854415</created>
@@ -465,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656016895979</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="[update] documentation">
+      <created>1656021759374</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1656021759374</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -3,6 +3,7 @@ package model.game;
 import common.Helper;
 import model.card.Card;
 import model.deck.Dobble;
+import model.mode.DobbleGameMode;
 import model.mode.EmptyHandsStack;
 import model.mode.IMode;
 import model.mode.StackMode;
@@ -242,15 +243,19 @@ public class DobbleGame implements  IDobbleGame{
      * @param username
      * @return true if method could register or false the opposite
      */
-    public boolean register(String username) {
+    public String register(String username) {
         Player player = new Player(username);
-        if(!this.players.contains(player) && this.playersNumber > this.players.size()){
-            this.players.add(player);
-            Turn turn = new Turn(player);
-            this.turns.add(turn);
-            return true;
+        if(this.players.contains(player)){
+            return "jugador ya existe";
         }
-        return false;
+        if(this.playersNumber < this.players.size()){
+            return "no se puede registrar";
+        }
+        this.players.add(player);
+        Turn turn = new Turn(player);
+        this.turns.add(turn);
+        return "jugador registrado";
+
     }
 
     /**

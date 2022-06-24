@@ -2,6 +2,7 @@ package model.game;
 
 import model.card.Card;
 import model.deck.Dobble;
+import model.mode.DobbleGameMode;
 import model.player.Player;
 import model.turn.Turn;
 
@@ -21,7 +22,7 @@ import java.util.List;
      DobbleGameStatus getStatus();
      List<Turn> getTurns();
      int getPlayersNumber();
-     boolean register(String username);
+     String register(String username);
      void startGame();
      boolean spotit(Object element);
      void passTurn();

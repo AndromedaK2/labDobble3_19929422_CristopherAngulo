@@ -2,16 +2,14 @@ package view;
 
 import common.Helper;
 import model.game.DobbleGame;
-import model.game.DobbleGameMode;
+import model.mode.DobbleGameMode;
 import model.game.DobbleGameStatus;
-import model.mode.IMode;
-import model.mode.StackMode;
 
 import java.util.*;
 
 /** @author Cristopher Angulo
- * @implNote This class represent the user interface.
- * We retrieve and output data to the final user with in concrete operations
+ * @implNote This class represent the user interface o UI to interact with users.
+ * @version 1.0
  */
 public class Menu {
 
@@ -24,9 +22,16 @@ public class Menu {
      * @description represent a boolean value to keep or close menu
      */
     private boolean closeMenu = false;
+
+    /**
+     * @description represent a boolean value to keep or close game menu
+     */
+    private boolean closeGameMenu = false;
     /**
      * @description represent a boolean value to know the state of current game
      */
+
+    private boolean closeStartMenu = false;
     private boolean finishCurrentGame = false;
     /**
      * @description represent current dobble game
@@ -57,8 +62,7 @@ public class Menu {
         System.out.println("Escoja su opción:");
         System.out.println("1) Crear un Juego");
         System.out.println("2) Seleccionar juego");
-        System.out.println("3) Jugar (debe seleccionar un juego antes)");
-        System.out.println("4) Salir");
+        System.out.println("3) Salir");
 
     }
 
@@ -77,10 +81,7 @@ public class Menu {
             case 2:
                 displayDobbleGames();
                 break;
-            case 3:
-                play();
-                break;
-            case 4: closeMenu = true;
+            case 3: closeMenu = true;
                 break;
         }
     }
@@ -115,25 +116,36 @@ public class Menu {
     }
 
     private void displayDobbleGames(){
-        System.out.println("Lista de juegos que has creado");
-        if(this.dobbleGames.size()>0){
-            for (int i = 0; i < dobbleGames.size(); i++) {
-                int aux = i+1;
-                System.out.println(aux+"- "+dobbleGames.get(i).getName()+"\n");
+        closeGameMenu = false;
+        while(!closeGameMenu){
+            System.out.println("*********************************");
+            System.out.println("Lista de juegos que has creado: \n");
+            if(this.dobbleGames.size()>0){
+                int aux = 0;
+                for (int i= 0; i < dobbleGames.size(); i++) {
+                    aux = i +1;
+                    System.out.println(aux+") "+dobbleGames.get(i).getName()+"\n");
+                }
+                System.out.println((aux+1)+") Volver atras");
+                Scanner scanner = new Scanner(System.in);
+                int option = scanner.nextInt();
+                if(option == aux+1){
+                    closeGameMenu = true;
+                }else{
+                    this.selectDobbleGames(option);
+                    closeGameMenu = false;
+                }
+            }else{
+                closeGameMenu = true;
+                System.out.println("No existen juego creados\n");
             }
-            this.selectDobbleGames();
-        }else{
-            System.out.println("No existen juego creados\n");
         }
-
     }
-    private void selectDobbleGames(){
-        Scanner scanner = new Scanner(System.in);
-        int option = scanner.nextInt();
-        //Manual clone object
 
+
+    private void selectDobbleGames(int option){
+        //Manual clone
         DobbleGame dobbleGameReference = dobbleGames.get(option-1);
-
         DobbleGame dobbleGame = new DobbleGame(
                 dobbleGameReference.getDobble().getAllElements(),
                 dobbleGameReference.getDobble().getElementsPerCard(),
@@ -144,27 +156,53 @@ public class Menu {
                 dobbleGameReference.getPlayers(),
                 dobbleGameReference.getTurns()
                );
-
         this.currentDobbleGame = dobbleGame;
+        this.displayStartGame();
+    }
 
+    private void displayStartGame(){
+        closeStartMenu = false;
+        while(!closeStartMenu){
+            System.out.println("1) Jugar");
+            System.out.println("2) Volver atras");
+            Scanner scanner = new Scanner(System.in);
+            int option = scanner.nextInt();
+            switch (option){
+                case 1:
+                    play();
+                    closeStartMenu = true;
+                    break;
+                case 2:
+                    closeStartMenu = true;
+                    break;
+            }
+
+        }
     }
 
     /**
-     * @implNote method to register user in the current game
+     * @implNote method to register player in the current game
      */
     private void registerPlayer(DobbleGame dobbleGame){
         Scanner scanner = new Scanner(System.in);
+        String result = "";
+        boolean error = false;
         for (int i = 0; i < dobbleGame.getPlayersNumber(); i++) {
             int aux = i +1;
+
             System.out.println("Ingrese  nombre de usuario del jugador "+aux+ " para registrarlo en el juego");
             String username = scanner.next();
-            if(dobbleGame.register(username)){
-                System.out.println("Se ha registrado");
-            }else{
-                System.out.println("El usuario no se puede registrar");
+            result = dobbleGame.register(username);
+            System.out.println(result);
+
+            while(result=="jugador ya existe"){
+                System.out.println("Ingrese  nombre de usuario del jugador "+aux+ " para registrarlo en el juego");
+                username = scanner.next();
+                result = dobbleGame.register(username);
+                System.out.println(result);
             }
-            System.out.println(dobbleGame.getPlayers());
         }
+        System.out.println(dobbleGame.getPlayers());
     }
 
     /**
