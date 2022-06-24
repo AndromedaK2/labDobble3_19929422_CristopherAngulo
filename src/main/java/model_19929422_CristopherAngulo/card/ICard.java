@@ -1,4 +1,4 @@
-package model.card;
+package model_19929422_CristopherAngulo.card;
 
 /** @author Cristopher Angulo
  * @description interface of a card

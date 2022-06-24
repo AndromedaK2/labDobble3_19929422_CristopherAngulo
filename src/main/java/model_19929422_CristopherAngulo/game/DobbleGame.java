@@ -1,14 +1,14 @@
-package model.game;
+package model_19929422_CristopherAngulo.game;
 
-import common.Helper;
-import model.card.Card;
-import model.deck.Dobble;
-import model.mode.DobbleGameMode;
-import model.mode.EmptyHandsStack;
-import model.mode.IMode;
-import model.mode.StackMode;
-import model.player.Player;
-import model.turn.Turn;
+import common_19929422_CristopherAngulo.Helper;
+import model_19929422_CristopherAngulo.card.Card;
+import model_19929422_CristopherAngulo.deck.Dobble;
+import model_19929422_CristopherAngulo.mode.DobbleGameMode;
+import model_19929422_CristopherAngulo.mode.EmptyHandsStack;
+import model_19929422_CristopherAngulo.mode.IMode;
+import model_19929422_CristopherAngulo.mode.StackMode;
+import model_19929422_CristopherAngulo.player.Player;
+import model_19929422_CristopherAngulo.turn.Turn;
 
 import java.util.ArrayList;
 import java.util.List;

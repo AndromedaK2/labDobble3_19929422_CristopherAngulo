@@ -1,6 +1,6 @@
-package console;
+package console_19929422_CristopherAngulo;
 
-import view.Menu;
+import view_19929422_CristopherAngulo.Menu;
 
 /**
  * @author Cristopher angulo

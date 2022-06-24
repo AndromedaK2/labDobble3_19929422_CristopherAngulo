@@ -1,6 +1,6 @@
-package model.player;
+package model_19929422_CristopherAngulo.player;
 
-import model.card.Card;
+import model_19929422_CristopherAngulo.card.Card;
 
 import java.util.List;
 

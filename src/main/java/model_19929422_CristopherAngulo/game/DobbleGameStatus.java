@@ -1,4 +1,4 @@
-package model.game;
+package model_19929422_CristopherAngulo.game;
 
 public enum DobbleGameStatus {
     CREATED("Juego Creado"),STARTED("Juego Inicializado"),FINISHED("Juego Finalizado");

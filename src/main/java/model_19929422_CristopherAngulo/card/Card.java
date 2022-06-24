@@ -1,6 +1,6 @@
-package model.card;
+package model_19929422_CristopherAngulo.card;
 
-import common.Helper;
+import common_19929422_CristopherAngulo.Helper;
 
 
 import java.util.*;

@@ -1,6 +1,6 @@
-package model.turn;
+package model_19929422_CristopherAngulo.turn;
 
-import model.player.Player;
+import model_19929422_CristopherAngulo.player.Player;
 
 /** @author Cristopher Angulo
  * @implNote This class represent a turn in the game

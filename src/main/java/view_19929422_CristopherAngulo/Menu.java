@@ -1,10 +1,9 @@
-package view;
+package view_19929422_CristopherAngulo;
 
-import common.Helper;
-import model.deck.Dobble;
-import model.game.DobbleGame;
-import model.mode.DobbleGameMode;
-import model.game.DobbleGameStatus;
+import common_19929422_CristopherAngulo.Helper;
+import model_19929422_CristopherAngulo.game.DobbleGame;
+import model_19929422_CristopherAngulo.mode.DobbleGameMode;
+import model_19929422_CristopherAngulo.game.DobbleGameStatus;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -585,7 +584,7 @@ public class Menu {
 
 
     /**
-     * @implNote  this method is a special spoit random 
+     * @implNote  this method is a special spoit random
      */
     private void spotitCPU(DobbleGame dobbleGame) {
         try{

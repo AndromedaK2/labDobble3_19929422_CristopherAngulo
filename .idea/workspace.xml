@@ -6,7 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="6c7f73c8-2491-45e7-9ef6-819164c31bb0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/common/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common_19929422_CristopherAngulo/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/console/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/console_19929422_CristopherAngulo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/card/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/card/ICard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/card/ICard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/Dobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/deck/Dobble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/deck/IDobble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/deck/IDobble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/game/DobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/DobbleGameStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/game/DobbleGameStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/game/IDobbleGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/game/IDobbleGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/DobbleGameMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/mode/DobbleGameMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/EmptyHandsStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/mode/EmptyHandsStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/IMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/mode/IMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/mode/StackMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/mode/StackMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/player/IPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/turn/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model_19929422_CristopherAngulo/turn/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view_19929422_CristopherAngulo/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +64,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/view/Menu.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/view_19929422_CristopherAngulo/Menu.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -77,7 +93,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.console.Main">
+  <component name="RunManager" selected="Application.console_19929422_CristopherAngulo.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.main.Main" />
       <module name="DobbleGame.main" />
@@ -91,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="console.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="console.Main" />
+    <configuration name="console_19929422_CristopherAngulo.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="console_19929422_CristopherAngulo.Main" />
       <module name="DobbleGame.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="console.*" />
+          <option name="PATTERN" value="console_19929422_CristopherAngulo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,7 +122,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.console.Main" />
+        <item itemvalue="Application.console_19929422_CristopherAngulo.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -119,20 +135,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652849456211</updated>
-    </task>
-    <task id="LOCAL-00030" summary="[update] methods names">
-      <created>1655328420032</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1655328420032</updated>
-    </task>
-    <task id="LOCAL-00031" summary="[add] register player">
-      <created>1655354998746</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1655354998746</updated>
     </task>
     <task id="LOCAL-00032" summary="[add] register player output">
       <created>1655356538263</created>
@@ -463,7 +465,21 @@
       <option name="project" value="LOCAL" />
       <updated>1656031054050</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="[update] documentation">
+      <created>1656032605382</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1656032605382</updated>
+    </task>
+    <task id="LOCAL-00080" summary="[update] documentation">
+      <created>1656032670787</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1656032670787</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

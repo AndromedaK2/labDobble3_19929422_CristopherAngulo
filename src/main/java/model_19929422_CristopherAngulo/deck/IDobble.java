@@ -1,6 +1,6 @@
-package model.deck;
+package model_19929422_CristopherAngulo.deck;
 
-import model.card.Card;
+import model_19929422_CristopherAngulo.card.Card;
 
 import java.util.List;
 

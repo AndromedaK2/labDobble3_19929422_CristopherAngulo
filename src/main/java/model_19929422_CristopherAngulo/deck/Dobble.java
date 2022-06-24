@@ -1,6 +1,6 @@
-package model.deck;
-import common.Helper;
-import model.card.Card;
+package model_19929422_CristopherAngulo.deck;
+import common_19929422_CristopherAngulo.Helper;
+import model_19929422_CristopherAngulo.card.Card;
 
 import java.util.*;
 import java.util.stream.Collectors;

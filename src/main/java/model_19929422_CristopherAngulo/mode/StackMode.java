@@ -1,9 +1,9 @@
-package model.mode;
+package model_19929422_CristopherAngulo.mode;
 
-import model.card.Card;
-import model.deck.Dobble;
-import model.game.DobbleGame;
-import model.player.Player;
+import model_19929422_CristopherAngulo.card.Card;
+import model_19929422_CristopherAngulo.deck.Dobble;
+import model_19929422_CristopherAngulo.game.DobbleGame;
+import model_19929422_CristopherAngulo.player.Player;
 
 import java.util.*;
 
